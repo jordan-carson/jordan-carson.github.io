@@ -40,35 +40,7 @@ body {
     float: right;
 }
 
-.bio-div {
-    /*position: relative;*/
-    font-size: 18px;
+.contact-info {
+    font-size: 10px;
     text-align: center;
-    /*font-family: Helvetica;*/
-}
-
-.email-img {
-    width: 44px;
-    height: 33px;
-    margin-right: 25px;
-    margin-top: 8px;
-}
-
-.github-img {
-    width: 33px; height: 33px;
-}
-
-/* Responsive navigation menu (for mobile devices) */
-@media screen and (max-width: 600px) {
-    .topnav a, .topnav-right {
-        float: none;
-        display: block;
-    }
-
-    .topnav-centered a {
-        position: relative;
-        top: 0;
-        left: 0;
-        transform: none;
-    }
 }
