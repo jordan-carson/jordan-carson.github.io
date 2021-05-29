@@ -1,3 +1,5 @@
+
+/*Formatting the Body*/
 body{
     background-color: rgb(255, 249, 245);
     font-family: 'Open Sans', sans-serif;
@@ -5,6 +7,7 @@ body{
     font-size:17px;
     line-height: 24pt;
 }
+
 a{
     text-decoration: none;
     color: lightcoral;
@@ -45,22 +48,22 @@ footer{
 }
 
 .header-img{
-    background: url(../../../images/Banner.jpg) center no-repeat;
+    background: url(../images/home-banner.jpg) center no-repeat;
     background-size: 100%;
     padding: 30px 0 0 0;
     text-align:center;
 }
-.face-img{
-    border-style: solid;
-    border-color:white;
-    border-width: 5px;
-    border-height:5px;
-    border-radius:50%;
-    width:130px;
-    padding-bottom: 0;
-}
+/*.face-img{*/
+/*    border-style: solid;*/
+/*    border-color:white;*/
+/*    border-width: 5px;*/
+/*    border-height:5px;*/
+/*    border-radius:50%;*/
+/*    width:130px;*/
+/*    padding-bottom: 0;*/
+/*}*/
 .name{
-    color: white;
+    color: steelblue;
     padding-bottom: 10px;
     font-family: 'Fredericka the Great', cursive;
     font-weight: bold;
@@ -69,7 +72,7 @@ footer{
     list-style: none;
     text-align: center;
     padding: 0 0 5px 0;
-    color: lightcoral;
+    color: slategray;
 }
 .nav > li {
     display: inline-block;
@@ -78,110 +81,112 @@ footer{
 
 .nav > li > a{
     text-decoration: none;
-    color: lightcoral;
+    color: black;
     font-family: 'Fredericka the Great', serif;
     font-size: 17px;
 }
 
 .nav > li > a:hover{
-    color: palevioletred;
+    color: whitesmoke;
 }
 
-.pubs{
-    padding-top: 1px;
-    font-family: 'Open Sans',serif;
-    color: rgb(90,95,100);
-    font-size:17px;
-    line-height: 24pt;
-}
+/*.pubs{*/
+/*    padding-top: 1px;*/
+/*    font-family: 'Open Sans',serif;*/
+/*    color: rgb(90,95,100);*/
+/*    font-size:17px;*/
+/*    line-height: 24pt;*/
+/*}*/
 
-.pubinfo{
-    color:slategray;
-    font-size:15px;
-}
+/*.pubinfo{*/
+/*    color:slategray;*/
+/*    font-size:15px;*/
+/*}*/
 
-.pubs > li > p > a{
-    text-decoration: none;
-    color: lightcoral;
-    font-family: serif;
-    font-size: 15px;
-}
+/*.pubs > li > p > a{*/
+/*    text-decoration: none;*/
+/*    color: lightcoral;*/
+/*    font-family: serif;*/
+/*    font-size: 15px;*/
+/*}*/
 
-.pubs > li > p > a:hover{
-    color: palevioletred;
-}
-/*What does div > p mean in CSS?*/
-/*Selects all <p> elements where the parent is a <div> element*/
-.pubs > li > p > span > em > a{
-    text-decoration: none;
-    color: lightcoral;
-    font-family: serif;
-    font-size: 15px;
-}
-.pubs > li > p > span > em > a:hover{
-    color: palevioletred;
-}
+/*.pubs > li > p > a:hover{*/
+/*    color: palevioletred;*/
+/*}*/
+/*!*What does div > p mean in CSS?*!*/
+/*!*Selects all <p> elements where the parent is a <div> element*!*/
+/*.pubs > li > p > span > em > a{*/
+/*    text-decoration: none;*/
+/*    color: lightcoral;*/
+/*    font-family: serif;*/
+/*    font-size: 15px;*/
+/*}*/
+/*.pubs > li > p > span > em > a:hover{*/
+/*    color: palevioletred;*/
+/*}*/
 
-.pubs > li > p > span > b{
-    color:rgb(100,110,120);
-}
+/*.pubs > li > p > span > b{*/
+/*    color:rgb(100,110,120);*/
+/*}*/
 
-.quote {
-    position: relative;
-    top:15px;
-    background-position: 99% 50%;
-    background-color: mistyrose;
-    margin-left: 3.4%;
-    font-family: 'Open Sans',serif;
-    font-style: italic;
-    font-size:17px;
-    line-height: 24px;
-    color: rgb(90,95,100);
-    border-left-width: 0.5em;
-    border-left-color: lightcoral;
-    border-left-style: solid;
-}
+/*.quote {*/
+/*    position: relative;*/
+/*    top:15px;*/
+/*    background-position: 99% 50%;*/
+/*    background-color: mistyrose;*/
+/*    margin-left: 3.4%;*/
+/*    font-family: 'Open Sans',serif;*/
+/*    font-style: italic;*/
+/*    font-size:17px;*/
+/*    line-height: 24px;*/
+/*    color: rgb(90,95,100);*/
+/*    border-left-width: 0.5em;*/
+/*    border-left-color: lightcoral;*/
+/*    border-left-style: solid;*/
+/*}*/
 
-.quote:before {
-    color: lightcoral;
-    content: '\201C';
-    font-family: serif;
-    font-size: 4em;
-    line-height: 0.1em;
-    vertical-align: -0.4em;
-}
+/*.quote:before {*/
+/*    color: lightcoral;*/
+/*    content: '\201C';*/
+/*    font-family: serif;*/
+/*    font-size: 4em;*/
+/*    line-height: 0.1em;*/
+/*    vertical-align: -0.4em;*/
+/*}*/
 
-.ct{
-    text-align: center;
-    font-family: 'Open Sans', sans-serif;
-    color: rgb(90,95,100);
-    font-size:17px;
-    line-height: 24pt;
-}
+/*.ct{*/
+/*    text-align: center;*/
+/*    font-family: 'Open Sans', sans-serif;*/
+/*    color: rgb(90,95,100);*/
+/*    font-size:17px;*/
+/*    line-height: 24pt;*/
+/*}*/
 
-.ct > a{
-    text-decoration: none;
-    color: lightcoral;
-}
+/*.ct > a{*/
+/*    text-decoration: none;*/
+/*    color: lightcoral;*/
+/*}*/
 
-.ct > a:hover{
-    color: palevioletred;
-}
+/*.ct > a:hover{*/
+/*    color: palevioletred;*/
+/*}*/
 
-.topic{
-    font-family: 'Open Sans',serif;
-    color: rgb(90,95,100);
-    font-size:25px;
-    font-weight: 1000;
-}
+/*.topic{*/
+/*    font-family: 'Open Sans',serif;*/
+/*    color: rgb(90,95,100);*/
+/*    font-size:25px;*/
+/*    font-weight: 1000;*/
+/*}*/
 
-.subtopic{
-    font-family: 'Open Sans',serif;
-    color: rgb(90,95,100);
-    font-size:20px;
-    font-weight: 1000;
-}
+/*.subtopic{*/
+/*    font-family: 'Open Sans',serif;*/
+/*    color: rgb(90,95,100);*/
+/*    font-size:20px;*/
+/*    font-weight: 1000;*/
+/*}*/
 
+
+/*Formatting Images*/
 
 #email_img{
     width: 25px;
