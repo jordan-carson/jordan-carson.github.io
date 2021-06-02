@@ -1,0 +1,7 @@
+.idea
+.vscode
+.node_modules
+/node_modules
+node_modules
+/zz_old_files
+zz_old_files
