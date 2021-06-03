@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jordan Carson</title>
+
+<!--    <link rel="stylesheet" type="text/css" href="new_index.css">-->
+    <style>
+
+        /*colors {*/
+        /*    dark-color: #222831;*/
+        /*    lighter-color: #393e46;*/
+        /*    blue-color: #00adb5;*/
+        /*    grey-color: #eeeeee;*/
+        /*}*/
+
+        body {
+            background-color: #fff;
+            color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 1em;
+            margin: 0;
+        }
+
+        h1 {
+            color: darkslategrey;
+            font-size: 2em;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            border-bottom: 10px dotted slategrey;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            font-style: italic;
+        }
+        ul {
+            background-color: whitesmoke;
+            border: 1px solid rgba(96, 99, 106, 0.5);
+            padding: 25px;
+            /*padding: 10px;*/
+        }
+        a:link,
+        a:visited {
+            color: #fb6542;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: green;
+        }
+        .job-title {
+            /*color: #999999;*/
+            font-weight: bold;
+            position: relative;
+            top: 0;
+            bottom: 5px;
+            background-color: rgba(96, 99, 106, 0.2);
+            color: darkslategrey;
+            font-size: x-large;
+            border: 25px;
+            /*margin-top: 10px;*/
+        }
+        .left-container {
+            margin-top: 50px;
+            width: 200px;
+            height: 500px;
+            position: absolute;
+            border: 5px dotted slategrey;
+            /*padding-top: 10px;*/
+            padding: 10px;
+        }
+        .right-container {
+            margin-top: 50px;
+            width: 300px;
+            height: 500px;
+            position: absolute;
+            right: 0;
+            /*padding-right: 50px;*/
+            border: 5px dotted slategrey;
+            padding: 10px;
+
+        }
+        .center-container {
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 10px;
+            width: 200px;
+            height: 500px;
+            border: 5px dotted slategrey;
+        }
+        .employment-container {
+            margin-left: auto;
+            margin-right: auto;
+            /*border: 5px dotted slategrey;*/
+        }
+        #astro-helmet, #office_img, #student_img {
+            height: 50px;
+            width: 50px;
+            margin: auto;
+            display: block;
+        }
+        .skills-top-icons, .skill-icons {
+            width: 30px;
+            height: 50px;
+            /*margin-top: 50px;*/
+            margin: auto;
+            display: flex;
+            justify-content: center;
+        }
+        .skills-icons {
+            width: 30px;
+            height: 30px;
+            /*display: flex;*/
+            align-content: center;
+        }
+        #docker_img {
+            align-content: center;
+            height: 40px;
+            width: 40px;
+        }
+        /*.skills-icons:hover, .code-tooltip-text{*/
+        /*    background-color: #0085a1;*/
+        /*    visibility: visible;*/
+        /*}*/
+        .skills-table {
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+            font-size: medium;
+            /*border: 1px dotted slategrey;*/
+        }
+        td {
+            padding: 0 10px;
+        }
+        #bnp_paribas_img {
+            align-content: center;
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+<h1>Jordan Carson</h1>
+<div class="job-title">Data Engineer & Scientist</div>
+<div class="personal-description">
+    Skilled data scientist delivering innovative data pipelines, predictive tools, and machine learning models boosting stakeholder solutions.
+</div>
+<img id="astro-helmet" src="images/astro-person-icon.svg" alt="astro">
+<ul>
+    <li>Adept at applying strategies, plans, and processes enlivening frameworks, capabilities, and tools producing needs-based client business solutions.</li>
+    <li>Successfully designing, creating, and completing quantitative data research, analysis, mining, and application procedures bolstering feature enhancements, decision-making, and product design.</li>
+    <li>Collaborative professional forging pivotal partnerships and relationships with cross-functional teams facilitating problem-solving, trend assessments, new opportunity identification, and integrating best practices enhancing project completion.</li>
+</ul>
+<!--<svg id="skills-flask" fill="#000000" xmlns:x="http://ns.adobe.com/Extensibility/1.0/" xmlns:i="http://ns.adobe.com/AdobeIllustrator/10.0/" xmlns:graph="http://ns.adobe.com/Graphs/1.0/" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" version="1.1" x="0px" y="0px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve"><g><path d="M12.3,62h39.3c1.1,0,2.2-0.6,2.8-1.5c0.6-0.9,0.7-2.1,0.3-3.1L40.1,24.8V8h4.5c0.6,0,1-0.4,1-1V3c0-0.6-0.5-1-1-1H19.5   c-0.6,0-1,0.4-1,1v4c0,0.6,0.5,1,1,1h4.5v16.8L9.3,57.4c-0.5,1-0.4,2.2,0.3,3.1C10.2,61.4,11.2,62,12.3,62z M20.5,6V4h23.1v2h-4.5   H24.9H20.5z M25.9,25.4c0.1-0.1,0.1-0.3,0.1-0.4v-6h4c0.6,0,1-0.4,1-1s-0.5-1-1-1h-4v-2h2c0.6,0,1-0.4,1-1s-0.5-1-1-1h-2v-2h2   c0.6,0,1-0.4,1-1s-0.5-1-1-1h-2V8h12.1v17c0,0.1,0,0.3,0.1,0.4l7.1,15.7l-1.7,0.4c-4.1,0.9-8.4,0.4-12.1-1.4   c-3.5-1.7-7.4-2.4-11.3-2L25.9,25.4z M19.2,40.3c3.8-0.7,7.8-0.2,11.3,1.6c2.8,1.4,5.9,2.1,8.9,2.1c1.5,0,3-0.2,4.5-0.5L46,43   l2.8,6.3l-5.4,1.2c-4.1,0.9-8.4,0.4-12.1-1.4c-4.9-2.4-10.6-2.8-15.8-0.9L19.2,40.3z M11.1,58.2l3.3-7.4l0.7-0.3   c4.9-2.2,10.5-2,15.4,0.3c2.8,1.4,5.9,2.1,9,2.1c1.5,0,3-0.2,4.5-0.5l5.8-1.3l3.2,7c0.2,0.4,0.1,0.9-0.1,1.2   c-0.2,0.4-0.6,0.6-1.1,0.6H12.3c-0.5,0-0.9-0.2-1.1-0.6C11,59,11,58.6,11.1,58.2z"></path></g></svg>-->
+<!--<svg id="skills-tube" fill="#000000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve"><g><g><g><g><g><g><path d="M20.02,95.65c-4.31,0-8.25-1.58-11.17-4.5C5.71,88.01,4.12,83.69,4.38,79c0.25-4.61,2.26-9.02,5.66-12.42l46.65-46.65        c0.78-0.78,2.05-0.78,2.83,0s0.78,2.05,0,2.83L12.86,69.41c-2.7,2.7-4.3,6.19-4.49,9.81c-0.19,3.54,0.98,6.78,3.31,9.1        c2.33,2.33,5.56,3.51,9.1,3.31c3.63-0.2,7.11-1.79,9.81-4.5l46.65-46.65c0.78-0.78,2.05-0.78,2.83,0s0.78,2.05,0,2.83        L33.42,89.96c-3.4,3.4-7.81,5.41-12.42,5.66C20.67,95.64,20.35,95.65,20.02,95.65z"></path></g></g></g></g></g><g><g><g><g><g><path d="M82.57,45.38C82.57,45.38,82.57,45.38,82.57,45.38c-1.63,0-3.14-0.63-4.28-1.77l-21.9-21.9        c-1.14-1.14-1.77-2.66-1.77-4.28c0-1.62,0.63-3.14,1.77-4.28l0.54-0.54c2.36-2.36,6.2-2.36,8.56,0l21.9,21.9        c1.14,1.14,1.77,2.66,1.77,4.28c0,1.62-0.63,3.14-1.77,4.28l-0.54,0.54C85.71,44.75,84.19,45.38,82.57,45.38z M61.22,14.83        c-0.53,0-1.06,0.2-1.46,0.6l-0.55,0.54c-0.38,0.38-0.59,0.9-0.59,1.45c0,0.55,0.21,1.07,0.6,1.45l9.59,9.59l0,0l12.32,12.32        c0.38,0.38,0.9,0.6,1.45,0.6c0,0,0,0,0,0c0.55,0,1.07-0.21,1.46-0.6l0.54-0.54c0.38-0.38,0.6-0.9,0.59-1.45        c0-0.55-0.21-1.07-0.6-1.46l-21.9-21.9C62.27,15.03,61.75,14.83,61.22,14.83z"></path></g></g></g></g></g><g><g><g><g><g><path d="M65.98,55.16L65.98,55.16l-40.7,0c-0.55,0-1-0.45-1-1c0-0.55,0.45-1,1-1l0,0l40.7,0c0.55,0,1,0.45,1,1        C66.98,54.72,66.53,55.16,65.98,55.16z"></path></g></g></g></g></g><g><g><g><g><g><path d="M82.94,34.73c-0.51,0-1.02-0.2-1.41-0.59c-0.78-0.78-0.78-2.05,0-2.83l9.29-9.29L77.98,9.18l-9.15,9.15        c-0.78,0.78-2.05,0.78-2.83,0s-0.78-2.05,0-2.83L76.57,4.94c0.78-0.78,2.05-0.78,2.83,0L95.06,20.6        c0.38,0.38,0.59,0.88,0.59,1.41s-0.21,1.04-0.59,1.41L84.35,34.14C83.96,34.53,83.45,34.73,82.94,34.73z"></path></g></g></g></g></g><g><g><g><g><g><g><g><path d="M37.28,71.07c-0.54,0-1.08-0.21-1.49-0.62c-0.82-0.83-0.82-2.17,0-2.99c0.83-0.83,2.17-0.82,2.99,0          c0.4,0.4,0.62,0.93,0.62,1.49s-0.22,1.1-0.62,1.5C38.36,70.87,37.82,71.07,37.28,71.07z M37.26,68.85          c-0.02,0-0.04,0.01-0.06,0.03c-0.04,0.04-0.04,0.12,0,0.16c0.04,0.04,0.11,0.04,0.16,0c0,0,0,0,0,0          c0.02-0.02,0.04-0.05,0.04-0.08C37.35,68.88,37.3,68.85,37.26,68.85z"></path></g></g></g></g></g></g></g><g><g><g><g><g><g><g><path d="M24.62,75.41L24.62,75.41c-0.56,0-1.09-0.22-1.49-0.62c-0.4-0.4-0.62-0.93-0.62-1.49c0-0.56,0.22-1.1,0.62-1.5          c0.83-0.83,2.17-0.82,2.99,0c0.82,0.83,0.82,2.17,0,2.99C25.72,75.19,25.19,75.41,24.62,75.41z M24.62,73.18          c-0.03,0-0.06,0.01-0.08,0.04c0,0,0,0.16,0,0.16c0,0,0.16,0,0.16,0c0.05-0.05,0.05-0.12,0-0.16          C24.68,73.19,24.65,73.18,24.62,73.18z"></path></g></g></g></g></g></g></g></g></svg>-->
+<div class="skills-top-icons">
+    <img class="skill-icons" src="src/images/noun-project/flask-icon.svg" alt="astro-image">
+<!--    <img class="skill-icons" src="noun_Gear_3116976.svg" alt="astro-image">-->
+    <img class="skill-icons" src="src/images/noun-project/sideways-tube.svg" alt="astro-image">
+</div>
+
+<!--<div class="skills-table">-->
+<!--    <ul style="justify-content: center">-->
+<!--        <li><img id="skills-code-img" src="src/images/noun-project/code-black-icon.svg" alt="code-black-img"></li>-->
+<!--        <li><img id="skills-database-icon" src="noun_database_2231983.svg" alt="code-black-img"></li>-->
+<!--        <li><img id="skills-front-end-icon" src="noun_web%20development_3452554.svg" alt="code-black-img"></li>-->
+<!--        <li><img id="skills-distributed-icon" src="noun_distribute_3747864.svg" alt="code-black-img"></li>-->
+<!--    </ul>-->
+<!--</div>-->
+
+<table class="skills-table">
+    <tr>
+        <td><img class="skills-icons" src="images/code-icon-language.svg" alt="code-black-img"></td>
+        <td>Python, SQL, JavaScript, TypeScript with limited experience in R, Scala and Java</td>
+    </tr>
+    <tr>
+        <td><img class="skills-icons" src="images/analytics-icon.svg" alt="code-black-img"></td>
+        <td>Tableau, d3.js, Plotly/Dash with limited experience in PowerBI, Kabana, Grafana</td>
+    </tr>
+    <tr>
+        <td><img class="skills-icons" src="images/database-icon.svg" alt="code-black-img"></td>
+        <td>SQL Server, Postgres, with limited experience in Redis, Cassandra, Oracle, MongoDB, Neo4j</td>
+    </tr>
+    <tr>
+        <td><img class="skills-icons" src="images/apache-kafka.svg" alt="code-black-img"></td>
+        <td>Kafka, RabbitMQ with limited experience in Google's PubSub</td>
+    </tr>
+    <tr>
+        <td><img id="docker_img" src="images/docker-icon.svg" alt="code-black-img"></td>
+        <td>Docker with limited experience in Kubernetes, Rancher Drone CI</td>
+    </tr>
+    <tr>
+        <td><img class="skills-icons" src="images/wrench-hammer-icon.svg" alt="code-black-img"></td>
+        <td>Jenkins, TravisCI with some limited experience in GitLab and GitHub Actions</td>
+    </tr>
+    <tr>
+        <td><img class="skills-icons" src="images/front-end-interface-icon.svg" alt="code-black-img"></td>
+        <td>Vue.js, Svelte, Sapper, HTML5, CSS3, SASS with limited experience in React, Angular </td>
+    </tr>
+</table>
+
+<div class="employment-container">
+    <img src="images/office-icon.svg" alt="office-img" id="office_img">
+    <table>
+        <tr>
+            <td><img src="images/bnp-paribas.svg" alt="bnp_image" id="bnp_paribas_img"></td>
+        </tr>
+        <tr>
+            <td>
+                Global Client Analytics, Global Markets Americas
+            </td>
+        </tr>
+<!--        <tr>-->
+<!--            Data Scientist/Global Client Analytics Associate, Global Markets Americas (2017 - Present)-->
+<!--        </tr>-->
+    </table>
+</div>
+
+
+
+<div class="education-information">
+    <img src="images/student-icon.svg" alt="office-img" id="student_img">
+</div>
+
+
+<div class="left-container">
+    This is a left container
+</div>
+<div class="right-container">
+    This is a right container
+</div>
+<div class="center-container">
+    This is centered
+</div>
+
+<footer>
+    This website was built using Vue.js, HTML5, and CSS3.
+</footer>
+
+</body>
+</html>
