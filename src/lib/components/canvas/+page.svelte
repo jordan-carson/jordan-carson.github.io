@@ -1,6 +1,6 @@
 <script>
-    import Canvas from '../../../lib/tools/Canvas.svelte'
-    import Palette from '../../../lib/tools/Palette.svelte'
+    import Canvas from '../../tools/Canvas.svelte'
+    import Palette from '../../tools/Palette.svelte'
 
     const colors = [
         '#d58141',
