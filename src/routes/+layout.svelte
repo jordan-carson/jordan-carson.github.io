@@ -59,10 +59,6 @@
 			<a href="/contact">Contact</a>
 			<a href="/resume">Resume</a>
 
-			<a href="/blog">Blog</a>
-			<a href="/tools">Tools</a>
-
-
 			{#if theme === 'dark'}
 				<button
 						class="theme-switch"
@@ -187,7 +183,7 @@
 	.row {
 		display: flex;
 		/*text-align: left;*/
-
+		justify-content: flex-start;
 		/*z-index: 20;*/
 		/*height: 10px;*/
 		/*width: 200px;*/
@@ -197,8 +193,7 @@
 		/*flex: 10%;*/
 		/*display: inline-flex;*/
 		display: flex;
-		/*flex-direction: column;*/
-
+		/*ustify-content: flex-end;*/
 		/*padding: 10px;*/
 		width: 100px;
 	}

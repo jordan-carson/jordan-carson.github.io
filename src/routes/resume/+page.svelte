@@ -25,7 +25,7 @@
   <!--    <br />-->
 
   <!--    <p>-->
-  <!--        Also a huge <strong>skiier</strong>.-->
+  <!--        Also a huge <strong>sk  iier</strong>.-->
   <!--    </p>-->
   <br /><br /><br />
     to be continued...  
