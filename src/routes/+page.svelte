@@ -79,7 +79,7 @@
 
 		<p>
 			<br />
-			I enjoy <strong>blogging</strong> about engineering, scientific and <strong>food</strong>.
+			I enjoy <strong>blogging</strong> about ML and <strong>food</strong>.
 			<br />
 			<!--        Few being... <strong>AI</strong>,-->
 			<!--        <strong>Python</strong>,-->
@@ -92,8 +92,7 @@
 		</p>
 		<br />
 		<p>
-			Lifelong learner, <strong>open-source enthusiast</strong>, mainly working on ...this website,
-			LLMs, ML Engineering, and a lot in between.
+			Lifelong learner, <strong>open-source enthusiast</strong>, mainly working on ...this website
 		</p>
 		<br />
 
