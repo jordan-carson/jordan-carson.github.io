@@ -7,7 +7,7 @@
     "build": "rm -rf build && vite build && touch build/.nojekyll",
     "dev": "vite dev",
     "preview": "vite preview",
-
+    "publish": "node scripts/publishToGithub.js",
     "start": "sirv public --no-clear",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
@@ -15,11 +15,7 @@
     "format": "prettier --write --plugin-search-dir=. ."
   },
   "devDependencies": {
-    "flowbite": "^1.6.3",
-    "flowbite-svelte": "^0.30.4",
     "@popperjs/core": "^2.11.6",
-    "classnames": "2.3.2",
-    "canvas-confetti": "1.6.0",
     "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-node-resolve": "^15.0.0",
     "@rollup/plugin-terser": "^0.4.0",
@@ -30,10 +26,14 @@
     "@sveltejs/kit": "^1.8.3",
     "@tsconfig/svelte": "^3.0.0",
     "autoprefixer": "^10.4.7",
+    "canvas-confetti": "1.6.0",
+    "classnames": "2.3.2",
     "esbuild-darwin-arm64": "^0.15.18",
     "eslint": "8.30.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-svelte3": "4.0.0",
+    "flowbite": "^1.6.3",
+    "flowbite-svelte": "^0.30.4",
     "postcss": "^8.4.14",
     "postcss-load-config": "^4.0.1",
     "prettier": "2.8.1",
@@ -59,6 +59,7 @@
     "classnames": "^2.3.2",
     "flowbite": "^1.6.3",
     "flowbite-svelte": "^0.30.4",
+    "gh-pages": "^5.0.0",
     "sirv-cli": "^2.0.0"
   }
 }

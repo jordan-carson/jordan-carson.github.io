@@ -28,7 +28,17 @@
   <!--        Also a huge <strong>sk  iier</strong>.-->
   <!--    </p>-->
   <br /><br /><br />
-    to be continued...  
+    This site is created using <img>
+
+  <a href="https://kit.svelte.dev/" rel="external">
+    <img
+            src="/images/svelte.svg"
+            alt="Svelte"
+            style="height: 50px;"
+    >
+  </a>
+
+  <br /><br /><br />
   <a href="mailto:jordanlouiscarson@gmail.com">jordanlouiscarson@gmail.com</a>
   <p>
     <a href="https://github.com/jordan-carson">GitHub</a>
@@ -55,13 +65,4 @@
     object-fit: fill;
   }
 
-  .row {
-    display: inline-flex;
-  }
-
-  .column {
-    flex: 10%;
-    /*display: inline-block;*/
-    padding: 10px;
-  }
 </style>
