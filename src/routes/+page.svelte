@@ -104,6 +104,9 @@
 </section>
 
 <style>
+	h1 {
+		font-family: "Lora", sans-serif;
+	}
 	section {
 		text-align: center;
 		font-size: 1.25rem;

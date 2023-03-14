@@ -50,14 +50,15 @@
 			>
 		</h2>
 
-		<nav let:hidden let:toggle class="fixed top-3 left-0 z-20 w-full md:h-auto space-x-2">
+		<nav let:hidden let:toggle class="fixed top-3 left-0 z-20 w-full md:h-auto space-x-4">
 <!--			<Hamburger bind:open={sidebar} />-->
 <!--			<NavHamburger on:click={toggle} class="font-bold " />-->
-			<a href="/" class:active={true}>Home</a>
+			<a href="/">Home</a>
 <!--			<a href="/blog" class:active={segment.startsWith('blog')}>BLOG</a>-->
 <!--			<a href="/blog/rss.xml" data-sveltekit-reload>RSS</a>-->
-			<a href="/contact">Contact</a>
 			<a href="/resume">Resume</a>
+			<a href="/portfolio">Portfolio</a>
+			<a href="/contact">Contact</a>
 
 			{#if theme === 'dark'}
 				<button
@@ -226,14 +227,17 @@
 	:global(body.dark) header {
 		box-shadow: rgb(255 255 255 / 5%) 0px 5px 15px;
 	}
-
+	span {
+		font-family: "Inter", sans-serif;
+	}
 	.name-short {
 		display: none;
-		font-family: inherit;
+		font-family: "Inter", sans-serif;
 	}
 
 	.name-long {
 		display: block;
+		font-family:"Inter", sans-serif;
 	}
 
 
