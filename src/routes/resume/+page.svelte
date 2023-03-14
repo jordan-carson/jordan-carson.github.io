@@ -1,32 +1,6 @@
 <section>
   <h1 class="font-bold text-5xl">Resume</h1>
   <br />
-  <!--    <p>Mastering in AI and Computational Mathematics at Johns Hopkins University.</p>-->
-  <!--    <br>-->
-
-  <!--    <p>-->
-  <!--        <br />-->
-  <!--        I enjoy <strong>blogging</strong> resume engineering, scientific and <strong>food</strong>.-->
-  <!--        <br />-->
-  <!--&lt;!&ndash;        Few being... <strong>AI</strong>,&ndash;&gt;-->
-  <!--&lt;!&ndash;        <strong>Python</strong>,&ndash;&gt;-->
-  <!--&lt;!&ndash;        <strong>JavaScript</strong>,&ndash;&gt;-->
-  <!--&lt;!&ndash;        <strong>Golang</strong>,&ndash;&gt;-->
-  <!--&lt;!&ndash;        <strong>Philosophy</strong>,&ndash;&gt;-->
-  <!--&lt;!&ndash;        lots of <strong>food pics</strong>&ndash;&gt;-->
-  <!--&lt;!&ndash;        and&ndash;&gt;-->
-  <!--&lt;!&ndash;        <strong>HBO</strong>.&ndash;&gt;-->
-  <!--    </p>-->
-  <!--    <br />-->
-  <!--    <p>-->
-  <!--        Lifelong learner, <strong>open-source enthusiast</strong>, mainly working on ...this website,-->
-  <!--        LLMs, ML Engineering, and a lot in between.-->
-  <!--    </p>-->
-  <!--    <br />-->
-
-  <!--    <p>-->
-  <!--        Also a huge <strong>sk  iier</strong>.-->
-  <!--    </p>-->
   <br /><br /><br />
     This site is created using <img>
 

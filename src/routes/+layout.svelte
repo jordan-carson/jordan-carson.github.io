@@ -46,16 +46,12 @@
 	<div>
 		<h2>
 			<a href="/"
-			><span class="name-long">Jordan Carson</span><span class="name-short">Jordan</span></a
+			><span class="name-long">Jordan Carson</span><span class="name-short">Jordan Carson</span></a
 			>
 		</h2>
 
 		<nav let:hidden let:toggle class="fixed top-3 left-0 z-20 w-full md:h-auto space-x-4">
-<!--			<Hamburger bind:open={sidebar} />-->
-<!--			<NavHamburger on:click={toggle} class="font-bold " />-->
 			<a href="/">Home</a>
-<!--			<a href="/blog" class:active={segment.startsWith('blog')}>BLOG</a>-->
-<!--			<a href="/blog/rss.xml" data-sveltekit-reload>RSS</a>-->
 			<a href="/resume">Resume</a>
 			<a href="/portfolio">Portfolio</a>
 			<a href="/contact">Contact</a>
@@ -98,13 +94,6 @@
 
 	<div class="row ">
 		<div class="column">
-<!--			<a href="https://github.com/jordan-carson" rel="external">-->
-<!--				<img-->
-<!--						src="/images/github-mark-white.svg"-->
-<!--						alt="GitHub"-->
-<!--						style="width:30px;height:30px;"-->
-<!--				>-->
-<!--			</a>-->
 		</div>
 		<div class="column absolute">
 
@@ -148,38 +137,7 @@
 	</div>
 
 </footer>
-<!--<div class="wrapper relative">-->
 
-<!--</div>-->
-<!--<div class="div5">-->
-<!--	<a href="https://www.linkedin.com/in/jordan-carson" rel="external">-->
-<!--		<img src="/images/linkedin.svg" alt="LinkedIn" style="width:30px;height:30px">-->
-<!--	</a>-->
-<!--</div>-->
-<!--<div class="div6">-->
-
-<!--	{#if theme === 'dark'}-->
-<!--		<a href="https://github.com/jordan-carson" rel="external">-->
-<!--			<img src="/images/GitHub-Mark-Light-32px.png" alt="GitHub" style="width:30px;height:30px;">-->
-<!--		</a>-->
-<!--	{:else}-->
-<!--		<a href="https://github.com/jordan-carson" rel="external">-->
-<!--			<img src="/images/GitHub-Mark-32px.png" alt="GitHub" style="width:30px;height:30px;">-->
-<!--		</a>-->
-<!--	{/if}-->
-
-<!--</div>-->
-<!--<div class="div7">-->
-<!--	<a href="https://ko-fi.com/C0C5J1LY6" target="_blank" rel="noreferrer" class="support mt-0"-->
-<!--	><img-->
-<!--			src="https://storage.ko-fi.com/cdn/kofi2.png?v=3"-->
-<!--			alt="Buy Me a Coffee at ko-fi.com"-->
-<!--			style="height:36px;border: 0px"-->
-<!--			height="36"-->
-<!--	/></a-->
-<!--	>-->
-<!--</div>-->
-<!--| Last update: {variables.timestamp.toISOString()}.-->
 <style>
 	.row {
 		display: flex;
