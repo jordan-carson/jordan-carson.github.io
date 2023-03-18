@@ -1,12 +1,12 @@
-<script lang="ts">
+<script>
 
-	import Head from '../lib/NavBar/Head.svelte';
+	import Head from '$lib/NavBar/Head.svelte';
 	import confetti from 'canvas-confetti';
 
 	let lastConfetti = 0;
 
 
-	function fireConfetti(evt: MouseEvent): void {
+	function fireConfetti(evt) {
 		if (lastConfetti + 1_111 > Date.now()) return;
 
 		lastConfetti = Date.now();
@@ -61,8 +61,10 @@
 	<Head title="Jordan Carson" details={true} />
 </svelte:head>
 <section>
-	<h1 class="font-bold text-5xl">
-		Hi, I'm Jordan
+<!--	<h1 class="font-bold text-5xl">-->
+<!--		Hi, I'm Jordan-->
+<!--	</h1>-->
+		<h1 class="font-light text-5xl text-center">Hi, I'm Jordan
 		<strong
 			on:mouseover={fireConfetti}
 			on:focus={fireConfetti}>
@@ -79,16 +81,8 @@
 
 		<p>
 			<br />
-			I enjoy <strong>blogging</strong> about ML and <strong>food</strong>.
+			Enjoy <strong>blogging</strong> about data and <strong>food</strong>. Sometimes creating visual essays with data.
 			<br />
-			<!--        Few being... <strong>AI</strong>,-->
-			<!--        <strong>Python</strong>,-->
-			<!--        <strong>JavaScript</strong>,-->
-			<!--        <strong>Golang</strong>,-->
-			<!--        <strong>Philosophy</strong>,-->
-			<!--        lots of <strong>food pics</strong>-->
-			<!--        and-->
-			<!--        <strong>HBO</strong>.-->
 		</p>
 		<br />
 		<p>

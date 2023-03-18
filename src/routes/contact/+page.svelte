@@ -4,7 +4,7 @@
 
   <br /><br /><br />
 
-  <a href="mailto:jordanlouiscarson@gmail.com">jordanlouiscarson@gmail.com</a>
+  <p><a href="mailto:jordanlouiscarson@gmail.com">Email Me</a></p>
   <p>
     <a href="https://github.com/jordan-carson">GitHub</a>
   </p>

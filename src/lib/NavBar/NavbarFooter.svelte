@@ -17,7 +17,7 @@
   <div class="column">
     <a href="https://www.linkedin.com/in/jordan-carson" rel="external">
       <img
-        src="/images/linkedin.svg"
+        src="/images/languages/linkedin.svg"
         alt="LinkedIn"
         style="width:30px;height:30px"
       />

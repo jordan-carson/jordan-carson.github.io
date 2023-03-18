@@ -8,6 +8,7 @@
     "dev": "vite dev",
     "preview": "vite preview",
     "publish": "node scripts/publishToGithub.js",
+    "bp": "rm -rf build && vite build && touch build/.nojekyll && node scripts/publishToGithub.js",
     "start": "sirv public --no-clear",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
@@ -57,9 +58,11 @@
     "@popperjs/core": "^2.11.6",
     "@sveltejs/vite-plugin-svelte": "^2.0.3",
     "classnames": "^2.3.2",
+    "d3": "^7.8.2",
     "flowbite": "^1.6.3",
     "flowbite-svelte": "^0.30.4",
     "gh-pages": "^5.0.0",
-    "sirv-cli": "^2.0.0"
+    "sirv-cli": "^2.0.0",
+    "svelte-markdown": "^0.2.3"
   }
 }

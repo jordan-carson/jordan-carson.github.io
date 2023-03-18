@@ -5,15 +5,15 @@
 	let darkmodebtn =
 	'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 fixed right-4 top-2 z-50';
 	import { fly } from 'svelte/transition';
-
 	import {variables} from "../lib/variables";
 
 	let theme = '';
-	// import { theme } from '../lib/theme.store';
+	import { store } from '../lib/themes.ts';
 	// $: segment = $page.url.pathname.substring(1);
 
 
 	onMount(() => {
+		store.set('dark');
 		theme =
 				window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
 						? 'dark'
@@ -28,11 +28,13 @@
 	function toggleTheme(newTheme: string) {
 		document.body.classList.replace(theme, newTheme);
 		theme = newTheme;
+		store.set(newTheme);
 	}
 
 	let open = false;
 
 	export let sidebar = false;
+
 
 </script>
 
@@ -54,6 +56,7 @@
 			<a href="/">Home</a>
 			<a href="/resume">Resume</a>
 			<a href="/portfolio">Portfolio</a>
+			<a href="/blog">Blog</a>
 			<a href="/contact">Contact</a>
 
 			{#if theme === 'dark'}
@@ -87,56 +90,56 @@
 </svelte:head>
 
 <main>
-	<slot />
+<slot />
 </main>
 
-<footer>
+<!--<footer>-->
 
-	<div class="row ">
-		<div class="column">
-		</div>
-		<div class="column absolute">
+<!--	<div class="row ">-->
+<!--		<div class="column">-->
+<!--		</div>-->
+<!--		<div class="column absolute">-->
 
-			{#if theme === 'dark'}
-				<a href="https://github.com/jordan-carson" rel="external">
-					<img
-							src="/images/github-mark-white.svg"
-							alt="GitHub"
-							style="height: 30px;width: 30px"
-					>
-				</a>
-			{:else}
-				<a href="https://github.com/jordan-carson" rel="external">
-					<img
-							src="/images/github-mark.svg"
-							alt="GitHub"
-							style="height: 30px;"
-					>
-				</a>
-			{/if}
+<!--			{#if theme === 'dark'}-->
+<!--				<a href="https://github.com/jordan-carson" rel="external">-->
+<!--					<img-->
+<!--							src="/images/github-mark-white.svg"-->
+<!--							alt="GitHub"-->
+<!--							style="height: 30px;width: 30px"-->
+<!--					>-->
+<!--				</a>-->
+<!--			{:else}-->
+<!--				<a href="https://github.com/jordan-carson" rel="external">-->
+<!--					<img-->
+<!--							src="/images/github-mark.svg"-->
+<!--							alt="GitHub"-->
+<!--							style="height: 30px;"-->
+<!--					>-->
+<!--				</a>-->
+<!--			{/if}-->
 
-		</div>
-		<div class="column">
-			<a href="https://www.linkedin.com/in/jordan-carson" rel="external">
-				<img
-						src="/images/linkedin.svg"
-						alt="LinkedIn"
-						style="height: 30px;"
-				>
-			</a>
-		</div>
-		<div class="column">
-			<a href="https://ko-fi.com/C0C5J1LY6" target="_blank" rel="noreferrer"
-			><img
-					src="https://storage.ko-fi.com/cdn/kofi2.png?v=3"
-					alt="Buy Me a Coffee at ko-fi.com"
-					style="height: 30px;width: 500px"
-			/></a
-			>
-			</div>
-	</div>
+<!--		</div>-->
+<!--		<div class="column">-->
+<!--			<a href="https://www.linkedin.com/in/jordan-carson" rel="external">-->
+<!--				<img-->
+<!--						src="/images/languages/linkedin.svg"-->
+<!--						alt="LinkedIn"-->
+<!--						style="height: 30px;"-->
+<!--				>-->
+<!--			</a>-->
+<!--		</div>-->
+<!--		<div class="column">-->
+<!--			<a href="https://ko-fi.com/C0C5J1LY6" target="_blank" rel="noreferrer"-->
+<!--			><img-->
+<!--					src="https://storage.ko-fi.com/cdn/kofi2.png?v=3"-->
+<!--					alt="Buy Me a Coffee at ko-fi.com"-->
+<!--					style="height: 30px;width: 500px"-->
+<!--			/></a-->
+<!--			>-->
+<!--			</div>-->
+<!--	</div>-->
 
-</footer>
+<!--</footer>-->
 
 <style>
 	.row {
@@ -220,15 +223,6 @@
 	header h2 > a {
 		text-decoration: none;
 	}
-
-	/*header .current-details {*/
-	/*	margin-top: -1.5em;*/
-	/*	font-size: 0.8rem;*/
-	/*}*/
-
-	/*header .current-details.title {*/
-	/*	cursor: pointer;*/
-	/*}*/
 
 	nav {
 		width: 100%;
