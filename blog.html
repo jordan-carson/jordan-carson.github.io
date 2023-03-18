@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/global.css" />
     <meta http-equiv="content-security-policy" content="">
 		<link href="./_app/immutable/assets/_layout.3958b64a.css" rel="stylesheet">
-		<link href="./_app/immutable/assets/_page.edd27b6f.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/_page.c017f5fc.css" rel="stylesheet">
 		<link rel="modulepreload" href="./_app/immutable/entry/start.a9ba9075.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index.4b4f7035.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index.8de33e46.js">
@@ -15,7 +15,7 @@
 		<link rel="modulepreload" href="./_app/immutable/chunks/themes.3a30f97f.js">
 		<link rel="modulepreload" href="./_app/immutable/entry/_layout.ts.984db11e.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/_layout.da46b06b.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/portfolio-page.svelte.8a6525ad.js"><!-- HEAD_svelte-1a8q9zr_START --><script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script><!-- HEAD_svelte-1a8q9zr_END -->
+		<link rel="modulepreload" href="./_app/immutable/entry/blog-page.svelte.454f1dcb.js"><!-- HEAD_svelte-1a8q9zr_START --><script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js"></script><!-- HEAD_svelte-1a8q9zr_END -->
   </head>
   <body>
     <div id="svelte">
@@ -41,13 +41,13 @@
 
 
 
-<main><section class="svelte-zbgud6"><h1 class="font-bold text-5xl svelte-zbgud6">Portfolio</h1>
-    <br>
-    <br><br><br>
-
-    <a href="mailto:jordanlouiscarson@gmail.com">jordanlouiscarson@gmail.com</a>
-    <p><a href="https://github.com/jordan-carson">GitHub</a></p>
-</section></main>
+<main><div class="card rounded-3xl hover:rounded-lg dark:text-gray-800 dark:hover:text-gray-900 dark:hover:bg-green-300 hover:bg-green-300 bg-green-300 svelte-185ty2d"><h1 class="font-bold text-xl"><h1 slot="title">Golang for Microservices</h1></h1>
+    <p class="text-lg text-left"><span slot="date">10-12-1991</span></p>
+    <p class="text-left text-base"><p slot="content">Some content content here</p></p>
+</div><div class="card rounded-3xl hover:rounded-lg dark:text-gray-800 dark:hover:text-gray-900 dark:hover:bg-green-300 hover:bg-green-300 bg-green-300 svelte-185ty2d"><h1 class="font-bold text-xl"><h1 slot="title">Python for MLOps</h1></h1>
+    <p class="text-lg text-left"><span slot="date">03-14-2023</span></p>
+    <p class="text-left text-base"><p slot="content">Describing the ways to use Python for ML Ops.</p></p>
+</div></main>
 
 
 
@@ -114,7 +114,7 @@
 						import("./_app/immutable/entry/app.bdafcbcb.js")
 					]).then(([kit, app]) => {
 						kit.start(app, __sveltekit_fk8juc.element, {
-							node_ids: [0, 5],
+							node_ids: [0, 3],
 							data,
 							form: null,
 							error: null
