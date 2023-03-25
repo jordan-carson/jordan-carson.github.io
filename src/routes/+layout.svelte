@@ -2,8 +2,8 @@
 	import {onMount} from "svelte";
 	// import FlowFooter from '../lib/NavBar/NavbarFooter.svelte';
 	import '../app.css';
-	let darkmodebtn =
-	'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 fixed right-4 top-2 z-50';
+	// let darkmodebtn =
+	// 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 fixed right-4 top-2 z-50';
 	import { fly } from 'svelte/transition';
 	import {variables} from "../lib/variables";
 
@@ -22,7 +22,6 @@
 		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
 			toggleTheme(event.matches ? 'dark' : 'light');
 		});
-
 	});
 
 	function toggleTheme(newTheme: string) {
@@ -32,8 +31,6 @@
 	}
 
 	let open = false;
-
-	export let sidebar = false;
 
 
 </script>
@@ -51,14 +48,13 @@
 			><span class="name-long">Jordan Carson</span><span class="name-short">Jordan Carson</span></a
 			>
 		</h2>
-
-		<nav let:hidden let:toggle class="fixed top-3 left-0 z-20 w-full md:h-auto space-x-4">
+		<nav>
 			<a href="/">Home</a>
-			<a href="/resume">Resume</a>
-			<a href="/portfolio">Portfolio</a>
-			<a href="/blog">Blog</a>
+<!--			<a href="/pages" data-sveltekit-reload>Portfolio</a>-->
+<!--			<a href="/blog" data-sveltekit-reload>Blog</a>-->
+			<a href="/resume">CV</a>
 			<a href="/contact">Contact</a>
-
+			<a href="/resources">Resources</a>
 			{#if theme === 'dark'}
 				<button
 						class="theme-switch"
@@ -77,6 +73,27 @@
 				</button>
 			{/if}
 		</nav>
+
+<!--		<nav let:hidden let:toggle class="fixed top-3 left-0 z-20 w-full md:h-auto space-x-4">-->
+
+<!--			{#if theme === 'dark'}-->
+<!--				<button-->
+<!--						class="theme-switch"-->
+<!--						title="Switch to light theme"-->
+<!--						on:click={() => toggleTheme('light')}-->
+<!--						in:fly={{ y: 20, duration: 200, delay: 200 }}-->
+<!--				>☀️-->
+<!--				</button>-->
+<!--			{:else}-->
+<!--				<button-->
+<!--						class="theme-switch"-->
+<!--						title="Switch to dark theme"-->
+<!--						on:click={() => toggleTheme('dark')}-->
+<!--						in:fly={{ y: -20, duration: 200, delay: 200 }}-->
+<!--				>🌚-->
+<!--				</button>-->
+<!--			{/if}-->
+<!--		</nav>-->
 
 	</div>
 </header>
@@ -142,23 +159,23 @@
 <!--</footer>-->
 
 <style>
-	.row {
-		display: flex;
-		/*text-align: left;*/
-		justify-content: flex-start;
-		/*z-index: 20;*/
-		/*height: 10px;*/
-		/*width: 200px;*/
-	}
+	/*.row {*/
+	/*	display: flex;*/
+	/*	!*text-align: left;*!*/
+	/*	justify-content: flex-start;*/
+	/*	!*z-index: 20;*!*/
+	/*	!*height: 10px;*!*/
+	/*	!*width: 200px;*!*/
+	/*}*/
 
-	.column {
-		/*flex: 10%;*/
-		/*display: inline-flex;*/
-		display: flex;
-		/*ustify-content: flex-end;*/
-		/*padding: 10px;*/
-		width: 100px;
-	}
+	/*.column {*/
+	/*	!*flex: 10%;*!*/
+	/*	!*display: inline-flex;*!*/
+	/*	display: flex;*/
+	/*	!*ustify-content: flex-end;*!*/
+	/*	!*padding: 10px;*!*/
+	/*	width: 100px;*/
+	/*}*/
 	header {
 		position: fixed;
 		top: 0;
@@ -253,15 +270,15 @@
 		border: none;
 	}
 
-	footer {
-		position: absolute;
-		padding: 0.6em 1.2em;
-		bottom: 0;
-		width: 100%;
-		display: inline-flex;
-		justify-content: right;
-		color: var(--text-color-light);
-		/*font-size: 0.9rem;*/
-	}
+	/*footer {*/
+	/*	position: absolute;*/
+	/*	padding: 0.6em 1.2em;*/
+	/*	bottom: 0;*/
+	/*	width: 100%;*/
+	/*	display: inline-flex;*/
+	/*	justify-content: right;*/
+	/*	color: var(--text-color-light);*/
+	/*	!*font-size: 0.9rem;*!*/
+	/*}*/
 
 </style>  

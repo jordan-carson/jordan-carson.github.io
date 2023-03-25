@@ -6,3 +6,5 @@ build
 .svelte-kit
 *.lock
 /out/
+/exclude/
+/new/

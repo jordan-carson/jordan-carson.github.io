@@ -1,7 +1,7 @@
 <script>
-  import Logo from "../icons/NameLogo.svelte";
-  import Hamburger from "./NavbarHamburger.svelte";
-  import Menu from "./Menu.svelte";
+  import Logo from "../../../exclude/tools/icons/NameLogo.svelte";
+  import Hamburger from "../../../exclude/tools/NavbarHamburger.svelte";
+  import Menu from "../../../exclude/tools/Menu.svelte";
   export let sidebar = false;
 </script>
 
