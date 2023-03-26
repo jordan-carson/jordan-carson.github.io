@@ -4,7 +4,7 @@
     <br />
     <b>Links</b>
     <nav>
-        <a href="/about/html">HTML Example</a>
+        <a href="/resources/html">HTML Example</a>
     </nav>
     <br /><br /><br />
 

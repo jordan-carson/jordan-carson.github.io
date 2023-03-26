@@ -13,7 +13,6 @@
 
 
 	onMount(() => {
-		store.set('dark');
 		theme =
 				window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
 						? 'dark'
