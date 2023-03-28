@@ -81,7 +81,7 @@
 
 		<p>
 			<br />
-			Enjoy <strong>blogging</strong> about data and <strong>food</strong>. Sometimes creating visual essays with data.
+			Proud City Carnivore. Enjoy <strong>blogging</strong> about data and <strong>food</strong>. Sometimes creating visual essays with data.
 			<br />
 		</p>
 		<br />
