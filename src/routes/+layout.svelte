@@ -11,7 +11,6 @@
 	import { store } from '../lib/themes.ts';
 	// $: segment = $page.url.pathname.substring(1);
 
-
 	onMount(() => {
 		theme =
 				window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -35,11 +34,6 @@
 </script>
 
 
-<!--<Sidebar bind:open />-->
-<!--<NavbarSimple bind:sidebar/>-->
-<!--<StickyNavbar bind:open />-->
-<!--<DarkMode btnClass={darkmodebtn} />-->
-
 <header>
 	<div>
 		<h2>
@@ -49,8 +43,6 @@
 		</h2>
 		<nav>
 			<a href="/">Home</a>
-<!--			<a href="/pages" data-sveltekit-reload>Portfolio</a>-->
-<!--			<a href="/blog" data-sveltekit-reload>Blog</a>-->
 			<a href="/resume">CV</a>
 			<a href="/contact">Contact</a>
 			<a href="/resources">Resources</a>
@@ -73,26 +65,6 @@
 			{/if}
 		</nav>
 
-<!--		<nav let:hidden let:toggle class="fixed top-3 left-0 z-20 w-full md:h-auto space-x-4">-->
-
-<!--			{#if theme === 'dark'}-->
-<!--				<button-->
-<!--						class="theme-switch"-->
-<!--						title="Switch to light theme"-->
-<!--						on:click={() => toggleTheme('light')}-->
-<!--						in:fly={{ y: 20, duration: 200, delay: 200 }}-->
-<!--				>☀️-->
-<!--				</button>-->
-<!--			{:else}-->
-<!--				<button-->
-<!--						class="theme-switch"-->
-<!--						title="Switch to dark theme"-->
-<!--						on:click={() => toggleTheme('dark')}-->
-<!--						in:fly={{ y: -20, duration: 200, delay: 200 }}-->
-<!--				>🌚-->
-<!--				</button>-->
-<!--			{/if}-->
-<!--		</nav>-->
 
 	</div>
 </header>

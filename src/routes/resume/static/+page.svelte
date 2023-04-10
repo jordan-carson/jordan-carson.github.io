@@ -1,8 +1,8 @@
 
 <script lang="ts">
   import {store} from "../../../lib/themes.ts"
-
   let theme;
+
   store.subscribe(value => {
     theme = value;
   });
@@ -10,6 +10,7 @@
 </script>
 
 <style>
+
   .center-screen {
     display: flex;
     justify-content: center;
@@ -190,13 +191,14 @@
     >
   {/if}
 
-  <b><i>New York, NY, (2021 - Present)</i></b>
+  <b>New York, NY</b>, (2021 - Present)
   <p class="text-xl">Associate, AI ML Engineer, AWM AI Engineering, Asset & Wealth Management
   </p>
 
   <br>
   <p >
     Assisting Asset and Wealth Management with Client/Prospecting Leads through the use of Applied Machine Learning.
+    Additionally, helping Architecture & Engineering with FinOps and Infrastructure Management for Applied Data Science teams.
   </p>
   <br>
 </div>
@@ -217,7 +219,7 @@
             style="display: flex;justify-content: left; width: 25%; height: 25%"
     >
   {/if}
-  <b><i>New York, NY, (2021 - Present)</i></b>
+  <b>New York, NY</b>, (2015 - 2021)
   <p class="text-xl">Associate, Full-Stack Data Scientist, Global Client Analytics, Global Markets Americas
   </p>
   <br>
@@ -241,14 +243,13 @@
             style="display: flex;justify-content: left; width: 25%; height: 25%"
     >
   {:else}
-
     <img
             src="/images/icons/UBS_BIG.svg"
             alt="Bullets"
             style="display: flex;justify-content: left; width: 25%; height: 25%"
     >
   {/if}
-  <b>USB Securities, Stamford, CT</b> <i>(2013 - 2015)</i>
+  <b>Stamford, CT</b>, (2013 - 2015)
 
   <p class="text-xl">Analyst, Software Engineer, Group Data Services
   </p>
@@ -281,6 +282,8 @@
     {/if}
   </div>
   <div class="container">
+
+
     <div class="tool_image">
       {#if theme === "dark"}
         <img
@@ -295,7 +298,23 @@
       {/if}
     </div>
     <div class="text text-xl">
-      &nbsp; <strong>Python</strong>, <strong>Golang</strong>, <strong>JavaScript</strong>, <strong>TypeScript</strong>, <strong>SQL</strong>
+      &nbsp; <strong>Python</strong>, <strong>Golang</strong>, <strong>JavaScript</strong>, <strong>TypeScript</strong>, <strong>SQL</strong>, <strong>Cypher</strong>
+    </div>
+    <div class="tool_image">
+      {#if theme === "dark"}
+        <img
+                src="/images/icons/noun-potions-1778128-FFFFFF.svg"
+                alt="Bullets"
+        >
+      {:else}
+        <img
+                src="/images/icons/noun-potions-1778128.svg"
+                alt="Bullets"
+        >
+      {/if}
+    </div>
+    <div class="text text-xl">
+      &nbsp;<strong>Faiss, NMSLIB, Hugging Face, Torch, Tensorflow, Comet ML</strong>, SageMaker, Snorkel.ai
     </div>
 
     <div class="tool_image">
@@ -312,7 +331,7 @@
       {/if}
     </div>
     <div class="text text-xl">
-      &nbsp; <strong>FastAPI</strong>, <i>Flask</i>, Mux, FastHTTP, <strong>Gin Gonic</strong>, GraphQL, Apigee
+      &nbsp; <strong>FastAPI</strong>, Flask, Mux, FastHTTP, <strong>Gin Gonic</strong>, GraphQL, Apigee
     </div>
 
     <div class="tool_image">
@@ -329,58 +348,23 @@
       {/if}
     </div>
     <div class="text text-xl">
-      &nbsp;  <strong>Docker, Kubernetes, Skaffold</strong>, Rancher, Docker Swarm
+      &nbsp;  <strong>Docker, Kubernetes, Skaffold, Kaniko, Helm, </strong> Rancher, Harbor, Argo
     </div>
-
     <div class="tool_image">
       {#if theme === "dark"}
         <img
-                src="/images/icons/noun-web-page-1360424-FFFFFF.svg"
+                src="/images/icons/noun-api-317051-FFFFFF.svg"
                 alt="Bullets"
         >
       {:else}
         <img
-                src="/images/icons/noun-web-page-1360424.svg"
+                src="/images/icons/noun-api-317051.svg"
                 alt="Bullets"
         >
       {/if}
     </div>
     <div class="text text-xl">
-      &nbsp; <strong>Svelte, SvelteKit</strong>, React, HTML5, CSS3, SASS
-    </div>
-
-    <div class="tool_image">
-      {#if theme === "dark"}
-        <img
-                src="/images/icons/noun-database-5079143-FFFFFF.svg"
-                alt="Bullets"
-        >
-      {:else}
-        <img
-                src="/images/icons/noun-database-5079143.svg"
-                alt="Bullets"
-        >
-      {/if}
-    </div>
-    <div class="text text-xl">
-      &nbsp; <strong>AWS RDS</strong>, <strong>Postgres</strong>, <strong>Elasticsearch</strong>, DuckDB, MongoDB, Cassandra, DynamoDB, kdb+, SQL Server, Redis
-    </div>
-
-    <div class="tool_image">
-      {#if theme === "dark"}
-        <img
-                src="/images/icons/noun-graph-1358766-FFFFFF.svg"
-                alt="Bullets"
-        >
-      {:else}
-        <img
-                src="/images/icons/noun-graph-1358766.svg"
-                alt="Bullets"
-        >
-      {/if}
-    </div>
-    <div class="text text-xl">
-      &nbsp; <strong>Tableau</strong>, PowerBI, <i>Grafana</i>, <strong><i>Kibana</i></strong>, <strong>D3.js</strong>, Superset
+      &nbsp;  <strong>Jenkins, Spinnaker, Github Actions</strong>, TravisCI, CircleCI
     </div>
 
     <div class="tool_image">
@@ -397,9 +381,59 @@
       {/if}
     </div>
     <div class="text text-xl">
-      &nbsp; <strong>Prefect</strong>, <strong><i>Airflow</i></strong>, Spark, <strong><i>Kafka</i>, Jenkins</strong>, TravisCI
+      &nbsp; <strong>Prefect, Airflow, Kafka, SQS, SNS, Event Bridge, Step Functions</strong>
     </div>
 
+
+    <div class="tool_image">
+      {#if theme === "dark"}
+        <img
+                src="/images/icons/noun-database-5079143-FFFFFF.svg"
+                alt="Bullets"
+        >
+      {:else}
+        <img
+                src="/images/icons/noun-database-5079143.svg"
+                alt="Bullets"
+        >
+      {/if}
+    </div>
+    <div class="text text-xl">
+      &nbsp; <strong>TigerGraph, neo4j</strong>, <strong>Postgres</strong>, <strong>Elasticsearch</strong>, MongoDB, Cassandra, DynamoDB, <strong>SQL Server</strong>, Redis
+    </div>
+
+    <div class="tool_image">
+      {#if theme === "dark"}
+        <img
+                src="/images/icons/noun-graph-1358766-FFFFFF.svg"
+                alt="Bullets"
+        >
+      {:else}
+        <img
+                src="/images/icons/noun-graph-1358766.svg"
+                alt="Bullets"
+        >
+      {/if}
+    </div>
+    <div class="text text-xl">
+      &nbsp; <strong>Tableau</strong>, <strong>Kibana</strong>, <strong>d3.js</strong>, PowerBI, Grafana, Superset
+    </div>
+    <div class="tool_image">
+      {#if theme === "dark"}
+        <img
+                src="/images/icons/noun-web-page-1360424-FFFFFF.svg"
+                alt="Bullets"
+        >
+      {:else}
+        <img
+                src="/images/icons/noun-web-page-1360424.svg"
+                alt="Bullets"
+        >
+      {/if}
+    </div>
+    <div class="text text-xl">
+      &nbsp; <strong>Svelte, <a href="https://kit.svelte.dev/">SvelteKit</a>, Svelte Native, tailwindcss</strong>, NativeScript, <a href="https://tamagui.dev/">Tamagui</a>, Expo, React, SASS
+    </div>
     <div class="tool_image">
       {#if theme === "dark"}
         <img
@@ -414,13 +448,11 @@
       {/if}
     </div>
     <div class="text text-xl">
-      &nbsp; <strong>Terraform, AWS,</strong> GCP, <strong>Azure</strong>
+      &nbsp; <strong>AWS</strong>, <strong>Azure</strong>, <strong>Terraform</strong>, GCP
     </div>
-  </div>
-  <br>
-  bold=<strong>Preferred / used in PROD</strong><br>
-  italic=<i>Used with k8s</i>
 
+  <br>
+  </div>
 </div>
 
 
