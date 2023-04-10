@@ -4,7 +4,7 @@
     <br />
     <nav>
         <p>• <a href="/resume/static">Static CV</a></p>
-        <p>• <a href="/resume/elastic">Dynamic CV</a></p>
+<!--        <p>• <a href="/resume/elastic">Dynamic CV</a></p>-->
     </nav>
 </section>
 
