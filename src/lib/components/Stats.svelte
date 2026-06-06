@@ -3,7 +3,6 @@
 
   const stats = [
     { value: '6,500+', label: 'Engineers on DevGPT',    sub: 'J.P. Morgan Chase'     },
-    { value: '18k+',   label: 'Newton users',           sub: 'VSCode & IntelliJ'     },
     { value: '65%',    label: 'AWS cost reduction',     sub: 'via Karpenter migration' },
     { value: '3',      label: 'Publications & Talks',   sub: 'Medium + FINOS 2025'   },
   ];
