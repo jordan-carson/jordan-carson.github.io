@@ -1,255 +1,156 @@
-<script lang="ts">
-	import {onMount} from "svelte";
-	// import FlowFooter from '../lib/NavBar/NavbarFooter.svelte';
-	import '../app.css';
-	// let darkmodebtn =
-	// 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-lg p-2.5 fixed right-4 top-2 z-50';
-	import { fly } from 'svelte/transition';
-	import {variables} from "../lib/variables";
+<script>
+  import '../app.css';
+  import { page } from '$app/stores';
+  import { base } from '$app/paths';
 
-	let theme = '';
-	import { store } from '../lib/themes.ts';
-	// $: segment = $page.url.pathname.substring(1);
-
-	onMount(() => {
-		theme =
-				window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-						? 'dark'
-						: 'light';
-		document.body.classList.add(theme);
-		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
-			toggleTheme(event.matches ? 'dark' : 'light');
-		});
-	});
-
-	function toggleTheme(newTheme: string) {
-		document.body.classList.replace(theme, newTheme);
-		theme = newTheme;
-		store.set(newTheme);
-	}
-
-	let open = false;
-
-
+  const navLinks = [
+    { href: '/',           label: 'Home'       },
+    { href: '/writings',   label: 'Writing'    },
+    { href: '/projects/devgpt', label: 'DevGPT' },
+  ];
 </script>
 
-
-<header>
-	<div>
-		<h2>
-			<a href="/"
-			><span class="name-long">Jordan Carson</span><span class="name-short">Jordan Carson</span></a
-			>
-		</h2>
-		<nav>
-			<a href="/">Home</a>
-			<a href="/resume">CV</a>
-			<a href="/contact">Contact</a>
-			<a href="/resources">Resources</a>
-			{#if theme === 'dark'}
-				<button
-						class="theme-switch"
-						title="Switch to light theme"
-						on:click={() => toggleTheme('light')}
-						in:fly={{ y: 20, duration: 200, delay: 200 }}
-				>☀️
-				</button>
-			{:else}
-				<button
-						class="theme-switch"
-						title="Switch to dark theme"
-						on:click={() => toggleTheme('dark')}
-						in:fly={{ y: -20, duration: 200, delay: 200 }}
-				>🌚
-				</button>
-			{/if}
-		</nav>
-
-
-	</div>
-</header>
-
-
-
 <svelte:head>
-	<script src="https://storage.ko-fi.com/cdn/scripts/overlay-widget.js">
-	</script>
-
+  <title>Jordan Carson — Principal Engineer</title>
+  <meta name="description" content="Principal Engineer specializing in cloud-native AI systems and agentic developer platforms." />
 </svelte:head>
 
+<nav>
+  <div class="nav-inner">
+    <a href="{base}/" class="nav-brand mono">JC<span class="gold">.</span></a>
+    <div class="nav-links">
+      {#each navLinks as link}
+        <a
+          href="{base}{link.href}"
+          class="nav-link mono"
+          class:active={$page.url.pathname === (base + link.href)}
+        >
+          {link.label}
+        </a>
+      {/each}
+    </div>
+  </div>
+</nav>
+
 <main>
-<slot />
+  <slot />
 </main>
 
-<!--<footer>-->
-
-<!--	<div class="row ">-->
-<!--		<div class="column">-->
-<!--		</div>-->
-<!--		<div class="column absolute">-->
-
-<!--			{#if theme === 'dark'}-->
-<!--				<a href="https://github.com/jordan-carson" rel="external">-->
-<!--					<img-->
-<!--							src="/images/github-mark-white.svg"-->
-<!--							alt="GitHub"-->
-<!--							style="height: 30px;width: 30px"-->
-<!--					>-->
-<!--				</a>-->
-<!--			{:else}-->
-<!--				<a href="https://github.com/jordan-carson" rel="external">-->
-<!--					<img-->
-<!--							src="/images/github-mark.svg"-->
-<!--							alt="GitHub"-->
-<!--							style="height: 30px;"-->
-<!--					>-->
-<!--				</a>-->
-<!--			{/if}-->
-
-<!--		</div>-->
-<!--		<div class="column">-->
-<!--			<a href="https://www.linkedin.com/in/jordan-carson" rel="external">-->
-<!--				<img-->
-<!--						src="/images/languages/linkedin.svg"-->
-<!--						alt="LinkedIn"-->
-<!--						style="height: 30px;"-->
-<!--				>-->
-<!--			</a>-->
-<!--		</div>-->
-<!--		<div class="column">-->
-<!--			<a href="https://ko-fi.com/C0C5J1LY6" target="_blank" rel="noreferrer"-->
-<!--			><img-->
-<!--					src="https://storage.ko-fi.com/cdn/kofi2.png?v=3"-->
-<!--					alt="Buy Me a Coffee at ko-fi.com"-->
-<!--					style="height: 30px;width: 500px"-->
-<!--			/></a-->
-<!--			>-->
-<!--			</div>-->
-<!--	</div>-->
-
-<!--</footer>-->
+<footer>
+  <div class="footer-inner mono">
+    <span class="text-muted">© 2026 Jordan Carson</span>
+    <div class="footer-links">
+      <a href="https://github.com/jordan-carson" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+      <a href="https://linkedin.com/in/jordan-carson" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+      <a href="https://medium.com/@jordan-carson" target="_blank" rel="noopener" class="footer-link">Medium</a>
+    </div>
+  </div>
+</footer>
 
 <style>
-	/*.row {*/
-	/*	display: flex;*/
-	/*	!*text-align: left;*!*/
-	/*	justify-content: flex-start;*/
-	/*	!*z-index: 20;*!*/
-	/*	!*height: 10px;*!*/
-	/*	!*width: 200px;*!*/
-	/*}*/
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border);
+    background: rgba(10, 10, 11, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
 
-	/*.column {*/
-	/*	!*flex: 10%;*!*/
-	/*	!*display: inline-flex;*!*/
-	/*	display: flex;*/
-	/*	!*ustify-content: flex-end;*!*/
-	/*	!*padding: 10px;*!*/
-	/*	width: 100px;*/
-	/*}*/
-	header {
-		position: fixed;
-		top: 0;
-		width: 100%;
-		height: var(--header-height);
-		backdrop-filter: saturate(100%) blur(3px);
-		z-index: 3;
-	}
-	header > div {
-		display: grid;
-		grid-template-columns: 2fr 1fr;
-		align-items: center;
-	}
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-	header > div > *:nth-child(even) {
-		justify-self: right;
-	}
+  .nav-brand {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    transition: color var(--transition);
+  }
+  .nav-brand:hover { color: var(--gold); }
 
-	header * {
-		margin-top: 0;
-	}
+  .gold { color: var(--gold); }
 
-	:global(body.light) header {
-		box-shadow: rgb(0 0 0 / 5%) 0px 5px 15px;
-	}
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
 
-	:global(body.dark) header {
-		box-shadow: rgb(255 255 255 / 5%) 0px 5px 15px;
-	}
-	span {
-		font-family: "Inter", sans-serif;
-	}
-	.name-short {
-		display: none;
-		font-family: "Inter", sans-serif;
-	}
+  .nav-link {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    transition: color var(--transition);
+    position: relative;
+  }
 
-	.name-long {
-		display: block;
-		font-family:"Inter", sans-serif;
-	}
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform var(--transition);
+  }
 
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--gold);
+  }
 
-	@media (max-width: 480px) {
-		header > div {
-			grid-template-columns: auto auto;
-		}
+  .nav-link.active::after,
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
 
-		/*header .current-details.title {*/
-		/*	visibility: hidden;*/
-		/*}*/
+  main {
+    padding-top: 56px;
+    min-height: 100vh;
+  }
 
-		header .name-short {
-			display: block;
-		}
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    margin-top: 6rem;
+  }
 
-		header .name-long {
-			display: none;
-		}
-	}
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.75rem;
+  }
 
-	header h2 > a {
-		text-decoration: none;
-	}
+  .text-muted { color: var(--text-muted); }
 
-	nav {
-		width: 100%;
-		display: flex;
-		justify-content: end;
-		gap: 0.6em;
-	}
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+  }
 
-	nav > *:last-child {
-		margin-left: 0.6em;
-	}
+  .footer-link {
+    color: var(--text-muted);
+    transition: color var(--transition);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+  }
 
-	nav a {
-		color: var(--text-color-light);
-		transition: 0.2s ease-in-out;
-		text-decoration: none;
-	}
-
-	nav a.active,
-	nav a:hover {
-		color: var(--text-color);
-		text-decoration: underline;
-	}
-
-	header button {
-		padding: 0;
-		margin: 0;
-		border: none;
-	}
-
-	/*footer {*/
-	/*	position: absolute;*/
-	/*	padding: 0.6em 1.2em;*/
-	/*	bottom: 0;*/
-	/*	width: 100%;*/
-	/*	display: inline-flex;*/
-	/*	justify-content: right;*/
-	/*	color: var(--text-color-light);*/
-	/*	!*font-size: 0.9rem;*!*/
-	/*}*/
-
-</style>  
+  .footer-link:hover { color: var(--gold); }
+</style>

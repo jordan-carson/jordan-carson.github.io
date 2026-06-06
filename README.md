@@ -1,28 +1,65 @@
-# My Personal Website - `jordancarson.dev`
+# Jordan Carson — Portfolio
 
-This repo was forked and modified to fit my needs. Shout out to Tim for creating this project. [Tim Deschryver](https://timdeschryver.dev/).
+Personal portfolio site built with SvelteKit + Tailwind CSS, deployed to GitHub Pages.
 
+## Stack
+- **SvelteKit** with `adapter-static` for GitHub Pages
+- **Tailwind CSS v4** (Vite plugin)
+- **D3.js** for the interactive skills force graph
+- **pnpm** as package manager
 
-## Get started
-
-Install the dependencies...
-
-```bash
-cd jordan-carson.github.io
-npm run install
-```
-
-Run locally..
-```bash
-npm run dev
-```
-
-## Building and running in production mode
-
-To create an optimised version of the app:
+## Setup
 
 ```bash
-npm run build
+pnpm install
+pnpm dev
 ```
 
-You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
+## Build
+
+```bash
+pnpm build
+pnpm preview   # preview the build locally
+```
+
+## GitHub Pages Deployment
+
+### 1. Update the repo name in `svelte.config.js`
+
+```js
+base: process.env.NODE_ENV === 'production' ? '/YOUR-REPO-NAME' : ''
+```
+
+Replace `jordan-portfolio` with your actual GitHub repo name (e.g. `jordancarson.github.io` for a user site, or `portfolio` for a project site).
+
+### 2. For a user site (`username.github.io`)
+
+Set `base` to `''` (empty string) in production — user sites are served from the root.
+
+### 3. Push to GitHub
+
+The GitHub Actions workflow in `.github/workflows/deploy.yml` will automatically build and deploy on every push to `main`.
+
+Make sure **GitHub Pages** is enabled in your repo settings with source set to **GitHub Actions**.
+
+## Structure
+
+```
+src/
+  routes/
+    +layout.svelte          # Nav, footer, global imports
+    +page.svelte             # Home: Hero, Stats, Skills, Timeline
+    writings/
+      +page.svelte           # Articles + conference talks
+    projects/
+      devgpt/
+        +page.svelte         # DevGPT architecture deep dive
+  lib/
+    components/
+      Hero.svelte
+      Stats.svelte
+      SkillGraph.svelte      # D3 force graph
+      Timeline.svelte
+    data/
+      skills.js
+```

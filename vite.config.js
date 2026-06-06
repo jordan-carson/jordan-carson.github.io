@@ -1,21 +1,8 @@
-import { sveltekit } from "@sveltejs/kit/vite";
-// import VitePluginRestart from "vite-plugin-restart";// VitePluginRestart(),
-import svgLoader from "vite-svg-loader";
-// import { plugin as markdown } from 'vite-plugin-markdown'
+import { svelte } from '@sveltejs/vite-plugin-svelte';
+import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from 'vite';
+import { sveltekit } from '@sveltejs/kit/vite';
 
-
-/** @type {import('vite').UserConfig} */
-const config = {
-  plugins: [
-    sveltekit(),
-    svgLoader(),
-    // markdown({ mode: ['html', 'toc']})
-  ],
-  server: {
-    fs: {
-      allow: [".."],
-    },
-  },
-};
-
-export default config;
+export default defineConfig({
+  plugins: [tailwindcss(), sveltekit()]
+});

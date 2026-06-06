@@ -1,23 +1,19 @@
-import sveltePreprocess from "svelte-preprocess";
-import adapter from "@sveltejs/adapter-static";
-import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
+import adapter from '@sveltejs/adapter-static';
 
+/** @type {import('@sveltejs/kit').Config} */
 const config = {
-  preprocess: [
-    vitePreprocess(),
-    sveltePreprocess({
-      postcss: true,
-    }),
-  ],
   kit: {
-    // hydrate the <div id="svelte"> element in src/app.html
     adapter: adapter({
       pages: 'build',
       assets: 'build',
-      fallback: null
-    })
+      fallback: '404.html',
+      precompress: false,
+      strict: true
+    }),
+    paths: {
+      base: ''
+    }
   }
-
 };
 
 export default config;
