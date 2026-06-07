@@ -13,7 +13,7 @@
   const metrics = [
     { v: '6,500+', l: 'Engineers' },
     { v: '<2s',    l: 'Sandbox dispatch target' },
-    { v: '4',      l: 'IDE integrations' },
+    { v: '3+',      l: 'IDE integrations' },
     { v: '2025',   l: 'FINOS Conference' },
   ];
 </script>
