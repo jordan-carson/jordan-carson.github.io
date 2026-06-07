@@ -7,7 +7,7 @@
     { layer: 'Context Assembly',    items: ['EFS Bare Git Clones', 'Per-Task Worktrees', 'Context Assembler'],              color: '#6a9fd4' },
     { layer: 'Memory',              items: ['OpenSearch (Cohere Embed v4)', 'RDS Postgres', 'Dream Cycle Consolidation'],   color: '#a8c47c' },
     { layer: 'Streaming',           items: ['WebSockets', 'Redis Streams', 'NATS', 'Go Cloud API', 'SSE to IDE'],           color: '#c47ca8' },
-    { layer: 'Governance',          items: ['PolicyBundle (deny-overrides)', 'Capability Gating', 'SemTrace Audit'], color: '#d4c46a' },
+    { layer: 'Governance',          items: ['PolicyBundle (deny-overrides via bwrap)', 'Capability Gating', 'SemTrace Audit'], color: '#d4c46a' },
   ];
 
   const metrics = [
@@ -91,6 +91,10 @@
           <div class="principle-title mono">Memory ≠ Brain</div>
           <p>Memory Service holds per-user structured operational facts. Brain holds platform-wide institutional narrative. Both queried in parallel and merged at agent boot.</p>
         </div>
+        <div class="principle">
+          <div class="principle-title mono">Warm Pods · SRT + Istio Ambient</div>
+          <p>Pre-warmed pod pools eliminate cold-start latency at dispatch. Anthropic SRT sandboxes sit ready behind Istio Ambient Mode — sidecar-free mTLS and L4 policy enforced at the node level, keeping the data plane out of the agent container entirely.</p>
+        </div>
       </div>
     </section>
 
@@ -108,6 +112,48 @@
           no separate runtime service. Leveraging Istio Integrated directly into the DevGPT plugin and CLI.
           Sub-2-second dispatch target with warm pod pool strategies via Karpenter NodePool and KEDA ScaledObject.
         </p>
+      </div>
+    </section>
+
+    <!-- Tech References -->
+    <section class="section">
+      <div class="section-label mono">Technology References</div>
+      <div class="refs-list">
+        <a href="https://github.com/anthropic-experimental/sandbox-runtime" target="_blank" rel="noopener" class="ref-link mono">
+          <span class="ref-icon">↗</span>
+          <span>anthropic-experimental/sandbox-runtime</span>
+          <span class="ref-desc">Anthropic SRT — kernel-level sandbox for secure agent execution</span>
+        </a>
+        <a href="https://github.com/containers/bubblewrap" target="_blank" rel="noopener" class="ref-link mono">
+          <span class="ref-icon">↗</span>
+          <span>containers/bubblewrap</span>
+          <span class="ref-desc">Bubblewrap — unprivileged process isolation underpinning SRT</span>
+        </a>
+        <a href="https://temporal.io/" target="_blank" rel="noopener" class="ref-link mono">
+          <span class="ref-icon">↗</span>
+          <span>temporal.io</span>
+          <span class="ref-desc">Temporal — durable workflow engine for agent orchestration & intention state</span>
+        </a>
+        <a href="https://aws.amazon.com/elasticache/" target="_blank" rel="noopener" class="ref-link mono">
+          <span class="ref-icon">↗</span>
+          <span>AWS ElastiCache</span>
+          <span class="ref-desc">Redis Streams — real-time agent output streaming and session state</span>
+        </a>
+        <a href="https://agentcommunicationprotocol.dev/introduction/welcome" target="_blank" rel="noopener" class="ref-link mono">
+          <span class="ref-icon">↗</span>
+          <span>Agent Communication Protocol (ACP)</span>
+          <span class="ref-desc">ACP — open protocol for agent-to-agent and agent-to-harness communication</span>
+        </a>
+        <a href="https://a2a-protocol.org/latest/" target="_blank" rel="noopener" class="ref-link mono">
+          <span class="ref-icon">↗</span>
+          <span>Agent-to-Agent Protocol (A2A)</span>
+          <span class="ref-desc">A2A — cross-platform agent interoperability protocol</span>
+        </a>
+        <a href="https://arize.com/phoenix/" target="_blank" rel="noopener" class="ref-link mono">
+          <span class="ref-icon">↗</span>
+          <span>Arize Phoenix</span>
+          <span class="ref-desc">Phoenix — LLM observability and tracing for agent evaluation</span>
+        </a>
       </div>
     </section>
 
@@ -332,5 +378,47 @@
 
   @media (max-width: 600px) {
     .stack-row { grid-template-columns: 1fr; gap: 0.5rem; }
+  }
+
+  .refs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .ref-link {
+    display: grid;
+    grid-template-columns: 1.5rem 1fr auto;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    background: var(--bg-2);
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    transition: background var(--transition), color var(--transition);
+    letter-spacing: 0.02em;
+  }
+
+  .ref-link:hover {
+    background: var(--bg-3);
+    color: var(--gold);
+  }
+
+  .ref-icon {
+    color: var(--gold-dim);
+    transition: color var(--transition);
+  }
+
+  .ref-link:hover .ref-icon { color: var(--gold); }
+
+  .ref-desc {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    text-align: right;
   }
 </style>

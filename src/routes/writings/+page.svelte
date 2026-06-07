@@ -1,6 +1,7 @@
 <script>
-  const writings = [
+  const mnemonicSeries = [
     {
+      part: 'III',
       title: 'Convergent Engineering: How Everyone Built the Same Thing',
       publication: 'Medium · AI Advances',
       date: 'May 2026',
@@ -10,6 +11,17 @@
       tags: ['Agent Memory', 'Architecture', 'Distributed Systems'],
     },
     {
+      part: 'II',
+      title: 'Cloud Ant Colonies',
+      publication: 'Medium · AI Advances',
+      date: 'April 2026',
+      readTime: '~15 min',
+      url: 'https://medium.com/ai-advances/cloud-ant-colonies-5b311dcae1d5',
+      summary: 'Agent swarms are real. But to understand how they think, coordinate, and grow — we need a better metaphor than "team." We need a colony. Explores how distributed agent swarms, shared memory, and a converging industry are building a genuinely new kind of distributed intelligence — drawing on swarm intelligence, stigmergy, and the principle that when an idea from mathematics is genuinely correct, nature was running it first.',
+      tags: ['Agent Swarms', 'Distributed Intelligence', 'Memory Systems', 'Swarm Intelligence'],
+    },
+    {
+      part: 'I',
       title: 'Beyond the Session: Memory Engineering for Agent Teams',
       publication: 'Medium · Towards Artificial Intelligence',
       date: 'April 2026',
@@ -19,6 +31,8 @@
       tags: ['Agent Teams', 'Memory Systems', 'Platform Engineering'],
     },
   ];
+
+  const writings = [];
 
   const talks = [
     {
@@ -48,7 +62,49 @@
       </p>
     </header>
 
-    <!-- Articles -->
+    <!-- Mnemonic Architecture Series -->
+    <section class="section">
+      <div class="section-label mono">Series</div>
+      <div class="series-block">
+        <div class="series-header">
+          <div class="series-eyebrow mono">3-Part Series · Medium</div>
+          <h2 class="series-title serif">Mnemonic Architecture</h2>
+          <p class="series-desc">A deep exploration of memory engineering for autonomous agent systems — from foundational session design to swarm coordination to industry-wide convergence.</p>
+        </div>
+        <div class="writings-list">
+          {#each mnemonicSeries as w, i}
+            <a
+              href={w.url}
+              target="_blank"
+              rel="noopener"
+              class="writing-card"
+              style="animation-delay: {i * 100}ms"
+            >
+              <div class="writing-meta mono">
+                <span class="series-part">Part {w.part}</span>
+                <span class="sep">·</span>
+                <span class="writing-pub">{w.publication}</span>
+                <span class="sep">·</span>
+                <span>{w.date}</span>
+                <span class="sep">·</span>
+                <span>{w.readTime}</span>
+              </div>
+              <h2 class="writing-title serif">{w.title}</h2>
+              <p class="writing-summary">{w.summary}</p>
+              <div class="writing-tags">
+                {#each w.tags as tag}
+                  <span class="tag mono">{tag}</span>
+                {/each}
+              </div>
+              <div class="writing-arrow">↗</div>
+            </a>
+          {/each}
+        </div>
+      </div>
+    </section>
+
+    <!-- Standalone Articles -->
+    {#if writings.length > 0}
     <section class="section">
       <div class="section-label mono">Articles</div>
       <div class="writings-list">
@@ -79,6 +135,7 @@
         {/each}
       </div>
     </section>
+    {/if}
 
     <!-- Talks -->
     <section class="section">
@@ -260,6 +317,56 @@
     border: 1px solid var(--border);
     padding: 0.2rem 0.6rem;
     border-radius: 2px;
+  }
+
+  .series-block {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .series-header {
+    padding: 2rem 2.5rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-2);
+  }
+
+  .series-eyebrow {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+
+  .series-title {
+    font-size: 1.9rem;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+  }
+
+  .series-desc {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 580px;
+  }
+
+  .series-block .writings-list {
+    border: none;
+    border-radius: 0;
+  }
+
+  .series-block .writing-card {
+    border-top: 1px solid var(--border);
+  }
+
+  .series-part {
+    color: var(--gold);
+    font-weight: 600;
   }
 
   @keyframes fadeUp {
