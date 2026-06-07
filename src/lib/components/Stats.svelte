@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
 
   const stats = [
-    { value: '6,500+', label: 'Engineers on DevGPT',    sub: 'J.P. Morgan Chase'     },
+    { value: '6,500+', label: 'Engineers on Platform',   sub: 'J.P. Morgan Chase'     },
     { value: '65%',    label: 'AWS cost reduction',     sub: 'Prompt engineering & caching' },
     { value: '5',      label: 'Publications & Talks',   sub: 'Medium + FINOS 2025'   },
   ];

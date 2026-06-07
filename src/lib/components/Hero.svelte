@@ -16,12 +16,11 @@
     </h1>
 
     <p class="hero-sub">
-      Architect of <a href="{base}/projects/devgpt" class="gold-link">DevGPT</a> —
-      a cloud-native AI coding agent platform serving
-      <span class="highlight">6,500+ engineers</span> at J.P. Morgan Chase.
-      Built telemetry gateway powering AI attribution across DevGPT and Copilot,
-      managing <span class="highlight">25k events/sec</span> with DevGPT peaking at
-      <span class="highlight">48M tokens/min</span>.
+      Architect of a <a href="{base}/projects/devgpt" class="gold-link">cloud-native AI coding agent platform</a>
+      serving thousands of engineers at J.P. Morgan Chase.
+      Built telemetry infrastructure powering AI attribution at scale —
+      consuming <span class="highlight">tens of thousands of events per second</span>
+      and peaking at <span class="highlight">multi-million tokens per minute</span>.
     </p>
 
     <div class="hero-cta">
@@ -29,7 +28,6 @@
       <a href="{base}/writings" class="btn-secondary mono">Read Writing →</a>
     </div>
 
-    <div class="hero-scroll mono">scroll</div>
   </div>
 </section>
 

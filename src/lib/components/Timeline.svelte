@@ -8,7 +8,7 @@
       org: 'J.P. Morgan Chase',
       tag: 'current',
       highlights: [
-        'Architect of DevGPT — cloud-native AI coding agent platform',
+        'Architect of cloud-native AI coding agent platform',
         'Agent sandbox via Anthropic SRT + bubblewrap',
         'Temporal-backed durable agent orchestration',
         'Multi-layer memory & governance system',
