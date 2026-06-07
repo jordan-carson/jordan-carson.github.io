@@ -1,13 +1,13 @@
 <script>
   const stack = [
-    { layer: 'IDE Layer',           items: ['VS Code Extension', 'IntelliJ Plugin', 'Android Studio', 'Xcode Companion'],  color: '#c9a84c' },
-    { layer: 'Agent Harness',       items: ['devgpt-harness (TypeScript)', 'ACP Protocol', 'Headless / Cloud modes'],       color: '#8b7ec8' },
+    { layer: 'IDE Layer',           items: ['VS Code', 'IntelliJ', 'Android Studio', 'Xcode'],  color: '#c9a84c' },
+    { layer: 'Agent Harness',       items: ['devgpt-cli (TypeScript)', 'ACP Protocol', 'Headless / Cloud modes'],       color: '#8b7ec8' },
     { layer: 'Orchestration',       items: ['Temporal Workflows', 'Pause / Resume / Fork', 'Durable Execution'],            color: '#7c9e87' },
     { layer: 'Execution',           items: ['Kubernetes EKS', 'KEDA Autoscaling', 'Anthropic SRT + bubblewrap'],            color: '#d4856a' },
     { layer: 'Context Assembly',    items: ['EFS Bare Git Clones', 'Per-Task Worktrees', 'Context Assembler'],              color: '#6a9fd4' },
     { layer: 'Memory',              items: ['OpenSearch (Cohere Embed v4)', 'RDS Postgres', 'Dream Cycle Consolidation'],   color: '#a8c47c' },
-    { layer: 'Streaming',           items: ['Redis Streams', 'Go Cloud API', 'SSE to IDE'],                                 color: '#c47ca8' },
-    { layer: 'Governance',          items: ['PolicyBundle (deny-overrides)', 'Astio Capability Gating', 'SemTrace Audit'], color: '#d4c46a' },
+    { layer: 'Streaming',           items: ['WebSockets', 'Redis Streams', 'NATS', 'Go Cloud API', 'SSE to IDE'],           color: '#c47ca8' },
+    { layer: 'Governance',          items: ['PolicyBundle (deny-overrides)', 'Capability Gating', 'SemTrace Audit'], color: '#d4c46a' },
   ];
 
   const metrics = [
@@ -19,7 +19,7 @@
 </script>
 
 <svelte:head>
-  <title>DevGPT — Jordan Carson</title>
+  <title>AI — Jordan Carson</title>
 </svelte:head>
 
 <div class="page">
@@ -31,8 +31,8 @@
       <p class="page-subtitle mono">Cloud-Native AI Coding Agent Platform</p>
       <p class="page-sub">
         An internal platform that enables J.P. Morgan Chase engineers, product & designers to delegate
-        software and prototype development tasks to AI and cloud-based AI agents — from feature implementation
-        to PR review, running securely within the firm's infrastructure at enterprise scale.
+        software and prototype development tasks to AI agents — from feature implementation
+        to deployment, running securely within the firm's infrastructure at enterprise scale.
       </p>
     </header>
 
@@ -83,10 +83,10 @@
           <div class="principle-title mono">Single Harness</div>
           <p>Our harness is the single source of truth for agent loop logic. IDE plugins are thin context capture and UI bridge layers only. Porting creates divergence risk.</p>
         </div>
-        <div class="principle">
+        <!-- <div class="principle">
           <div class="principle-title mono">Deny-Overrides Policies</div>
           <p>Multiple policies per task are composed with deny-overrides and priority-based tie-breaking. PolicyResolver merges into a single PolicyBundle before agent boot.</p>
-        </div>
+        </div> -->
         <div class="principle">
           <div class="principle-title mono">Memory ≠ Brain</div>
           <p>Memory Service holds per-user structured operational facts. Brain holds platform-wide institutional narrative. Both queried in parallel and merged at agent boot.</p>

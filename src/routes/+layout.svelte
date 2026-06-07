@@ -42,7 +42,7 @@
     <div class="footer-links">
       <a href="https://github.com/jordan-carson" target="_blank" rel="noopener" class="footer-link">GitHub</a>
       <a href="https://linkedin.com/in/jordan-carson" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
-      <a href="https://medium.com/@jordan-carson" target="_blank" rel="noopener" class="footer-link">Medium</a>
+      <a href="https://medium.com/@jordancarson" target="_blank" rel="noopener" class="footer-link">Medium</a>
     </div>
   </div>
 </footer>

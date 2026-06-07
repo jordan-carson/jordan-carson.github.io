@@ -12,6 +12,7 @@
         'Agent sandbox via Anthropic SRT + bubblewrap',
         'Temporal-backed durable agent orchestration',
         'Multi-layer memory & governance system',
+        '65% AWS cost reduction via smart prompt engineering & Anthropic beta headers (1hr TTL cache)',
       ]
     },
     {
@@ -20,10 +21,8 @@
       org: 'J.P. Morgan Chase · AWM',
       tag: 'jpmc',
       highlights: [
-        'Lead engineer on Newton (18k+ developer users)',
         'Neo4j Knowledge Graph & News Analytics Platform',
         'Sm@rt RFP — weeks to minutes (patent pending)',
-        '65% AWS cost reduction via Karpenter migration',
       ]
     },
     {
@@ -38,13 +37,14 @@
       ]
     },
     {
-      year: '2013–2017',
+      year: '2012–2017',
       role: 'Earlier Roles',
-      org: 'BNP Paribas · UBS Securities',
+      org: 'BNP Paribas · UBS Securities · Western Asset Management',
       tag: 'prior',
       highlights: [
-        'Fixed income analytics & ETL pipelines',
-        'Client onboarding data warehouse (UBS)',
+        'Fixed income, Trading, & Client Intelligence',
+        'Client Onboarding, KYC, & Data Warehousing',
+        'Chief Economics Office intern — cubic spline interpolation for defined benefit pension plan valuation',
       ]
     },
   ];
