@@ -9,7 +9,7 @@
   </div>
 
   <div class="hero-content">
-    <div class="hero-tag mono">Principal Engineer · AI Agent Platforms</div>
+    <div class="hero-tag mono">Lead AI Systems Engineer · AI Agent Platforms</div>
 
     <h1 class="hero-name serif">
       Jordan<br />Carson
@@ -165,19 +165,6 @@
     border-color: var(--gold-dim);
     color: var(--gold);
     transform: translateY(-1px);
-  }
-
-  .hero-scroll {
-    position: absolute;
-    bottom: 2rem;
-    left: 2rem;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    writing-mode: vertical-rl;
-    animation: fadeUp 1s ease both;
-    animation-delay: 0.8s;
   }
 
   @keyframes fadeUp {

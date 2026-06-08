@@ -11,8 +11,8 @@
 </script>
 
 <svelte:head>
-  <title>Jordan Carson — Principal Engineer</title>
-  <meta name="description" content="Principal Engineer specializing in cloud-native AI systems and agentic developer platforms." />
+  <title>Jordan Carson — Lead AI Systems Engineer</title>
+  <meta name="description" content="Lead AI Systems Engineer specializing in cloud-native AI systems and agentic developer platforms." />
 </svelte:head>
 
 <nav>
