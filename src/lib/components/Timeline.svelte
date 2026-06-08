@@ -11,8 +11,8 @@
         'Architect of cloud-native AI coding agent platform',
         'Agent sandbox via Anthropic SRT + bubblewrap',
         'Temporal-backed durable agent orchestration',
-        'Multi-layer memory & governance system',
-        '65% AWS cost reduction via smart prompt engineering & Anthropic beta headers (1hr TTL cache)',
+        'Multi-layer memory system',
+        '65% AWS cost reduction via smart prompt engineering & beta headers. ',
       ]
     },
     {
@@ -21,8 +21,8 @@
       org: 'J.P. Morgan Chase · AWM',
       tag: 'jpmc',
       highlights: [
-        'Neo4j Knowledge Graph & News Analytics Platform',
-        'Sm@rt RFP — weeks to minutes (patent pending)',
+        'Knowledge Graphs & Event-Driven News Analytics Platform',
+        'Sm@rt RFP — weeks to minutes for client proposal generation',
       ]
     },
     {

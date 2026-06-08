@@ -19,8 +19,8 @@
       Architect of a <a href="{base}/projects/devgpt" class="gold-link">cloud-native AI coding agent platform</a>
       serving thousands of engineers at J.P. Morgan Chase.
       Built telemetry infrastructure powering AI attribution at scale —
-      consuming <span class="highlight">tens of thousands of events per second</span>
-      and peaking at <span class="highlight">multi-million tokens per minute</span>.
+      consuming <span class="highlight">tens of thousands of events/sec</span>
+      and peaking at <span class="highlight">multi-million tokens/min</span>.
     </p>
 
     <div class="hero-cta">
