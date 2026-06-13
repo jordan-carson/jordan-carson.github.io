@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { reveal } from '$lib/actions/reveal.js';
   import { skillCategories } from '$lib/data/skills.js';
   import * as d3 from 'd3';
 
@@ -11,7 +12,7 @@
   skillCategories.forEach(cat => {
     nodes.push({ id: cat.id, label: cat.label, icon: cat.icon, color: cat.color, type: 'category', r: 30 });
     cat.skills.forEach(skill => {
-      nodes.push({ id: skill.id, label: skill.label, desc: skill.desc, color: cat.color, type: 'skill', r: 16, catId: cat.id });
+      nodes.push({ id: skill.id, label: skill.label, desc: skill.desc, color: cat.color, type: 'skill', r: skill.r || 16, catId: cat.id });
       links.push({ source: cat.id, target: skill.id });
     });
   });
@@ -158,7 +159,7 @@
   }
 </script>
 
-<section class="skills">
+<section class="skills" use:reveal={{ y: 60, duration: 800 }}>
   <div class="skills-inner">
     <div class="section-header">
       <div class="section-label mono">Technical Skills</div>

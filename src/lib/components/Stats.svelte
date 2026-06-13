@@ -1,10 +1,12 @@
 <script>
   import { onMount } from 'svelte';
+  import { reveal } from '$lib/actions/reveal.js';
 
   const stats = [
-    { value: '6,500+', label: 'Engineers on Platform',   sub: 'J.P. Morgan Chase'     },
-    { value: '65%',    label: 'AWS cost reduction',     sub: 'Prompt engineering & caching' },
-    { value: '5',      label: 'Publications & Talks',   sub: 'Medium + FINOS 2025'   },
+    { value: '6,500+', label: 'Users on Platform',       sub: 'Engineers, product & senior management' },
+    { value: '90%',    label: 'Prompt cache hit rate',   sub: 'Anthropic models' },
+    { value: '20M',    label: 'Peak cache reads / min',  sub: 'AI4Tech · DevGPT' },
+    { value: '5',      label: 'Publications & Talks',    sub: 'Medium + FINOS 2025'   },
   ];
 
   let visible = false;
@@ -19,7 +21,7 @@
   });
 </script>
 
-<section class="stats" bind:this={el}>
+<section class="stats" bind:this={el} use:reveal>
   <div class="stats-inner">
     <div class="section-label mono">Impact</div>
     <div class="stats-grid">

@@ -95,6 +95,24 @@
           <div class="principle-title mono">Warm Pods · SRT + Istio Ambient</div>
           <p>Pre-warmed pod pools eliminate cold-start latency at dispatch. Anthropic SRT sandboxes sit ready behind Istio Ambient Mode — sidecar-free mTLS and L4 policy enforced at the node level, keeping the data plane out of the agent container entirely.</p>
         </div>
+        <div class="principle">
+          <div class="principle-title mono">Supervisor-Gated Maintenance</div>
+          <p>All automated patch branches are reviewed by a supervisor agent before surfacing to human owners. Teams retain merge authority to release/master. Automation proposes; humans decide.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology Lifecycle Management -->
+    <section class="section">
+      <div class="section-label mono">Technology Lifecycle Management (TLM)</div>
+      <div class="sandbox-card">
+        <p>
+          DevGPT powers TLM — a firm-wide JPMC initiative for automated software maintenance.
+          Agentic workflows perform dependency updates and patches across Terraform, Python, Java,
+          and Golang codebases on a dedicated maintenance branch. A supervisor agent reviews proposed
+          changes and routes them to the owning team for merge to release/master. TLM operates across
+          the full firm while the platform org remains AI4Tech-chartered within AWM.
+        </p>
       </div>
     </section>
 
@@ -111,6 +129,18 @@
           which leverages bubblewrap for lightweight, kernel-level process isolation — no privileged containers,
           no separate runtime service. Leveraging Istio Integrated directly into the DevGPT plugin and CLI.
           Sub-2-second dispatch target with warm pod pool strategies via Karpenter NodePool and KEDA ScaledObject.
+        </p>
+      </div>
+    </section>
+
+    <!-- AWS Migration -->
+    <section class="section">
+      <div class="section-label mono">Infrastructure</div>
+      <div class="sandbox-card">
+        <p>
+          In 2025, DevGPT migrated from AWM's shared AWS org into a dedicated SEAL with its own
+          accounts and cost center under AI4Tech. The 2-week migration completed with a 30-minute
+          planned outage — no data loss, no user-facing failures.
         </p>
       </div>
     </section>

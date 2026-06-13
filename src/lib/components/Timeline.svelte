@@ -1,33 +1,41 @@
 <script>
   import { onMount } from 'svelte';
+  import { reveal } from '$lib/actions/reveal.js';
 
   const timeline = [
     {
-      year: '2023–Present',
-      role: 'AI4Tech Platform Lead, Principal Engineer',
+      year: '2025–Present',
+      role: 'Lead Architect & AI Systems Engineer — AI4Tech',
       org: 'J.P. Morgan Chase',
       tag: 'current',
       highlights: [
-        'Architect of cloud-native AI coding agent platform',
-        'Agent sandbox via Anthropic SRT + bubblewrap',
+        'Architect of AI4Tech, a dedicated platform org with its own SEAL, AWS accounts, and cost center',
+        'DevGPT powers Technology Lifecycle Management (TLM) — firm-wide agentic software maintenance across Terraform, Python, Java, and Golang codebases',
+        'Supervisor agent reviews patches on a dedicated maintenance branch and routes changes to owning teams for merge',
+        'Anthropic SRT + bubblewrap sandbox (early 2026)',
         'Temporal-backed durable agent orchestration',
-        'Multi-layer memory system',
-        '65% AWS cost reduction via smart prompt engineering & beta headers. ',
+        'Multi-layer memory system (Org / Team / User / Session)',
+        '2-week AWS org migration with 30-minute planned outage — zero data loss',
       ]
     },
     {
-      year: '2021–2023',
-      role: 'Senior Applied AI Engineer',
-      org: 'J.P. Morgan Chase · AWM',
+      year: '2021–2025',
+      role: 'Senior Applied AI Engineer — Asset & Wealth Management',
+      org: 'J.P. Morgan Chase',
       tag: 'jpmc',
       highlights: [
-        'Knowledge Graphs & Event-Driven News Analytics Platform',
-        'Sm@rt RFP — weeks to minutes for client proposal generation',
+        'Built DevGPT from the ground up within AWM\'s Architecture & Investment Technology team',
+        '~90% prompt cache hit rates on Anthropic models; 20M peak cache reads/min against a 30M TPM budget',
+        'Hybrid model routing — Anthropic via AWS Bedrock, OpenAI via Azure OpenAI',
+        'Kubernetes API gateway on EKS using Cilium with per-LOB auth, rate limiting, load shedding',
+        '65% AWS cost reduction — Karpenter/EKS node group migration + smart prompt engineering & context caching',
+        'Knowledge Graphs & Event-Driven News Analytics Platform — entity resolution at ~900ms/article',
+        'Sm@rt RFP — weeks to minutes for client proposal generation (patent pending)',
       ]
     },
     {
-      year: '2017–2021',
-      role: 'Data Scientist, Global Client Analytics',
+      year: '2015–2021',
+      role: 'Data Scientist & Analytics Developer',
       org: 'BNP Paribas · Global Markets',
       tag: 'bnp',
       highlights: [
@@ -37,12 +45,11 @@
       ]
     },
     {
-      year: '2012–2017',
-      role: 'Earlier Roles',
-      org: 'BNP Paribas · UBS Securities · Western Asset Management',
+      year: '2013–2015',
+      role: 'Software Engineer / Analyst',
+      org: 'UBS Securities · Group Data Services',
       tag: 'prior',
       highlights: [
-        'Fixed income, Trading, & Client Intelligence',
         'Client Onboarding, KYC, & Data Warehousing',
         'Chief Economics Office intern — cubic spline interpolation for defined benefit pension plan valuation',
       ]
@@ -66,7 +73,7 @@
   });
 </script>
 
-<section class="timeline">
+<section class="timeline" use:reveal={{ y: 60, duration: 900 }}>
   <div class="timeline-inner">
     <div class="section-label mono">Career</div>
 

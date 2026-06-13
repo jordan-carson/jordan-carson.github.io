@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import * as d3 from 'd3';
+  import { reveal } from '$lib/actions/reveal.js';
 
   // Proficiency scores per category (0–100)
   const data = [
@@ -141,7 +142,7 @@
   }
 </script>
 
-<section class="radar-section">
+<section class="radar-section" use:reveal={{ y: 60, duration: 800 }}>
   <div class="radar-inner">
     <div class="section-label mono">Technical Skills — Radar</div>
     <div class="radar-wrap">

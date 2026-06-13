@@ -11,8 +11,8 @@
 </script>
 
 <svelte:head>
-  <title>Jordan Carson — Lead AI Systems Engineer</title>
-  <meta name="description" content="Lead AI Systems Engineer specializing in cloud-native AI systems and agentic developer platforms." />
+  <title>Jordan Carson — Lead AI Systems Engineer & Architect</title>
+  <meta name="description" content="Lead AI Systems Engineer & Architect specializing in cloud-native AI systems and agentic developer platforms, powering Technology Lifecycle Management at J.P. Morgan Chase." />
 </svelte:head>
 
 <nav>

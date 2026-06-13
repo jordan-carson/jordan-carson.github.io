@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-  <title>Jordan Carson — Lead AI Systems Engineer</title>
+  <title>Jordan Carson — Lead AI Systems Engineer & Architect</title>
 </svelte:head>
 
 <Hero />

@@ -1,10 +1,21 @@
 <script>
   import { base } from '$app/paths';
+  import { onMount } from 'svelte';
+
+  let gridEl;
+
+  onMount(() => {
+    const onScroll = () => {
+      if (gridEl) gridEl.style.transform = `translateY(${window.scrollY * 0.3}px)`;
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  });
 </script>
 
 <section class="hero">
   <div class="hero-bg">
-    <div class="grid-overlay"></div>
+    <div class="grid-overlay" bind:this={gridEl}></div>
     <div class="glow-orb"></div>
   </div>
 

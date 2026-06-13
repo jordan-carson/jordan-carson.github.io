@@ -5,7 +5,7 @@ export const skillCategories = [
     icon: '💻',
     color: '#c9a84c',
     skills: [
-      { id: 'golang', label: 'Golang', desc: 'My favorite language for concurrent systems, APIs, and backend services' },
+      { id: 'golang', label: 'Golang', desc: 'My favorite language for concurrent systems, APIs, and backend services — the entire DevGPT platform is written in Go', r: 22 },
       { id: 'typescript', label: 'TypeScript', desc: 'Type-safe JavaScript for scalable applications' },
       { id: 'python', label: 'Python', desc: 'Scripting, data processing, and ML workflows' },
       { id: 'sql', label: 'SQL', desc: 'Relational database querying and design' },
@@ -23,7 +23,6 @@ export const skillCategories = [
       { id: 'redis', label: 'Redis / Elasticache', desc: 'Caching, pub/sub, session storage, real-time data' },
       { id: 'elasticsearch', label: 'Elasticsearch / OpenSearch', desc: 'Full-text search, log aggregation, analytics' },
       { id: 'dynamodb', label: 'DynamoDB', desc: 'NoSQL key-value, high-scale applications' },
-      { id: 'mongodb', label: 'MongoDB', desc: 'Document database, flexible schemas' },
       { id: 'snowflake', label: 'Snowflake', desc: 'Cloud data warehouse, analytics at scale' }
     ]
   },
@@ -49,10 +48,9 @@ export const skillCategories = [
     icon: '🤖',
     color: '#d4856a',
     skills: [
-      { id: 'anthropic', label: 'Anthropic', desc: 'Claude models, prompt engineering' },
+      { id: 'anthropic', label: 'Anthropic', desc: 'Claude models, prompt engineering, and prompt caching at scale', r: 20 },
       { id: 'openai', label: 'OpenAI', desc: 'GPT models, embeddings, chat completions' },
-      { id: 'google', label: 'Google', desc: '. Gemini and Vertex AI integrations' },
-      { id: 'vllm', label: 'vLLM', desc: 'High-throughput LLM serving, GPU optimization' }
+      { id: 'google', label: 'Google', desc: '. Gemini and Vertex AI integrations' }
     ]
   },
   {
