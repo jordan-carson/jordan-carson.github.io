@@ -1,4 +1,6 @@
 <script>
+  import { base } from '$app/paths';
+
   const stack = [
     { layer: 'IDE Layer',           items: ['VS Code', 'IntelliJ', 'Android Studio', 'Xcode'],  color: '#c9a84c' },
     { layer: 'Agent Harness',       items: ['devgpt-cli (TypeScript)', 'ACP Protocol', 'Headless / Cloud modes'],       color: '#8b7ec8' },
@@ -34,6 +36,7 @@
         software and prototype development tasks to AI agents — from feature implementation
         to deployment, running securely within the firm's infrastructure at enterprise scale.
       </p>
+      <a href="{base}/projects/devgpt/journey" class="journey-link mono">Read the full DevGPT journey →</a>
     </header>
 
     <!-- Metrics -->
@@ -236,6 +239,21 @@
     color: var(--text-dim);
     max-width: 600px;
     line-height: 1.8;
+  }
+
+  .journey-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border-bottom: 1px solid var(--gold-dim);
+    transition: border-color var(--transition);
+  }
+
+  .journey-link:hover {
+    border-color: var(--gold);
   }
 
   /* Metrics */
