@@ -44,16 +44,17 @@
         'The decision is made to invest DevGPT as a real platform — not a productivity tool, but infrastructure. That means:',
       ],
       list: [
-        'Multi-tenant architecture with per-LOB isolation',
+        'Single-tenant architecture with per-LOB isolation — true multi-tenancy is blocked by JPMC\'s Route53 routing restrictions, so isolation happens at the LOB layer within a single tenant',
         'A proper context assembly system (not just dumping history into the prompt)',
         'Memory that persists across sessions — the four-layer model: Org / Team / User / Session',
         'A Kubernetes API gateway on EKS using Cilium for per-LOB auth, rate limiting, and load shedding',
-        'Hybrid model routing — Anthropic via AWS Bedrock, OpenAI via Azure OpenAI',
-        'IDE expansion: Android Studio and Xcode support added',
+        'Hybrid model routing — Anthropic via AWS Bedrock, OpenAI via Azure OpenAI, with Bedrock inference profiles designed across 3 regions by default via Geo CRIS',
+        'IDE expansion: Android Studio and Xcode support on the roadmap — wanted, but never built; not enough time or headcount to take it on alongside everything else',
       ],
       bodyAfter: [
         'The platform begins onboarding product managers and senior leadership alongside engineers. The user base is no longer just developers. DevGPT is becoming infrastructure for how AWM thinks.',
         'User count approaches 2,000. TPM is growing fast.',
+        'The user base stays AWM-only — which is why, even at scale, DevGPT tops out around 6,500 users rather than firm-wide.',
       ],
     },
     {
@@ -166,6 +167,7 @@
         'It doesn\'t work. The agent loop is built assuming an IDE on the other end of the connection — plugin-side state, editor-bound context capture, UI callbacks baked into the control flow. Cloud agents need none of that, and the coupling makes it impossible to run the loop headless.',
         'Rather than bolt a cloud mode onto a plugin-shaped core, I rewrite the agent loop from the ground up as a CLI-first, headless runtime — the plugins become thin clients on top of it, not the other way around. The same binary that powers a developer\'s IDE session now runs unattended in a pod, dispatched by the SRT, driven by Temporal.',
         'This rewrite becomes the foundation for cloud agents across DevGPT — and for TLM\'s maintenance-branch agents that operate with no human in the loop until the patch is ready for review.',
+        'It also lands at the right moment: 2026 is the year JPMC obtains Claude Code licenses firm-wide. With a headless, cloud-capable agent loop already in place, DevGPT becomes the internal answer to Claude Code — the same agentic coding experience, built to run inside JPMC\'s infrastructure and security perimeter.',
       ],
     },
     {

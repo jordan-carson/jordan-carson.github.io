@@ -2,7 +2,7 @@
   import { base } from '$app/paths';
 
   const stack = [
-    { layer: 'IDE Layer',           items: ['VS Code', 'IntelliJ', 'Android Studio', 'Xcode'],  color: '#c9a84c' },
+    { layer: 'IDE Layer',           items: ['VS Code', 'IntelliJ', 'CLI / Headless'],  color: '#c9a84c' },
     { layer: 'Agent Harness',       items: ['devgpt-cli (TypeScript)', 'ACP Protocol', 'Headless / Cloud modes'],       color: '#8b7ec8' },
     { layer: 'Orchestration',       items: ['Temporal Workflows', 'Pause / Resume / Fork', 'Durable Execution'],            color: '#7c9e87' },
     { layer: 'Execution',           items: ['Kubernetes EKS', 'KEDA Autoscaling', 'Anthropic SRT + bubblewrap'],            color: '#d4856a' },
