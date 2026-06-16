@@ -47,17 +47,17 @@
 </script>
 
 <svelte:head>
-  <title>Writing — Jordan Carson</title>
+  <title>Blog — Jordan Carson</title>
 </svelte:head>
 
 <div class="page">
   <div class="page-inner">
 
     <header class="page-header">
-      <div class="breadcrumb mono">Jordan Carson / Writing</div>
-      <h1 class="page-title serif">Writing &<br />Speaking</h1>
+      <div class="breadcrumb mono">Jordan Carson / Blog</div>
+      <h1 class="page-title serif">Writing &<br />Reciting</h1>
       <p class="page-sub">
-        Thinking publicly about agent architecture, memory engineering,
+        Thoughts and talks on agent architecture, memory engineering,
         and what it actually takes to run autonomous systems at enterprise scale.
       </p>
     </header>

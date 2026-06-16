@@ -4,9 +4,9 @@
   import { base } from '$app/paths';
 
   const navLinks = [
-    { href: '/',           label: 'Home'       },
-    { href: '/writings',   label: 'Writing'    },
-    { href: '/projects/devgpt', label: 'DevGPT' },
+    { href: '/',           label: 'Home'     },
+    { href: '/writings',   label: 'Blog'     },
+    { href: '/projects',   label: 'Projects' },
   ];
 </script>
 
@@ -23,7 +23,9 @@
         <a
           href="{base}{link.href}"
           class="nav-link mono"
-          class:active={$page.url.pathname === (base + link.href)}
+          class:active={link.href === '/'
+            ? $page.url.pathname === (base + link.href)
+            : $page.url.pathname.startsWith(base + link.href)}
         >
           {link.label}
         </a>

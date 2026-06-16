@@ -37,6 +37,7 @@
         to deployment, running securely within the firm's infrastructure at enterprise scale.
       </p>
       <a href="{base}/projects/devgpt/journey" class="journey-link mono">Read the full DevGPT journey →</a>
+      <a href="{base}/projects/mozart-principle" class="journey-link mono">The Mozart Principle: Context & Cache at Scale →</a>
     </header>
 
     <!-- Metrics -->
@@ -244,6 +245,7 @@
   .journey-link {
     display: inline-block;
     margin-top: 1.5rem;
+    margin-right: 2rem;
     font-size: 0.72rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
