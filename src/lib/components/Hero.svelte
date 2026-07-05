@@ -2,11 +2,11 @@
   import { base } from '$app/paths';
   import { onMount } from 'svelte';
 
-  let gridEl;
+  let checkerEl;
 
   onMount(() => {
     const onScroll = () => {
-      if (gridEl) gridEl.style.transform = `translateY(${window.scrollY * 0.3}px)`;
+      if (checkerEl) checkerEl.style.transform = `translateY(${window.scrollY * 0.12}px)`;
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
@@ -15,30 +15,34 @@
 
 <section class="hero">
   <div class="hero-bg">
-    <div class="grid-overlay" bind:this={gridEl}></div>
-    <div class="glow-orb"></div>
+    <div class="checker-layer" bind:this={checkerEl}></div>
+    <div class="fade-vignette"></div>
+    <div class="glow-orb orb-main"></div>
+    <div class="glow-orb orb-accent"></div>
   </div>
 
   <div class="hero-content">
-    <div class="hero-tag mono">Lead AI Systems Engineer · AI Agent Platforms</div>
+    <div class="hero-tag mono">Platform AI Architect · Principal Engineer</div>
 
     <h1 class="hero-name serif">
       Jordan<br />Carson
     </h1>
 
     <p class="hero-sub">
-      Architect of a <a href="{base}/projects/devgpt" class="gold-link">cloud-native AI coding agent platform</a>
-      serving thousands of engineers at J.P. Morgan Chase.
-      Built telemetry infrastructure powering AI attribution at scale —
-      consuming <span class="highlight">tens of thousands of events/sec</span>
-      and peaking at <span class="highlight">multi-million tokens/min</span>.
+      Platform AI Architect and Principal Engineer with <span class="highlight">13+ years</span>
+      delivering production AI systems at scale. Built
+      <a href="{base}/projects/devgpt" class="gold-link">DevGPT</a> —
+      a state-of-the-art autonomous coding agent platform serving
+      <span class="highlight">6,500+ engineers</span> at J.P. Morgan Chase,
+      with a custom agentic loop, layered memory system, and strict brain/hands execution isolation.
+      Engineered prompt caching to <span class="highlight">90%+ hit rates</span> and a
+      distributed telemetry pipeline handling <span class="highlight">50K events/min</span>.
     </p>
 
     <div class="hero-cta">
       <a href="{base}/projects/devgpt" class="btn-primary mono">View DevGPT ↗</a>
-      <a href="{base}/writings" class="btn-secondary mono">Read Writing →</a>
+      <a href="{base}/writings" class="btn-secondary mono">Read Blog →</a>
     </div>
-
   </div>
 </section>
 
@@ -51,40 +55,82 @@
     overflow: hidden;
   }
 
-  /* Background */
+  /* ── Background ─────────────────────────────────── */
   .hero-bg {
     position: absolute;
     inset: 0;
     pointer-events: none;
+    overflow: hidden;
   }
 
-  .grid-overlay {
+  /* Checkered grid: alternating filled/empty cells via CSS gradient */
+  .checker-layer {
+    position: absolute;
+    /* extend beyond viewport so parallax doesn't reveal edges */
+    inset: -20% -10%;
+    will-change: transform;
+    background-color: transparent;
+    background-image:
+      linear-gradient(45deg, var(--checker-fill) 25%, transparent 25%),
+      linear-gradient(-45deg, var(--checker-fill) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, var(--checker-fill) 75%),
+      linear-gradient(-45deg, transparent 75%, var(--checker-fill) 75%);
+    background-size: 48px 48px;
+    background-position: 0 0, 0 24px, 24px -24px, -24px 0px;
+    /* fade toward center so text stays legible */
+    mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, transparent 20%, black 60%, black 100%);
+  }
+
+  /* Dark mode: very subtle gold-tinted squares */
+  :root:not([data-theme='light']) .checker-layer {
+    --checker-fill: rgba(201, 168, 76, 0.045);
+  }
+
+  /* Light mode: slightly stronger warm tint */
+  :root[data-theme='light'] .checker-layer {
+    --checker-fill: rgba(154, 110, 26, 0.055);
+  }
+
+  /* Soft fade at top/bottom to blend into content */
+  .fade-vignette {
     position: absolute;
     inset: 0;
-    background-image:
-      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 80%);
+    background:
+      linear-gradient(to bottom,  var(--bg) 0%, transparent 18%, transparent 80%, var(--bg) 100%),
+      linear-gradient(to right, var(--bg) 0%, transparent 12%, transparent 88%, var(--bg) 100%);
   }
 
   .glow-orb {
     position: absolute;
-    top: 20%;
-    right: 10%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
     border-radius: 50%;
     animation: pulse 8s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .orb-main {
+    top: 15%;
+    right: 8%;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, rgba(201,168,76,0.10) 0%, transparent 70%);
+  }
+
+  .orb-accent {
+    bottom: 10%;
+    left: 4%;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(106,159,212,0.07) 0%, transparent 70%);
+    animation-delay: -4s;
+    animation-duration: 11s;
   }
 
   @keyframes pulse {
     0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.1); opacity: 0.7; }
+    50%       { transform: scale(1.12); opacity: 0.7; }
   }
 
-  /* Content */
+  /* ── Content ─────────────────────────────────────── */
   .hero-content {
     max-width: 1100px;
     margin: 0 auto;
@@ -116,10 +162,10 @@
   }
 
   .hero-sub {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--text-dim);
-    max-width: 540px;
-    line-height: 1.8;
+    max-width: 560px;
+    line-height: 1.85;
     margin-bottom: 2.5rem;
     animation: fadeUp 0.8s ease both;
     animation-delay: 0.35s;

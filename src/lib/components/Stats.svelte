@@ -3,10 +3,10 @@
   import { reveal } from '$lib/actions/reveal.js';
 
   const stats = [
-    { value: '6,500+', label: 'Users on Platform',       sub: 'Engineers, product & senior management' },
-    { value: '90%',    label: 'Prompt cache hit rate',   sub: 'Anthropic models' },
-    { value: '20M',    label: 'Peak cache reads / min',  sub: 'AI4Tech · DevGPT' },
-    { value: '5',      label: 'Publications & Talks',    sub: 'Medium + FINOS 2025'   },
+    { value: '6,500+', label: 'Engineers on Platform',   sub: 'Engineering, product & senior management' },
+    { value: '90%+',   label: 'Prompt cache hit rate',   sub: 'Anthropic Claude · DevGPT' },
+    { value: '32M',    label: 'Peak cache reads / min',  sub: 'Against a 30M TPM budget' },
+    { value: '50K',    label: 'Telemetry events / min',  sub: 'OTel streaming gateway · DevGPT' },
   ];
 
   let visible = false;

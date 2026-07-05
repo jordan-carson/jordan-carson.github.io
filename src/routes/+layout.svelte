@@ -2,12 +2,36 @@
   import '../app.css';
   import { page } from '$app/stores';
   import { base } from '$app/paths';
+  import { onMount } from 'svelte';
 
   const navLinks = [
     { href: '/',           label: 'Home'     },
     { href: '/writings',   label: 'Blog'     },
     { href: '/projects',   label: 'Projects' },
   ];
+
+  let theme = 'dark';
+
+  function isDaytime() {
+    const h = new Date().getHours();
+    return h >= 7 && h < 19;
+  }
+
+  function applyTheme(t) {
+    theme = t;
+    document.documentElement.setAttribute('data-theme', t);
+    try { localStorage.setItem('theme', t); } catch (_) {}
+  }
+
+  function toggleTheme() {
+    applyTheme(theme === 'dark' ? 'light' : 'dark');
+  }
+
+  onMount(() => {
+    let saved;
+    try { saved = localStorage.getItem('theme'); } catch (_) {}
+    applyTheme(saved ?? (isDaytime() ? 'light' : 'dark'));
+  });
 </script>
 
 <svelte:head>
@@ -18,18 +42,39 @@
 <nav>
   <div class="nav-inner">
     <a href="{base}/" class="nav-brand mono">JC<span class="gold">.</span></a>
-    <div class="nav-links">
-      {#each navLinks as link}
-        <a
-          href="{base}{link.href}"
-          class="nav-link mono"
-          class:active={link.href === '/'
-            ? $page.url.pathname === (base + link.href)
-            : $page.url.pathname.startsWith(base + link.href)}
-        >
-          {link.label}
-        </a>
-      {/each}
+    <div class="nav-right">
+      <div class="nav-links">
+        {#each navLinks as link}
+          <a
+            href="{base}{link.href}"
+            class="nav-link mono"
+            class:active={link.href === '/'
+              ? $page.url.pathname === (base + link.href)
+              : $page.url.pathname.startsWith(base + link.href)}
+          >
+            {link.label}
+          </a>
+        {/each}
+      </div>
+      <button class="theme-toggle" on:click={toggleTheme} aria-label="Toggle theme">
+        {#if theme === 'dark'}
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        {:else}
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        {/if}
+      </button>
     </div>
   </div>
 </nav>
@@ -57,9 +102,14 @@
     right: 0;
     z-index: 100;
     border-bottom: 1px solid var(--border);
-    background: rgba(10, 10, 11, 0.88);
+    background: var(--nav-bg, rgba(10, 10, 11, 0.88));
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    transition: background var(--transition), border-color var(--transition);
+  }
+
+  :global(:root[data-theme='light']) nav {
+    background: rgba(245, 244, 240, 0.88);
   }
 
   .nav-inner {
@@ -83,9 +133,37 @@
 
   .gold { color: var(--gold); }
 
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
   .nav-links {
     display: flex;
     gap: 2rem;
+  }
+
+  .theme-toggle {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text-dim);
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color var(--transition), border-color var(--transition), background var(--transition);
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  .theme-toggle:hover {
+    color: var(--gold);
+    border-color: var(--gold-dim);
+    background: var(--gold-glow);
   }
 
   .nav-link {

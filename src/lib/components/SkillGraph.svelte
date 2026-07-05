@@ -136,7 +136,8 @@
     node.append('text')
       .attr('text-anchor', 'middle')
       .attr('dy', d => d.type === 'category' ? '1em' : '0.35em')
-      .attr('fill', d => d.type === 'category' ? d.color : '#d4d0c8')
+      .attr('class', d => d.type === 'category' ? 'cat-label' : 'skill-label')
+      .style('fill', d => d.type === 'category' ? d.color : null)
       .attr('font-size', d => d.type === 'category' ? '10px' : '8px')
       .attr('font-family', 'Space Mono, monospace')
       .attr('font-weight', d => d.type === 'category' ? '700' : '400')
@@ -220,7 +221,7 @@
     padding: 0.5rem 0.75rem;
     font-size: 0.72rem;
     font-family: 'DM Sans', sans-serif;
-    color: #e8e6e0;
+    color: var(--text);
     box-shadow: 0 4px 16px rgba(0,0,0,0.35);
     z-index: 10;
     max-width: 200px;
@@ -232,5 +233,13 @@
     color: var(--gold);
     display: block;
     margin-bottom: 2px;
+  }
+
+  :global(.skill-label) {
+    fill: #d4d0c8;
+  }
+
+  :global(:root[data-theme='light'] .skill-label) {
+    fill: #2a2826;
   }
 </style>
