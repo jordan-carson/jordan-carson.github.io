@@ -9,12 +9,15 @@
       org: 'J.P. Morgan Chase',
       tag: 'current',
       highlights: [
-        'Architect of AI4Tech, a dedicated platform org with its own SEAL, AWS accounts, and cost center',
-        'DevGPT powers Technology Lifecycle Management (TLM) — firm-wide agentic software maintenance across Terraform, Python, Java, and Golang codebases',
-        'Supervisor agent reviews patches on a dedicated maintenance branch and routes changes to owning teams for merge',
-        'Anthropic SRT + bubblewrap sandbox (early 2026)',
+        'Lead architect for DevGPT\'s core agentic systems: the coding harness (reasoning, tool use, memory) and a separate remote sandbox controller for isolated code execution',
+        'Coding agent harness — custom agentic loop, tool-calling, and multi-step execution comparable in scope to Claude Code, fully decoupled from execution',
+        'Remote sandbox controller — pool-managed, session-aware Kubernetes pods on EKS with MCP Bridge and SOCKS5/socat network isolation; the harness never holds credentials or network access directly',
+        'DevGPT Cloud — the collaboration layer: co-ideate with an agent alongside teammates, push/pull sessions, observe live sandbox execution, browse a team agent marketplace',
+        'DevGPT powers Technology Lifecycle Management (TLM) — firm-wide agentic maintenance across Java codebases today, expanding to Python, Golang, TypeScript, and Terraform',
+        'Sole AI4Tech engineer on the AWM AI Center of Excellence, defining agentic development standards across the firm',
+        'Designing AWM Agentic Training (in dev) — a Trailhead-style platform using AI as a Socratic brainstorming partner and grader',
         'Temporal-backed durable agent orchestration',
-        'Multi-layer memory system (Org / Team / User / Session)',
+        'Four-layer memory system (Org / Team / User / Session) — in development',
         '2-week AWS org migration with 30-minute planned outage — zero data loss',
       ]
     },
@@ -25,12 +28,13 @@
       tag: 'jpmc',
       highlights: [
         'Built DevGPT from the ground up within AWM\'s Architecture & Investment Technology team',
-        '~90% prompt cache hit rates on Anthropic models; 20M peak cache reads/min against a 30M TPM budget',
-        'Hybrid model routing — Anthropic via AWS Bedrock, OpenAI via Azure OpenAI',
+        '~90% prompt cache hit rates on Anthropic models; 32M peak cache reads/min against a 30M TPM budget',
+        'Two independent, mission-critical LLM provider services — Anthropic via AWS Bedrock, OpenAI via Azure OpenAI — no shared prompt router; provider selection is a deliberate, user-facing decision',
+        'Custom telemetry gateway: producer → SQS → consumer → staging → processors, feeding a federated service (Aurora writes, real-time attribution) and a separate analytics service (read replica, reporting) — ~50K events/min',
         'Kubernetes API gateway on EKS using Cilium with per-LOB auth, rate limiting, load shedding',
         '65% AWS cost reduction — Karpenter/EKS node group migration + smart prompt engineering & context caching',
         'Knowledge Graphs & Event-Driven News Analytics Platform — entity resolution at ~900ms/article',
-        'Sm@rt RFP — weeks to minutes for client proposal generation (patent pending)',
+        'Sm@rt RFP — weeks to minutes for client proposal generation',
       ]
     },
     {

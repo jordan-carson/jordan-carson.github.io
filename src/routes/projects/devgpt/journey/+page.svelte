@@ -48,7 +48,7 @@
         'A proper context assembly system (not just dumping history into the prompt)',
         'Memory that persists across sessions — the four-layer model: Org / Team / User / Session',
         'A Kubernetes API gateway on EKS using Cilium for per-LOB auth, rate limiting, and load shedding',
-        'Hybrid model routing — Anthropic via AWS Bedrock, OpenAI via Azure OpenAI, with Bedrock inference profiles designed across 3 regions by default via Geo CRIS',
+        'Two independent services — Anthropic via AWS Bedrock, OpenAI via Azure OpenAI — with Bedrock inference profiles designed across 3 regions by default via Geo CRIS. No shared prompt router; provider selection stays a deliberate, user-facing decision rather than a platform abstraction',
         'IDE expansion: Android Studio and Xcode support on the roadmap — wanted, but never built; not enough time or headcount to take it on alongside everything else',
       ],
       bodyAfter: [
@@ -114,36 +114,36 @@
         rows: [
           ['Prompt cache hit rate', '0%', '~90%'],
           ['Live inference TPM (peak)', '~4M (and climbing)', '~6M'],
-          ['Cache read TPM (peak)', '0', '~20M'],
+          ['Cache read TPM (peak)', '0', '~32M'],
           ['TPM budget utilized', '>90% (throttled)', '~20% of 30M budget'],
           ['User-facing errors', 'Frequent', 'Eliminated'],
         ],
       },
       bodyAfter: [
-        'Cache reads on Anthropic models peak at 20 million tokens per minute. Live inference consumption drops to approximately 6 million TPM against a 30 million TPM budget. The same platform, serving more users, consuming a fraction of the quota.',
+        'Cache reads on Anthropic models peak at 32 million tokens per minute. Live inference consumption drops to approximately 6 million TPM against a 30 million TPM budget. The same platform, serving more users, consuming a fraction of the quota.',
         'Prompt caching alone brings AWS costs down 70% — the same infrastructure, serving a growing user base, at a fraction of the spend.',
         'The remaining edge cases are honest ones: inexperienced users sending requests that exceed Bedrock\'s maximum input token limits. These are operational constraints — not bugs, not architectural failures. We handle them with clear error messaging, input validation, and user education on context window limits.',
       ],
     },
     {
       date: '2025',
-      title: 'AI4Tech',
+      title: 'Platform Migration',
       tag: 'org',
-      eyebrow: 'The platform earns its own organization.',
+      eyebrow: 'A zero-downtime cutover to support firm-wide scale.',
       body: [
-        'DevGPT\'s growth — 6,500 users, firm-wide tooling impact, infrastructure that had outgrown AWM\'s shared environments — leads to a structural decision: spin out a dedicated organization.',
-        'AI4Tech is formed within AWM with its own SEAL, its own AWS accounts, and its own cost center. My manager and I move over in a two-week migration — a full AWS org cutover with a 30-minute planned maintenance window, zero data loss, no user-facing failures.',
-        'The platform now has the organizational independence to operate and scale on its own terms.',
+        'DevGPT\'s growth — 6,500 users, firm-wide tooling impact, infrastructure that had outgrown AWM\'s shared environments — forces an infrastructure decision: the platform needs its own dedicated AWS account structure to scale further.',
+        'My manager and I execute a two-week migration — a full AWS org cutover with a 30-minute planned maintenance window, zero data loss, no user-facing failures. The new team, AI4Tech, is chartered within AWM to own the platform going forward.',
+        'The migration clears the runway for the next phase: autonomous execution infrastructure.',
       ],
     },
     {
       date: 'Early 2026',
       title: 'Agentic Runtime',
       tag: 'runtime',
-      eyebrow: 'Anthropic SRT. Bubblewrap. Sub-2-second sandbox dispatch.',
+      eyebrow: 'Remote sandbox controller. Bubblewrap. Sub-2-second sandbox dispatch.',
       body: [
         'With the cost and quota problems solved, the platform can grow. And the next frontier isn\'t conversation — it\'s autonomous execution.',
-        'We architect the Anthropic Sandbox Runtime (SRT) on EKS: a pool-managed, session-aware Kubernetes pod system where agents execute untrusted code in sandboxed subprocesses using bubblewrap for kernel-level process isolation. No privileged containers. No separate runtime service.',
+        'We architect a remote sandbox controller on EKS: a pool-managed, session-aware Kubernetes pod system where agents execute untrusted code in sandboxed subprocesses using bubblewrap for kernel-level process isolation. No privileged containers. No separate runtime service.',
         'Key design decisions:',
       ],
       list: [
@@ -154,7 +154,7 @@
         'VDI-to-AWS-cloud auth flow bridges JPMC\'s on-premise VDI environment to the cloud-native runtime securely',
       ],
       bodyAfter: [
-        'The SRT turns DevGPT from a chat interface with code awareness into a platform where agents can actually run code, test it, and iterate — inside the firm\'s security boundary.',
+        'The sandbox controller turns DevGPT from a chat interface with code awareness into a platform where agents can actually run code, test it, and iterate — inside the firm\'s security boundary. It\'s deliberately decoupled from the harness: the harness reasons and issues tool calls, the sandbox controller executes them, and neither holds the other\'s credentials.',
       ],
     },
     {
@@ -177,14 +177,14 @@
       eyebrow: 'DevGPT goes firm-wide — under the hood.',
       body: [
         'The most significant expansion of DevGPT\'s scope isn\'t a new UI feature or a new model. It\'s a new use case entirely: automated software maintenance at enterprise scale.',
-        'Technology Lifecycle Management (TLM) uses DevGPT\'s agentic infrastructure to automate dependency updates, security patches, and framework migrations across JPMC\'s full technology estate — Terraform, Python, Java, and Golang codebases.',
+        'Technology Lifecycle Management (TLM) uses DevGPT\'s agentic infrastructure to automate dependency updates, security patches, and framework migrations across JPMC\'s full technology estate — Java codebases today, expanding to Python, Golang, TypeScript, and Terraform.',
         'The architecture:',
       ],
       list: [
         'Agents operate on a dedicated maintenance branch per repository',
         'A supervisor agent reviews proposed changes — diffs, test results, risk assessment — before surfacing them to the owning team',
         'Teams retain full merge authority to release/master',
-        'The system operates continuously, across the entire firm, while the platform org remains AI4Tech-chartered within AWM',
+        'The system operates continuously, across the entire firm, while the platform team remains AWM-chartered',
       ],
       callout: 'The agents propose. The humans decide. The firm moves faster.',
     },

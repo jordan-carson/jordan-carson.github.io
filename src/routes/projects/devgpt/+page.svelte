@@ -5,7 +5,7 @@
     { layer: 'IDE Layer',           items: ['VS Code', 'IntelliJ', 'CLI / Headless'],  color: '#c9a84c' },
     { layer: 'Agent Harness',       items: ['devgpt-cli (TypeScript)', 'ACP Protocol', 'Headless / Cloud modes'],       color: '#8b7ec8' },
     { layer: 'Orchestration',       items: ['Temporal Workflows', 'Pause / Resume / Fork', 'Durable Execution'],            color: '#7c9e87' },
-    { layer: 'Execution',           items: ['Kubernetes EKS', 'KEDA Autoscaling', 'Anthropic SRT + bubblewrap'],            color: '#d4856a' },
+    { layer: 'Execution',           items: ['Kubernetes EKS', 'KEDA Autoscaling', 'Remote Sandbox Controller + bubblewrap'],            color: '#d4856a' },
     { layer: 'Context Assembly',    items: ['EFS Bare Git Clones', 'Per-Task Worktrees', 'Context Assembler'],              color: '#6a9fd4' },
     { layer: 'Memory',              items: ['OpenSearch (Cohere Embed v4)', 'RDS Postgres', 'Dream Cycle Consolidation'],   color: '#a8c47c' },
     { layer: 'Streaming',           items: ['WebSockets', 'Redis Streams', 'NATS', 'Go Cloud API', 'SSE to IDE'],           color: '#c47ca8' },
@@ -96,8 +96,8 @@
           <p>Memory Service holds per-user structured operational facts. Brain holds platform-wide institutional narrative. Both queried in parallel and merged at agent boot.</p>
         </div>
         <div class="principle">
-          <div class="principle-title mono">Warm Pods · SRT + Istio Ambient</div>
-          <p>Pre-warmed pod pools eliminate cold-start latency at dispatch. Anthropic SRT sandboxes sit ready behind Istio Ambient Mode — sidecar-free mTLS and L4 policy enforced at the node level, keeping the data plane out of the agent container entirely.</p>
+          <div class="principle-title mono">Warm Pods · Remote Sandbox Controller + Istio Ambient</div>
+          <p>Pre-warmed pod pools eliminate cold-start latency at dispatch. Remote sandbox controller pods sit ready behind Istio Ambient Mode — sidecar-free mTLS and L4 policy enforced at the node level, keeping the data plane out of the agent container entirely.</p>
         </div>
         <div class="principle">
           <div class="principle-title mono">Supervisor-Gated Maintenance</div>
@@ -112,10 +112,11 @@
       <div class="sandbox-card">
         <p>
           DevGPT powers TLM — a firm-wide JPMC initiative for automated software maintenance.
-          Agentic workflows perform dependency updates and patches across Terraform, Python, Java,
-          and Golang codebases on a dedicated maintenance branch. A supervisor agent reviews proposed
-          changes and routes them to the owning team for merge to release/master. TLM operates across
-          the full firm while the platform org remains AI4Tech-chartered within AWM.
+          Agentic workflows perform dependency updates and patches across Java codebases today
+          on a dedicated maintenance branch, expanding to Python, Golang, TypeScript, and Terraform.
+          A supervisor agent reviews proposed changes and routes them to the owning team for merge
+          to release/master. TLM operates across the full firm while the platform team remains
+          AWM-chartered.
         </p>
       </div>
     </section>
@@ -125,12 +126,12 @@
       <div class="section-label mono">Sandbox Runtime</div>
       <div class="sandbox-card">
         <div class="sandbox-header">
-          <span class="sandbox-badge mono">Anthropic SRT + bubblewrap</span>
+          <span class="sandbox-badge mono">Remote Sandbox Controller + bubblewrap</span>
           <span class="sandbox-status mono">● Production</span>
         </div>
         <p>
-          Agents execute untrusted code in sandboxed subprocesses using Anthropic's Sandbox Runtime,
-          which leverages bubblewrap for lightweight, kernel-level process isolation — no privileged containers,
+          Agents execute untrusted code in sandboxed subprocesses via a purpose-built remote sandbox
+          controller, which leverages bubblewrap for lightweight, kernel-level process isolation — no privileged containers,
           no separate runtime service. Leveraging Istio Integrated directly into the DevGPT plugin and CLI.
           Sub-2-second dispatch target with warm pod pool strategies via Karpenter NodePool and KEDA ScaledObject.
         </p>
@@ -142,9 +143,9 @@
       <div class="section-label mono">Infrastructure</div>
       <div class="sandbox-card">
         <p>
-          In 2025, DevGPT migrated from AWM's shared AWS org into a dedicated SEAL with its own
-          accounts and cost center under AI4Tech. The 2-week migration completed with a 30-minute
-          planned outage — no data loss, no user-facing failures.
+          In 2025, led a 2-week migration of DevGPT from AWM's shared AWS org into a new dedicated
+          account structure to support firm-wide scale — completed with a 30-minute
+          planned outage, zero data loss, no user-facing failures.
         </p>
       </div>
     </section>
@@ -156,12 +157,12 @@
         <a href="https://github.com/anthropic-experimental/sandbox-runtime" target="_blank" rel="noopener" class="ref-link mono">
           <span class="ref-icon">↗</span>
           <span>anthropic-experimental/sandbox-runtime</span>
-          <span class="ref-desc">Anthropic SRT — kernel-level sandbox for secure agent execution</span>
+          <span class="ref-desc">Remote Sandbox Controller — kernel-level isolation for secure agent execution</span>
         </a>
         <a href="https://github.com/containers/bubblewrap" target="_blank" rel="noopener" class="ref-link mono">
           <span class="ref-icon">↗</span>
           <span>containers/bubblewrap</span>
-          <span class="ref-desc">Bubblewrap — unprivileged process isolation underpinning SRT</span>
+          <span class="ref-desc">Bubblewrap — unprivileged process isolation underpinning the sandbox controller</span>
         </a>
         <a href="https://temporal.io/" target="_blank" rel="noopener" class="ref-link mono">
           <span class="ref-icon">↗</span>
