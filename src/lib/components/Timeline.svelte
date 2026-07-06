@@ -17,7 +17,7 @@
         'Sole AI4Tech engineer on the AWM AI Center of Excellence, defining agentic development standards across the firm',
         'Designing AWM Agentic Training (in dev) — a Trailhead-style platform using AI as a Socratic brainstorming partner and grader',
         'Temporal-backed durable agent orchestration',
-        'Four-layer memory system (Org / Team / User / Session) — in development',
+        'Layered memory system (Org / Team / User / Repo) — in development',
         '2-week AWS org migration with 30-minute planned outage — zero data loss',
       ]
     },
@@ -30,7 +30,7 @@
         'Built DevGPT from the ground up within AWM\'s Architecture & Investment Technology team',
         '~90% prompt cache hit rates on Anthropic models; 32M peak cache reads/min against a 30M TPM budget',
         'Two independent, mission-critical LLM provider services — Anthropic via AWS Bedrock, OpenAI via Azure OpenAI — no shared prompt router; provider selection is a deliberate, user-facing decision',
-        'Custom telemetry gateway: producer → SQS → consumer → staging → processors, feeding a federated service (Aurora writes, real-time attribution) and a separate analytics service (read replica, reporting) — ~50K events/min',
+        'Custom telemetry gateway: producer → SQS → consumer → staging → processors, feeding a federated service (Aurora writes, real-time attribution) and a separate analytics service (read replica, reporting) — ~100K events/min',
         'Kubernetes API gateway on EKS using Cilium with per-LOB auth, rate limiting, load shedding',
         '65% AWS cost reduction — Karpenter/EKS node group migration + smart prompt engineering & context caching',
         'Knowledge Graphs & Event-Driven News Analytics Platform — entity resolution at ~900ms/article',

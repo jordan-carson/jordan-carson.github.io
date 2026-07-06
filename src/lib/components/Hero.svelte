@@ -36,7 +36,7 @@
       separation between the reasoning harness ("brain") and an isolated remote sandbox controller
       ("hands") for secure, multi-tenant agentic code execution.
       Engineered prompt caching to <span class="highlight">90%+ hit rates</span> and a
-      distributed telemetry pipeline handling <span class="highlight">50K events/min</span>.
+      distributed telemetry pipeline.
     </p>
 
     <div class="hero-cta">
