@@ -3,13 +3,12 @@
 
   const stack = [
     { layer: 'IDE Layer',           items: ['VS Code', 'IntelliJ', 'CLI / Headless'],  color: '#c9a84c' },
-    { layer: 'Agent Harness',       items: ['devgpt-cli (TypeScript)', 'ACP Protocol', 'Headless / Cloud modes'],       color: '#8b7ec8' },
-    { layer: 'Orchestration',       items: ['Temporal Workflows', 'Pause / Resume / Fork', 'Durable Execution'],            color: '#7c9e87' },
-    { layer: 'Execution',           items: ['Kubernetes EKS', 'KEDA Autoscaling', 'Remote Sandbox Controller + bubblewrap'],            color: '#d4856a' },
+    { layer: 'Agent Harness',       items: ['devgpt-cli (TypeScript)', 'ACP Protocol', 'Headless / Cloud / Sandbox modes'],       color: '#8b7ec8' },
+    { layer: 'Execution',           items: ['Kubernetes EKS', 'KEDA Autoscaling', 'Remote Sandbox Controller + bubblewrap', 'Identity Proxy (AWS creds via TokenReview)'],            color: '#d4856a' },
     { layer: 'Context Assembly',    items: ['EFS Bare Git Clones', 'Per-Task Worktrees', 'Context Assembler'],              color: '#6a9fd4' },
-    { layer: 'Memory',              items: ['OpenSearch (Cohere Embed v4)', 'RDS Postgres', 'Dream Cycle Consolidation'],   color: '#a8c47c' },
-    { layer: 'Streaming',           items: ['WebSockets', 'Redis Streams', 'NATS', 'Go Cloud API', 'SSE to IDE'],           color: '#c47ca8' },
-    { layer: 'Governance',          items: ['PolicyBundle (deny-overrides via bwrap)', 'Capability Gating', 'SemTrace Audit'], color: '#d4c46a' },
+    { layer: 'Memory',              items: ['PostgreSQL / pgvector (Cohere Embed v4)', 'EFS Memory Files + Redis', 'Hybrid Retrieval (BM25 + RRF)', 'Temporal-Orchestrated Consolidation'],   color: '#a8c47c' },
+    { layer: 'Streaming',           items: ['WebSockets', 'Redis Streams', 'MSK', 'Go Cloud API', 'SSE to IDE'],           color: '#c47ca8' },
+    { layer: 'Governance',          items: ['SRT (Anthropic Sandbox Runtime)', 'Capability Gating', 'NetworkPolicy Egress (deny-all except DNS)'], color: '#d4c46a' },
   ];
 
   const metrics = [
@@ -28,7 +27,7 @@
   <div class="page-inner">
 
     <header class="page-header">
-      <div class="breadcrumb mono">Jordan Carson / Projects / DevGPT</div>
+      <div class="breadcrumb mono"><a href="{base}/">Jordan Carson</a> / <a href="{base}/projects">Projects</a> / DevGPT</div>
       <h1 class="page-title serif">DevGPT</h1>
       <p class="page-subtitle mono">Cloud-Native AI Coding Agent Platform</p>
       <p class="page-sub">
@@ -36,8 +35,7 @@
         software and prototype development tasks to AI agents — from feature implementation
         to deployment, running securely within the firm's infrastructure at enterprise scale.
       </p>
-      <a href="{base}/projects/devgpt/journey" class="journey-link mono">Read the full DevGPT journey →</a>
-      <a href="{base}/projects/mozart-principle" class="journey-link mono">The Mozart Principle: Context & Cache at Scale →</a>
+      <a href="{base}/projects/stateless-by-design" class="journey-link mono">Stateless by Design: Context & Cache at Scale →</a>
     </header>
 
     <!-- Metrics -->
@@ -92,8 +90,8 @@
           <p>Multiple policies per task are composed with deny-overrides and priority-based tie-breaking. PolicyResolver merges into a single PolicyBundle before agent boot.</p>
         </div> -->
         <div class="principle">
-          <div class="principle-title mono">Memory ≠ Brain</div>
-          <p>Memory Service holds per-user structured operational facts. Brain holds platform-wide institutional narrative. Both queried in parallel and merged at agent boot.</p>
+          <div class="principle-title mono">Layered Memory, Hybrid Retrieval</div>
+          <p>A dedicated memory service backs the harness with EFS-scoped memory files, Redis, and PostgreSQL/pgvector — retrieval fuses vector similarity with BM25 via Reciprocal Rank Fusion, and an LLM scope classifier tags insights team- vs. project-scoped before Temporal-orchestrated consolidation promotes them to long-term memory.</p>
         </div>
         <div class="principle">
           <div class="principle-title mono">Warm Pods · Remote Sandbox Controller + Istio Ambient</div>
@@ -112,11 +110,11 @@
       <div class="sandbox-card">
         <p>
           DevGPT powers TLM — a firm-wide JPMC initiative for automated software maintenance.
-          Agentic workflows perform dependency updates and patches across Java codebases today
-          on a dedicated maintenance branch, expanding to Python, Golang, TypeScript, and Terraform.
-          A supervisor agent reviews proposed changes and routes them to the owning team for merge
-          to release/master. TLM operates across the full firm while the platform team remains
-          AWM-chartered.
+          Agentic workflows are currently delivering Java/Moneta Boot migrations on a dedicated
+          maintenance branch, with a roadmap to a harness-driven agent loop and broader language
+          coverage across Python, Golang, TypeScript, and Terraform. A supervisor agent reviews
+          proposed changes and routes them to the owning team for merge to release/master. TLM
+          operates across the full firm while the platform team remains AWM-chartered.
         </p>
       </div>
     </section>
@@ -132,8 +130,24 @@
         <p>
           Agents execute untrusted code in sandboxed subprocesses via a purpose-built remote sandbox
           controller, which leverages bubblewrap for lightweight, kernel-level process isolation — no privileged containers,
-          no separate runtime service. Leveraging Istio Integrated directly into the DevGPT plugin and CLI.
+          no separate runtime service. Kubernetes NetworkPolicy egress controls (deny-all except DNS) sit behind
+          corporate HTTP proxy containment, and an Identity Proxy brokers AWS credentials to sandboxes via an
+          init-container authenticated by Kubernetes TokenReview — the harness never holds credentials directly.
           Sub-2-second dispatch target with warm pod pool strategies via Karpenter NodePool and KEDA ScaledObject.
+        </p>
+      </div>
+    </section>
+
+    <!-- Token Economics -->
+    <section class="section">
+      <div class="section-label mono">Token Economics & Observability</div>
+      <div class="sandbox-card">
+        <p>
+          A high-throughput event platform (OpenTelemetry ingest, MSK/Kafka streaming) processes
+          50K+ events/minute from IDE plugins and LLM proxies, with per-response token attribution
+          including cache read/write tokens. The platform is evolving to a CQRS + CDC architecture
+          on Aurora Serverless v2 — separating real-time AI attribution writes from analytics and
+          reporting reads.
         </p>
       </div>
     </section>
@@ -143,9 +157,9 @@
       <div class="section-label mono">Infrastructure</div>
       <div class="sandbox-card">
         <p>
-          In 2025, led a 2-week migration of DevGPT from AWM's shared AWS org into a new dedicated
-          account structure to support firm-wide scale — completed with a 30-minute
-          planned outage, zero data loss, no user-facing failures.
+          In 2025, led a 2-week migration of DevGPT from AWM's shared AWS org into a dedicated
+          AWS org via a Route53 weighted DNS cutover, to support firm-wide scale — completed with
+          a 30-minute planned maintenance window, zero data loss, no user-facing failures.
         </p>
       </div>
     </section>
@@ -189,6 +203,21 @@
           <span>Arize Phoenix</span>
           <span class="ref-desc">Phoenix — LLM observability and tracing for agent evaluation</span>
         </a>
+        <a href="https://github.com/pgvector/pgvector" target="_blank" rel="noopener" class="ref-link mono">
+          <span class="ref-icon">↗</span>
+          <span>pgvector</span>
+          <span class="ref-desc">pgvector — vector similarity search backing the layered memory service</span>
+        </a>
+        <a href="https://aws.amazon.com/msk/" target="_blank" rel="noopener" class="ref-link mono">
+          <span class="ref-icon">↗</span>
+          <span>AWS MSK</span>
+          <span class="ref-desc">Managed Kafka — high-throughput telemetry ingest for token economics</span>
+        </a>
+        <a href="https://aws.amazon.com/rds/aurora/serverless/" target="_blank" rel="noopener" class="ref-link mono">
+          <span class="ref-icon">↗</span>
+          <span>Aurora Serverless v2</span>
+          <span class="ref-desc">CQRS + CDC write/read split for real-time AI attribution and analytics</span>
+        </a>
       </div>
     </section>
 
@@ -211,13 +240,6 @@
     border-bottom: 1px solid var(--border);
   }
 
-  .breadcrumb {
-    font-size: 0.68rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-  }
 
   .page-title {
     font-size: clamp(3.5rem, 8vw, 6rem);

@@ -22,14 +22,14 @@
   </div>
 
   <div class="hero-content">
-    <div class="hero-tag mono">Platform AI Architect · Principal Engineer</div>
+    <div class="hero-tag mono">Platform AI Architect · Lead AI Engineer</div>
 
     <h1 class="hero-name serif">
       Jordan<br />Carson
     </h1>
 
     <p class="hero-sub">
-      Platform AI Architect and Principal Engineer with <span class="highlight">13+ years</span>
+      Platform AI Architect and Lead AI Engineer with <span class="highlight">13+ years</span>
       delivering production AI systems at scale. Built
       <a href="{base}/projects/devgpt" class="gold-link">DevGPT</a>, a coding agent harness serving
       <span class="highlight">6,500+ engineers</span> at J.P. Morgan Chase, architected as a clean

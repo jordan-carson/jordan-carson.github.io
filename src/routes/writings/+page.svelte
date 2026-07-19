@@ -1,4 +1,6 @@
 <script>
+  import { base } from '$app/paths';
+
   const mnemonicSeries = [
     {
       part: 'III',
@@ -54,7 +56,7 @@
   <div class="page-inner">
 
     <header class="page-header">
-      <div class="breadcrumb mono">Jordan Carson / Blog</div>
+      <div class="breadcrumb mono"><a href="{base}/">Jordan Carson</a> / Blog</div>
       <h1 class="page-title serif">Writing &<br />Reciting</h1>
       <p class="page-sub">
         Thoughts and talks on agent architecture, memory engineering,
@@ -178,14 +180,6 @@
     margin-bottom: 5rem;
     padding-bottom: 3rem;
     border-bottom: 1px solid var(--border);
-  }
-
-  .breadcrumb {
-    font-size: 0.68rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
   }
 
   .page-title {

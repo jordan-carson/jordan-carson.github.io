@@ -200,7 +200,7 @@
   <div class="page-inner">
 
     <header class="page-header">
-      <div class="breadcrumb mono">Jordan Carson / Projects / DevGPT / Journey</div>
+      <div class="breadcrumb mono"><a href="{base}/">Jordan Carson</a> / <a href="{base}/projects">Projects</a> / <a href="{base}/projects/devgpt">DevGPT</a> / Journey</div>
       <h1 class="page-title serif">The DevGPT<br />Journey</h1>
       <p class="page-subtitle mono">From Autocomplete to Agentic Platform</p>
       <p class="page-sub">
@@ -321,13 +321,6 @@
     border-bottom: 1px solid var(--border);
   }
 
-  .breadcrumb {
-    font-size: 0.68rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-  }
 
   .page-title {
     font-size: clamp(3rem, 7vw, 5.5rem);

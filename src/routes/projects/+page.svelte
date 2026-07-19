@@ -11,20 +11,12 @@
       tags: ['Golang', 'Temporal', 'Anthropic SRT', 'EKS'],
     },
     {
-      href: '/projects/mozart-principle',
+      href: '/projects/stateless-by-design',
       tag: 'Architecture',
-      title: 'The Mozart Principle',
+      title: 'Stateless by Design',
       subtitle: 'Context, Cache & Prompt Management at Scale',
       summary: 'How DevGPT runs effectively unbounded conversations within a 200K token window — orchestrating system prompts, multi-layer memory, tool schemas, and rolling conversation history around deliberate cache boundaries to sustain ~90% prompt cache hit rates indefinitely.',
       tags: ['Prompt Caching', 'Context Engineering', 'Anthropic'],
-    },
-    {
-      href: '/projects/devgpt/journey',
-      tag: 'Case Study',
-      title: 'The DevGPT Journey',
-      subtitle: 'From Autocomplete to Agentic Platform',
-      summary: 'The unfiltered engineering history of DevGPT — from a thin autocomplete wrapper in 2023, through the September 2025 throttling wall, to a firm-wide agentic maintenance platform in 2026.',
-      tags: ['Case Study', 'Production Story'],
     },
   ];
 </script>
@@ -38,7 +30,7 @@
   <div class="page-inner">
 
     <header class="page-header">
-      <div class="breadcrumb mono">Jordan Carson / Projects</div>
+      <div class="breadcrumb mono"><a href="{base}/">Jordan Carson</a> / Projects</div>
       <h1 class="page-title serif">Projects</h1>
       <p class="page-sub">
         Platform architecture, agentic infrastructure, and the systems engineering
@@ -84,13 +76,6 @@
     border-bottom: 1px solid var(--border);
   }
 
-  .breadcrumb {
-    font-size: 0.68rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-  }
 
   .page-title {
     font-size: clamp(3rem, 7vw, 5.5rem);

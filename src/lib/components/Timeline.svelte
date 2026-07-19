@@ -10,15 +10,15 @@
       tag: 'current',
       highlights: [
         'Lead architect for DevGPT\'s core agentic systems: the coding harness (reasoning, tool use, memory) and a separate remote sandbox controller for isolated code execution',
-        'Coding agent harness — custom agentic loop, tool-calling, and multi-step execution comparable in scope to Claude Code, fully decoupled from execution',
-        'Remote sandbox controller — pool-managed, session-aware Kubernetes pods on EKS with MCP Bridge and SOCKS5/socat network isolation; the harness never holds credentials or network access directly',
+        'Coding agent harness — custom agentic loop, tool-calling, and multi-step execution built from scratch, fully decoupled from execution',
+        'Remote sandbox controller — pool-managed, session-aware Kubernetes pods on EKS with an AWS-credential identity proxy and NetworkPolicy egress isolation (deny-all except DNS) behind corporate HTTP proxy containment; the harness never holds credentials or network access directly',
         'DevGPT Cloud — the collaboration layer: co-ideate with an agent alongside teammates, push/pull sessions, observe live sandbox execution, browse a team agent marketplace',
-        'DevGPT powers Technology Lifecycle Management (TLM) — firm-wide agentic maintenance across Java codebases today, expanding to Python, Golang, TypeScript, and Terraform',
+        'DevGPT powers Technology Lifecycle Management (TLM) — firm-wide agentic maintenance, currently delivering Java/Moneta Boot migrations, with a roadmap to broader language coverage across Python, Golang, TypeScript, and Terraform',
         'Sole AI4Tech engineer on the AWM AI Center of Excellence, defining agentic development standards across the firm',
         'Designing AWM Agentic Training (in dev) — a Trailhead-style platform using AI as a Socratic brainstorming partner and grader',
         'Temporal-backed durable agent orchestration',
-        'Layered memory system (Org / Team / User / Repo) — in development',
-        '2-week AWS org migration with 30-minute planned outage — zero data loss',
+        'Layered memory service — EFS-scoped memory files + Redis + PostgreSQL/pgvector, with hybrid retrieval (vector + BM25 + Reciprocal Rank Fusion)',
+        '2-week AWS org migration via Route53 weighted DNS cutover, 30-minute planned maintenance window — zero data loss',
       ]
     },
     {

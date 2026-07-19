@@ -16,7 +16,7 @@
 
   const steps = [
     {
-      eyebrow: 'The Mozart Principle',
+      eyebrow: 'Stateless by Design',
       title: 'A 200K Window, Played Indefinitely',
       body: [
         'Anthropic\'s models give you a 200,000 token context window. Most systems treat that as a ceiling — fill it, hit it, truncate, repeat.',
@@ -329,7 +329,7 @@
 </script>
 
 <svelte:head>
-  <title>The Mozart Principle — Jordan Carson</title>
+  <title>Stateless by Design — Jordan Carson</title>
   <meta name="description" content="How DevGPT runs effectively unbounded conversations within a 200K token context window — context, cache, and prompt management working together to sustain ~90% prompt cache hit rates indefinitely." />
 </svelte:head>
 
@@ -337,8 +337,8 @@
   <div class="page-inner">
 
     <header class="page-header" use:reveal>
-      <div class="breadcrumb mono">Jordan Carson / Projects / The Mozart Principle</div>
-      <h1 class="page-title serif">The Mozart<br />Principle</h1>
+      <div class="breadcrumb mono"><a href="{base}/">Jordan Carson</a> / <a href="{base}/projects">Projects</a> / Stateless by Design</div>
+      <h1 class="page-title serif">Stateless<br />by Design</h1>
       <p class="page-subtitle mono">Context, Cache & Prompt Management at Scale</p>
       <p class="page-sub">
         A name for the discipline behind running effectively unbounded conversations inside
@@ -550,13 +550,6 @@
     border-bottom: 1px solid var(--border);
   }
 
-  .breadcrumb {
-    font-size: 0.68rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-  }
 
   .page-title {
     font-size: clamp(3rem, 7vw, 5.5rem);
