@@ -1,0 +1,1 @@
+import{a as l}from"./BtgJTMla.js";import{q as r,p as i}from"./B309Klx4.js";function n(s,t,y,f){var p=s[r];if(i||p!==t){var e=l(t);(!i||e!==s.getAttribute("style"))&&(e==null?s.removeAttribute("style"):s.style.cssText=e),s[r]=t}return f}export{n as s};
