@@ -19,7 +19,7 @@
       eyebrow: 'Stateless by Design',
       title: 'A 200K Window, Played Indefinitely',
       body: [
-        'Anthropic\'s models give you a 200,000 token context window. Most systems treat that as a ceiling — fill it, hit it, truncate, repeat.',
+        'Anthropic\'s models historically gave you a 200,000 token context window (newer models like Opus 4.7/4.8 default to 1M). Most systems treat that as a ceiling — fill it, hit it, truncate, repeat.',
         'DevGPT treats it as an instrument: a fixed canvas where what\'s stable recurs from cache, while only the smallest possible slice is freshly composed each turn. Scroll to see how the window is built.',
       ],
       cachePct: 0,
