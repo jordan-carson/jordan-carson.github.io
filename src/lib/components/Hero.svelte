@@ -22,7 +22,7 @@
   </div>
 
   <div class="hero-content">
-    <div class="hero-tag mono">Platform AI Architect · Lead AI Engineer</div>
+    <div class="hero-tag mono">Platform AI Architect · Lead AI Engineer · Dude With Laptop</div>
 
     <h1 class="hero-name serif">
       Jordan<br />Carson
