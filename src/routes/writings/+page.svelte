@@ -25,12 +25,47 @@
     {
       part: 'I',
       title: 'Beyond the Session: Memory Engineering for Agent Teams',
-      publication: 'Medium · Towards Artificial Intelligence',
+      publication: 'Medium · Towards AI',
       date: 'April 2026',
       readTime: '~23 min',
       url: 'https://medium.com/towards-artificial-intelligence/beyond-the-session-memory-engineering-for-agent-teams-b69865506bf8',
       summary: 'Autonomous agent teams are real — but to run them well, not just impressively, there\'s a level of memory engineering most teams haven\'t tackled yet. Covers intent-driven architecture, context-driven systems, and the memory substrate that separates coordinated agent teams from chaos with good intentions.',
       tags: ['Agent Teams', 'Memory Systems', 'Platform Engineering'],
+    },
+  ];
+
+  const harnessesSeries = [
+    {
+      part: 'I',
+      title: 'Harnesses: Eager vs. Just-in-Time',
+      publication: 'Medium · Towards AI',
+      date: 'July 2026',
+      readTime: '~10 min',
+      url: 'https://pub.towardsai.net/harnesses-eager-vs-just-in-time-4209bf1b0953?sk=d8df692623113bd9817470b5f47957f9',
+      summary: 'Coding agents face a fundamental architectural choice: load the entire codebase upfront (eager hydration) or search for files as needed (just-in-time). Compares eager systems like Cline against just-in-time approaches like Claude Code, and argues that just-in-time wins for prompt caching and team-level resource sharing in collaborative development environments.',
+      tags: ['Agent Harnesses', 'Prompt Caching', 'Context Management', 'Coding Agents'],
+    },
+    {
+      part: 'II',
+      title: 'Harnesses: Cache Economics',
+      publication: 'Medium',
+      date: 'Coming Soon',
+      readTime: '',
+      url: '',
+      summary: 'A closer look at the economics of prompt caching in coding agent harnesses — how cache hit rates, context reuse, and pricing models shape the real cost of running agents at scale.',
+      tags: ['Agent Harnesses', 'Prompt Caching', 'Cost Optimization'],
+      comingSoon: true,
+    },
+    {
+      part: 'III',
+      title: 'Harnesses: Sandboxing and the Zero-Trust Principle',
+      publication: 'Medium',
+      date: 'Coming Soon',
+      readTime: '',
+      url: '',
+      summary: 'Why coding agent harnesses need to treat every execution environment as untrusted by default, and how zero-trust sandboxing principles set up the next piece: a dedicated look at agentic sandboxes.',
+      tags: ['Agent Harnesses', 'Sandboxing', 'Zero Trust', 'Security'],
+      comingSoon: true,
     },
   ];
 
@@ -59,7 +94,7 @@
       <div class="breadcrumb mono"><a href="{base}/">Jordan Carson</a> / Blog</div>
       <h1 class="page-title serif">Writing &<br />Reciting</h1>
       <p class="page-sub">
-        Thoughts and talks on agent architecture, memory engineering,
+        Thoughts and talks on agent architecture, memory engineering, coding agent harnesses,
         and what it actually takes to run autonomous systems at enterprise scale.
       </p>
     </header>
@@ -100,6 +135,55 @@
               </div>
               <div class="writing-arrow">↗</div>
             </a>
+          {/each}
+        </div>
+      </div>
+    </section>
+
+    <!-- Harnesses Series -->
+    <section class="section">
+      <div class="section-label mono">Series</div>
+      <div class="series-block">
+        <div class="series-header">
+          <div class="series-eyebrow mono">Ongoing Series · Medium</div>
+          <h2 class="series-title serif">Harnesses Series</h2>
+          <p class="series-desc">A look at the architectural choices behind coding agent harnesses — how they load context, cache prompts, and share resources across a team.</p>
+        </div>
+        <div class="writings-list">
+          {#each harnessesSeries as w, i}
+            <svelte:element
+              this={w.comingSoon ? 'div' : 'a'}
+              href={w.comingSoon ? undefined : w.url}
+              target={w.comingSoon ? undefined : '_blank'}
+              rel={w.comingSoon ? undefined : 'noopener'}
+              class="writing-card {w.comingSoon ? 'is-pending' : ''}"
+              style="animation-delay: {i * 100}ms"
+            >
+              <div class="writing-meta mono">
+                <span class="series-part">Part {w.part}</span>
+                <span class="sep">·</span>
+                <span class="writing-pub">{w.publication}</span>
+                <span class="sep">·</span>
+                <span>{w.date}</span>
+                {#if w.readTime}
+                  <span class="sep">·</span>
+                  <span>{w.readTime}</span>
+                {/if}
+              </div>
+              <h2 class="writing-title serif">{w.title}</h2>
+              <p class="writing-summary">{w.summary}</p>
+              <div class="writing-tags">
+                {#each w.tags as tag}
+                  <span class="tag mono">{tag}</span>
+                {/each}
+                {#if w.comingSoon}
+                  <span class="tag mono pending-tag">Coming Soon</span>
+                {/if}
+              </div>
+              {#if !w.comingSoon}
+                <div class="writing-arrow">↗</div>
+              {/if}
+            </svelte:element>
           {/each}
         </div>
       </div>
@@ -361,6 +445,20 @@
   .series-part {
     color: var(--gold);
     font-weight: 600;
+  }
+
+  .writing-card.is-pending {
+    cursor: default;
+    opacity: 0.6;
+  }
+
+  .writing-card.is-pending:hover {
+    background: var(--bg-2);
+  }
+
+  .pending-tag {
+    color: var(--gold);
+    border-color: var(--gold-dim);
   }
 
   @keyframes fadeUp {
