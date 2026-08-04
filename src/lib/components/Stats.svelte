@@ -3,10 +3,11 @@
   import { reveal } from '$lib/actions/reveal.js';
 
   const stats = [
-    { value: '6,500+', label: 'Engineers on Platform',   sub: 'Engineering, product & senior management' },
+    { value: '7,500+', label: 'Engineers on Platform',   sub: 'Engineering, product & senior management' },
     { value: '90%+',   label: 'Prompt cache hit rate',   sub: 'Anthropic Claude · DevGPT' },
     { value: '32M',    label: 'Peak cache reads / min',  sub: 'Against a 30M TPM budget' },
-    { value: '50K',    label: 'Telemetry events / min',  sub: 'OTel streaming gateway · DevGPT' },
+    { value: '100K+',  label: 'Telemetry events / min',  sub: 'OTel streaming gateway · DevGPT' },
+    { value: '~9M',    label: 'TPM live inference demand', sub: 'Down from a 4M/min throttle event, via caching' },
   ];
 
   let visible = false;

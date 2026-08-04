@@ -5,7 +5,7 @@
   const timeline = [
     {
       year: '2025–Present',
-      role: 'Lead Architect & AI Systems Engineer — AI4Tech',
+      role: 'Lead AI Engineer — Agentic Infrastructure, AWM AI4Tech',
       org: 'J.P. Morgan Chase',
       tag: 'current',
       highlights: [
@@ -56,6 +56,16 @@
       highlights: [
         'Client Onboarding, KYC, & Data Warehousing',
         'Chief Economics Office intern — cubic spline interpolation for defined benefit pension plan valuation',
+      ]
+    },
+    {
+      year: '2024–2026',
+      role: 'AI Systems Interview Coach & Architecture Mentor',
+      org: 'Exponent (tryexponent.com) · 1099 Contract',
+      tag: 'exponent',
+      highlights: [
+        '100+ Staff+ mock interviews spanning system design, AI/ML and agentic architecture, and behavioral leadership',
+        'Partnered with Exponent leadership to shape a new Agentic AI Engineering interview track, translating production agent-platform patterns into practical architecture exercises and evaluation criteria',
       ]
     },
   ];
@@ -112,6 +122,22 @@
 
       <!-- vertical line -->
       <div class="timeline-line"></div>
+    </div>
+
+    <div class="education-block">
+      <div class="section-label mono">Education</div>
+      <div class="education-grid">
+        <div class="education-item">
+          <div class="education-school serif">Johns Hopkins University</div>
+          <div class="education-detail mono">Whiting School of Engineering · Graduate Coursework, Data Science &amp; Artificial Intelligence</div>
+          <div class="education-year mono">2021–2023</div>
+        </div>
+        <div class="education-item">
+          <div class="education-school serif">Hobart &amp; William Smith Colleges</div>
+          <div class="education-detail mono">B.A. Economics</div>
+          <div class="education-year mono">2013</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -254,5 +280,37 @@
     .timeline-line { left: 0; }
     .timeline-left { text-align: left; padding-left: 1.5rem; padding-right: 0; }
     .timeline-dot { left: -5px; right: auto; }
+  }
+
+  .education-block {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+  }
+
+  .education-school {
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+
+  .education-detail {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+    margin-bottom: 0.4rem;
+  }
+
+  .education-year {
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
   }
 </style>

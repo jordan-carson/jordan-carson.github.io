@@ -29,10 +29,10 @@
     </h1>
 
     <p class="hero-sub">
-      Platform AI Architect and Lead AI Engineer with <span class="highlight">13+ years</span>
+      Platform AI Architect, Lead AI Engineer, and Dude With Laptop with <span class="highlight">13+ years</span>
       delivering production AI systems at scale. Built
       <a href="{base}/projects/devgpt" class="gold-link">DevGPT</a>, a coding agent harness serving
-      <span class="highlight">6,500+ engineers</span> at J.P. Morgan Chase, architected as a clean
+      <span class="highlight">7,500+ engineers</span> at J.P. Morgan Chase, architected as a clean
       separation between the reasoning harness ("brain") and an isolated remote sandbox controller
       ("hands") for secure, multi-tenant agentic code execution.
       Engineered prompt caching to <span class="highlight">90%+ hit rates</span> and a

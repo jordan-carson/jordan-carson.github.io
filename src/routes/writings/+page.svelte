@@ -73,6 +73,15 @@
 
   const talks = [
     {
+      title: 'DevGPT Coding Agents and Their Effect on the SDLC',
+      event: 'AWS re:Invent 2026',
+      date: 'Prospectus submitted',
+      role: 'Co-Author · with Engineering Leadership',
+      summary: 'Co-authored talk presenting the architecture and organizational impact of enterprise coding agents — how DevGPT reshaped the SDLC across J.P. Morgan Chase\'s Asset & Wealth Management division.',
+      tags: ['DevGPT', 'SDLC', 'Enterprise AI', 'AWS re:Invent'],
+      comingSoon: true,
+    },
+    {
       title: 'Transforming Developer Productivity: Rethinking the SDLC with AI Coding Agents',
       event: 'Open Source Finance Foundation (FINOS)',
       date: 'August 2025',
