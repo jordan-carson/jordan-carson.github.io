@@ -66,6 +66,17 @@
       tags: ['Agent Harnesses', 'Long-Running Agents', 'Memory Engineering'],
       comingSoon: true,
     },
+    {
+      part: 'IV',
+      title: 'Harnesses: Sandboxing and the Zero-Trust Principle',
+      publication: 'Medium',
+      date: 'Coming Soon',
+      readTime: '',
+      url: '',
+      summary: 'Why coding agent harnesses need to treat every execution environment as untrusted by default, and how zero-trust sandboxing principles shape agentic sandboxes.',
+      tags: ['Agent Harnesses', 'Sandboxing', 'Zero Trust', 'Security'],
+      comingSoon: true,
+    },
   ];
 
   const writings = [];
