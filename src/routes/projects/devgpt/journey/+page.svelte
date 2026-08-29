@@ -335,7 +335,7 @@
     font-size: 0.8rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--cyan);
     margin-bottom: 1.5rem;
   }
 
@@ -366,7 +366,7 @@
   .entry-date {
     font-size: 0.78rem;
     letter-spacing: 0.08em;
-    color: var(--gold);
+    color: var(--cyan);
     text-transform: uppercase;
     position: relative;
     padding-left: 1rem;
@@ -380,7 +380,7 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--gold);
+    background: var(--cyan);
   }
 
   .entry-title {
@@ -413,7 +413,7 @@
   }
 
   .entry-callout {
-    border-left: 2px solid var(--gold);
+    border-left: 2px solid var(--cyan);
     padding: 0.25rem 1.25rem;
     margin: 1.25rem 0;
     font-size: 1rem;
@@ -445,14 +445,14 @@
     content: '—';
     position: absolute;
     left: 0;
-    color: var(--gold-dim);
+    color: var(--cyan-dim);
   }
 
   .entry-subheading {
     font-size: 0.78rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--cyan);
     margin: 1.75rem 0 0.75rem;
   }
 
@@ -481,7 +481,7 @@
   }
 
   .entry-table th {
-    color: var(--gold);
+    color: var(--cyan);
     letter-spacing: 0.06em;
     text-transform: uppercase;
     font-size: 0.66rem;
@@ -518,7 +518,7 @@
     font-size: 0.68rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--cyan);
     margin-bottom: 1.5rem;
   }
 
@@ -540,7 +540,7 @@
   }
 
   .now-closer {
-    color: var(--gold) !important;
+    color: var(--cyan) !important;
     font-style: italic;
   }
 
@@ -561,7 +561,7 @@
   }
 
   .back-link:hover {
-    color: var(--gold);
+    color: var(--cyan);
   }
 
   @media (max-width: 640px) {

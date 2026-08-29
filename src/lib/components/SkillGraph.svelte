@@ -193,7 +193,7 @@
     font-size: 0.68rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--cyan);
   }
 
   .section-hint {
@@ -230,16 +230,16 @@
   }
 
   :global(.tooltip strong) {
-    color: var(--gold);
+    color: var(--cyan);
     display: block;
     margin-bottom: 2px;
   }
 
   :global(.skill-label) {
-    fill: #d4d0c8;
+    fill: #2a2826;
   }
 
-  :global(:root[data-theme='light'] .skill-label) {
-    fill: #2a2826;
+  :global(:root[data-theme='dark'] .skill-label) {
+    fill: #d4d0c8;
   }
 </style>

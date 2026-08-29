@@ -124,7 +124,7 @@
     font-size: 0.62rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--cyan);
   }
 
   .project-title {
@@ -140,7 +140,7 @@
     font-size: 0.74rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--gold-dim);
+    color: var(--cyan-dim);
     margin-bottom: 1rem;
   }
 
@@ -173,12 +173,12 @@
     top: 2.5rem;
     right: 2.5rem;
     font-size: 1.2rem;
-    color: var(--gold-dim);
+    color: var(--cyan-dim);
     transition: color var(--transition), transform var(--transition);
   }
 
   .project-card:hover .project-arrow {
-    color: var(--gold);
+    color: var(--cyan);
     transform: translate(2px, -2px);
   }
 

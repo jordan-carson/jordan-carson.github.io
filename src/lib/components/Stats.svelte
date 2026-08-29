@@ -54,7 +54,7 @@
     font-size: 0.68rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--cyan);
     margin-bottom: 3rem;
   }
 
@@ -85,7 +85,7 @@
   .stat-value {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
-    color: var(--gold);
+    color: var(--cyan);
     line-height: 1;
     margin-bottom: 0.75rem;
   }

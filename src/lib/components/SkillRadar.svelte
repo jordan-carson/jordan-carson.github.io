@@ -5,7 +5,7 @@
 
   // Proficiency scores per category (0–100)
   const data = [
-    { axis: 'Languages',      score: 90, color: '#c9a84c' },
+    { axis: 'Languages',      score: 90, color: '#0e7490' },
     { axis: 'AI / ML',        score: 95, color: '#d4856a' },
     { axis: 'Orchestration',  score: 88, color: '#8b7ec8' },
     { axis: 'Databases',      score: 82, color: '#7c9e87' },
@@ -52,8 +52,8 @@
 
     // Gradient fill
     const grad = defs.append('radialGradient').attr('id', 'radar-fill');
-    grad.append('stop').attr('offset', '0%').attr('stop-color', '#c9a84c').attr('stop-opacity', 0.25);
-    grad.append('stop').attr('offset', '100%').attr('stop-color', '#c9a84c').attr('stop-opacity', 0.05);
+    grad.append('stop').attr('offset', '0%').attr('stop-color', '#0e7490').attr('stop-opacity', 0.25);
+    grad.append('stop').attr('offset', '100%').attr('stop-color', '#0e7490').attr('stop-opacity', 0.05);
 
     const g = svg.append('g').attr('transform', `translate(${cx},${cy})`);
 
@@ -114,7 +114,7 @@
       .datum(pathData)
       .attr('d', radarLine)
       .attr('fill', 'url(#radar-fill)')
-      .attr('stroke', '#c9a84c')
+      .attr('stroke', '#0e7490')
       .attr('stroke-width', 1.5)
       .attr('stroke-opacity', 0.8)
       .attr('filter', 'url(#radar-glow)')
@@ -176,7 +176,7 @@
     font-size: 0.68rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--cyan);
     margin-bottom: 2.5rem;
   }
 
@@ -222,7 +222,7 @@
 
   .legend-score {
     font-size: 0.68rem;
-    color: var(--gold);
+    color: var(--cyan);
     letter-spacing: 0.06em;
   }
 </style>

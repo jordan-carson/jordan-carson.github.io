@@ -5,7 +5,7 @@
   import { reveal } from '$lib/actions/reveal.js';
 
   const segments = [
-    { id: 'system',       label: 'System Prompt',            tokens: '2K',   pct: 1,  cached: true,  color: '#c9a84c' },
+    { id: 'system',       label: 'System Prompt',            tokens: '2K',   pct: 1,  cached: true,  color: '#0e7490' },
     { id: 'org',          label: 'Org Memory',               tokens: '4K',   pct: 2,  cached: true,  color: '#8b7ec8' },
     { id: 'team',         label: 'Team Memory',              tokens: '4K',   pct: 2,  cached: true,  color: '#7c9e87' },
     { id: 'session',      label: 'Session & User Memory',    tokens: '6K',   pct: 3,  cached: true,  color: '#6a9fd4' },
@@ -564,7 +564,7 @@
     font-size: 0.8rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--cyan);
     margin-bottom: 1.5rem;
   }
 
@@ -609,7 +609,7 @@
     font-size: 0.68rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--cyan);
     margin-bottom: 1rem;
   }
 
@@ -631,7 +631,7 @@
   }
 
   .step.final .step-title {
-    color: var(--gold);
+    color: var(--cyan);
   }
 
   /* ── Sticky visual ────────────────────────────────────── */
@@ -728,7 +728,7 @@
   }
 
   .visual-cache strong {
-    color: var(--gold);
+    color: var(--cyan);
     font-size: 0.85rem;
     letter-spacing: 0.02em;
     transition: color 200ms ease;
@@ -868,7 +868,7 @@
     background: var(--text-muted);
   }
 
-  .tl-row.role-user .tl-dot { background: var(--gold); }
+  .tl-row.role-user .tl-dot { background: var(--cyan); }
   .tl-row.role-assistant .tl-dot { background: #6a9fd4; }
   .tl-row.role-tool .tl-dot { background: #c47ca8; }
 
@@ -884,8 +884,8 @@
     text-transform: uppercase;
     padding: 0.1rem 0.4rem;
     border-radius: 2px;
-    border: 1px solid var(--gold-dim);
-    color: var(--gold);
+    border: 1px solid var(--cyan-dim);
+    color: var(--cyan);
     white-space: nowrap;
   }
 
@@ -966,7 +966,7 @@
     flex-direction: column;
     gap: 0.6rem;
     padding: 0.8rem 0.7rem;
-    border: 1px solid var(--gold-dim);
+    border: 1px solid var(--cyan-dim);
     border-radius: 4px;
     background: rgba(201, 168, 76, 0.06);
   }
@@ -978,13 +978,13 @@
   }
 
   .tl-compacted-icon {
-    color: var(--gold);
+    color: var(--cyan);
     font-size: 0.7rem;
   }
 
   .tl-compacted-label {
     font-size: 0.7rem;
-    color: var(--gold);
+    color: var(--cyan);
   }
 
   .tl-tense {
@@ -1072,7 +1072,7 @@
   .closing-value {
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
-    color: var(--gold);
+    color: var(--cyan);
     line-height: 1;
     margin-bottom: 0.5rem;
   }
@@ -1099,7 +1099,7 @@
   }
 
   .back-link:hover {
-    color: var(--gold);
+    color: var(--cyan);
   }
 
   @media (max-width: 860px) {

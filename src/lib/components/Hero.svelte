@@ -31,7 +31,7 @@
     <p class="hero-sub">
       Platform AI Architect, Lead AI Engineer, and Dude With Laptop with <span class="highlight">13+ years</span>
       delivering production AI systems at scale. Built
-      <a href="{base}/projects/devgpt" class="gold-link">DevGPT</a>, a coding agent harness serving
+      <a href="{base}/projects/devgpt" class="cyan-link">DevGPT</a>, a coding agent harness serving
       <span class="highlight">7,500+ engineers</span> at J.P. Morgan Chase, architected as a clean
       separation between the reasoning harness ("brain") and an isolated remote sandbox controller
       ("hands") for secure, multi-tenant agentic code execution.
@@ -81,14 +81,14 @@
     mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, transparent 20%, black 60%, black 100%);
   }
 
-  /* Dark mode: very subtle gold-tinted squares */
-  :root:not([data-theme='light']) .checker-layer {
-    --checker-fill: rgba(201, 168, 76, 0.045);
+  /* Light mode (default): soft cyan-tinted squares */
+  :root:not([data-theme='dark']) .checker-layer {
+    --checker-fill: rgba(14, 116, 144, 0.05);
   }
 
-  /* Light mode: slightly stronger warm tint */
-  :root[data-theme='light'] .checker-layer {
-    --checker-fill: rgba(154, 110, 26, 0.055);
+  /* Dark mode: subtle cyan-tinted squares */
+  :root[data-theme='dark'] .checker-layer {
+    --checker-fill: rgba(34, 211, 238, 0.045);
   }
 
   /* Soft fade at top/bottom to blend into content */
@@ -112,7 +112,7 @@
     right: 8%;
     width: 520px;
     height: 520px;
-    background: radial-gradient(circle, rgba(201,168,76,0.10) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(14,116,144,0.10) 0%, transparent 70%);
   }
 
   .orb-accent {
@@ -120,7 +120,7 @@
     left: 4%;
     width: 320px;
     height: 320px;
-    background: radial-gradient(circle, rgba(106,159,212,0.07) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(8,145,178,0.08) 0%, transparent 70%);
     animation-delay: -4s;
     animation-duration: 11s;
   }
@@ -144,7 +144,7 @@
     font-size: 0.72rem;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--cyan);
     margin-bottom: 1.5rem;
     animation: fadeUp 0.8s ease both;
     animation-delay: 0.1s;
@@ -171,12 +171,12 @@
     animation-delay: 0.35s;
   }
 
-  .gold-link {
-    color: var(--gold);
-    border-bottom: 1px solid var(--gold-dim);
+  .cyan-link {
+    color: var(--cyan);
+    border-bottom: 1px solid var(--cyan-dim);
     transition: border-color var(--transition);
   }
-  .gold-link:hover { border-color: var(--gold); }
+  .cyan-link:hover { border-color: var(--cyan); }
 
   .highlight {
     color: var(--text);
@@ -193,7 +193,7 @@
 
   .btn-primary {
     padding: 0.75rem 1.75rem;
-    background: var(--gold);
+    background: var(--cyan);
     color: var(--bg);
     font-size: 0.75rem;
     font-weight: 700;
@@ -203,9 +203,9 @@
     transition: all var(--transition);
   }
   .btn-primary:hover {
-    background: #e0b854;
+    background: var(--cyan-dim);
     transform: translateY(-1px);
-    box-shadow: 0 8px 24px rgba(201,168,76,0.3);
+    box-shadow: 0 8px 24px rgba(14,116,144,0.3);
   }
 
   .btn-secondary {
@@ -219,8 +219,8 @@
     transition: all var(--transition);
   }
   .btn-secondary:hover {
-    border-color: var(--gold-dim);
-    color: var(--gold);
+    border-color: var(--cyan-dim);
+    color: var(--cyan);
     transform: translateY(-1px);
   }
 
