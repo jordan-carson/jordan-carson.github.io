@@ -708,8 +708,8 @@
   .visual-sticky {
     position: sticky;
     top: calc(56px + 3rem);
-    border: 1px solid var(--border);
     border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
     background: var(--bg-2);
     padding: 1.5rem;
   }
@@ -882,9 +882,9 @@
     font-size: 0.58rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    padding: 0.1rem 0.4rem;
-    border-radius: 2px;
-    border: 1px solid var(--cyan-dim);
+    padding: 0.12rem 0.5rem;
+    border-radius: 999px;
+    background: var(--cyan-glow);
     color: var(--cyan);
     white-space: nowrap;
   }
@@ -967,8 +967,8 @@
     gap: 0.6rem;
     padding: 0.8rem 0.7rem;
     border: 1px solid var(--cyan-dim);
-    border-radius: 4px;
-    background: rgba(201, 168, 76, 0.06);
+    border-radius: 8px;
+    background: rgba(14, 116, 144, 0.06);
   }
 
   .tl-compacted-row {
@@ -1057,8 +1057,8 @@
   .closing {
     margin-top: 4rem;
     padding: 3rem;
-    border: 1px solid var(--border);
     border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
     background: var(--bg-2);
   }
 

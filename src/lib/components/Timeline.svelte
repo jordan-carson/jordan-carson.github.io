@@ -219,7 +219,7 @@
   .timeline-dot.current {
     background: var(--cyan);
     border-color: var(--cyan);
-    box-shadow: 0 0 8px rgba(201,168,76,0.5);
+    box-shadow: 0 0 8px rgba(14,116,144,0.5);
   }
 
   .timeline-right {
@@ -232,9 +232,9 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--cyan);
-    border: 1px solid var(--cyan-dim);
-    padding: 0.15rem 0.5rem;
-    border-radius: 2px;
+    background: var(--cyan-glow);
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
     margin-bottom: 0.6rem;
   }
 
