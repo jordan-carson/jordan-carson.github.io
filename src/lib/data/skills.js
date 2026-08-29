@@ -3,7 +3,7 @@ export const skillCategories = [
     id: 'languages',
     label: 'Languages',
     icon: '💻',
-    color: '#c9a84c',
+    color: '#0e7490',
     skills: [
       { id: 'golang', label: 'Golang', desc: 'My favorite language for concurrent systems, APIs, and backend services — the entire DevGPT platform is written in Go', r: 22 },
       { id: 'typescript', label: 'TypeScript', desc: 'Type-safe JavaScript for scalable applications' },

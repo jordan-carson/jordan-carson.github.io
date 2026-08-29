@@ -10,12 +10,7 @@
     { href: '/projects',   label: 'Projects' },
   ];
 
-  let theme = 'dark';
-
-  function isDaytime() {
-    const h = new Date().getHours();
-    return h >= 7 && h < 19;
-  }
+  let theme = 'light';
 
   function applyTheme(t) {
     theme = t;
@@ -24,13 +19,13 @@
   }
 
   function toggleTheme() {
-    applyTheme(theme === 'dark' ? 'light' : 'dark');
+    applyTheme(theme === 'light' ? 'dark' : 'light');
   }
 
   onMount(() => {
     let saved;
     try { saved = localStorage.getItem('theme'); } catch (_) {}
-    applyTheme(saved ?? (isDaytime() ? 'light' : 'dark'));
+    applyTheme(saved ?? 'light');
   });
 </script>
 
@@ -41,7 +36,7 @@
 
 <nav>
   <div class="nav-inner">
-    <a href="{base}/" class="nav-brand mono">JC<span class="gold">.</span></a>
+    <a href="{base}/" class="nav-brand mono">JC<span class="cyan">.</span></a>
     <div class="nav-right">
       <div class="nav-links">
         {#each navLinks as link}
@@ -102,14 +97,14 @@
     right: 0;
     z-index: 100;
     border-bottom: 1px solid var(--border);
-    background: var(--nav-bg, rgba(10, 10, 11, 0.88));
+    background: rgba(255, 255, 255, 0.88);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     transition: background var(--transition), border-color var(--transition);
   }
 
-  :global(:root[data-theme='light']) nav {
-    background: rgba(245, 244, 240, 0.88);
+  :global(:root[data-theme='dark']) nav {
+    background: rgba(10, 10, 11, 0.88);
   }
 
   .nav-inner {
@@ -129,9 +124,9 @@
     color: var(--text);
     transition: color var(--transition);
   }
-  .nav-brand:hover { color: var(--gold); }
+  .nav-brand:hover { color: var(--cyan); }
 
-  .gold { color: var(--gold); }
+  .cyan { color: var(--cyan); }
 
   .nav-right {
     display: flex;
@@ -161,9 +156,9 @@
   }
 
   .theme-toggle:hover {
-    color: var(--gold);
-    border-color: var(--gold-dim);
-    background: var(--gold-glow);
+    color: var(--cyan);
+    border-color: var(--cyan-dim);
+    background: var(--cyan-glow);
   }
 
   .nav-link {
@@ -182,14 +177,14 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: var(--gold);
+    background: var(--cyan);
     transform: scaleX(0);
     transition: transform var(--transition);
   }
 
   .nav-link:hover,
   .nav-link.active {
-    color: var(--gold);
+    color: var(--cyan);
   }
 
   .nav-link.active::after,
@@ -232,5 +227,5 @@
     font-size: 0.7rem;
   }
 
-  .footer-link:hover { color: var(--gold); }
+  .footer-link:hover { color: var(--cyan); }
 </style>

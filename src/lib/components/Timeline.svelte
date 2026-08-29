@@ -158,7 +158,7 @@
     font-size: 0.68rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--cyan);
     margin-bottom: 3rem;
   }
 
@@ -173,7 +173,7 @@
     bottom: 8px;
     left: 140px;
     width: 1px;
-    background: linear-gradient(to bottom, var(--gold-dim), var(--border));
+    background: linear-gradient(to bottom, var(--cyan-dim), var(--border));
   }
 
   .timeline-item {
@@ -217,8 +217,8 @@
   }
 
   .timeline-dot.current {
-    background: var(--gold);
-    border-color: var(--gold);
+    background: var(--cyan);
+    border-color: var(--cyan);
     box-shadow: 0 0 8px rgba(201,168,76,0.5);
   }
 
@@ -231,8 +231,8 @@
     font-size: 0.6rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--gold);
-    border: 1px solid var(--gold-dim);
+    color: var(--cyan);
+    border: 1px solid var(--cyan-dim);
     padding: 0.15rem 0.5rem;
     border-radius: 2px;
     margin-bottom: 0.6rem;
@@ -271,7 +271,7 @@
     content: '—';
     position: absolute;
     left: 0;
-    color: var(--gold-dim);
+    color: var(--cyan-dim);
     font-size: 0.75rem;
   }
 

@@ -2,7 +2,7 @@
   import { base } from '$app/paths';
 
   const stack = [
-    { layer: 'IDE Layer',           items: ['VS Code', 'IntelliJ', 'CLI / Headless'],  color: '#c9a84c' },
+    { layer: 'IDE Layer',           items: ['VS Code', 'IntelliJ', 'CLI / Headless'],  color: '#0e7490' },
     { layer: 'Agent Harness',       items: ['devgpt-cli (TypeScript)', 'ACP Protocol', 'Headless / Cloud / Sandbox modes'],       color: '#8b7ec8' },
     { layer: 'Execution',           items: ['Kubernetes EKS', 'KEDA Autoscaling', 'Remote Sandbox Controller + bubblewrap', 'Identity Proxy (AWS creds via TokenReview)'],            color: '#d4856a' },
     { layer: 'Context Assembly',    items: ['EFS Bare Git Clones', 'Per-Task Worktrees', 'Context Assembler'],              color: '#6a9fd4' },
@@ -254,7 +254,7 @@
     font-size: 0.8rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--cyan);
     margin-bottom: 1.5rem;
   }
 
@@ -272,13 +272,13 @@
     font-size: 0.72rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--gold);
-    border-bottom: 1px solid var(--gold-dim);
+    color: var(--cyan);
+    border-bottom: 1px solid var(--cyan-dim);
     transition: border-color var(--transition);
   }
 
   .journey-link:hover {
-    border-color: var(--gold);
+    border-color: var(--cyan);
   }
 
   /* Metrics */
@@ -303,7 +303,7 @@
   .metric-value {
     font-size: 2.2rem;
     font-weight: 700;
-    color: var(--gold);
+    color: var(--cyan);
     line-height: 1;
     margin-bottom: 0.5rem;
   }
@@ -322,7 +322,7 @@
     font-size: 0.68rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--cyan);
     margin-bottom: 2rem;
   }
 
@@ -394,7 +394,7 @@
     font-size: 0.72rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--cyan);
     margin-bottom: 0.75rem;
   }
 
@@ -425,8 +425,8 @@
     font-size: 0.72rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--gold);
-    border: 1px solid var(--gold-dim);
+    color: var(--cyan);
+    border: 1px solid var(--cyan-dim);
     padding: 0.2rem 0.75rem;
     border-radius: 3px;
   }
@@ -478,15 +478,15 @@
 
   .ref-link:hover {
     background: var(--bg-3);
-    color: var(--gold);
+    color: var(--cyan);
   }
 
   .ref-icon {
-    color: var(--gold-dim);
+    color: var(--cyan-dim);
     transition: color var(--transition);
   }
 
-  .ref-link:hover .ref-icon { color: var(--gold); }
+  .ref-link:hover .ref-icon { color: var(--cyan); }
 
   .ref-desc {
     font-size: 0.68rem;

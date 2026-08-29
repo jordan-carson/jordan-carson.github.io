@@ -309,7 +309,7 @@
     font-size: 0.68rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--cyan);
     margin-bottom: 2rem;
   }
 
@@ -345,13 +345,13 @@
     top: 2rem;
     right: 2rem;
     font-size: 1.2rem;
-    color: var(--gold-dim);
+    color: var(--cyan-dim);
     transition: color var(--transition), transform var(--transition);
     display: none;
   }
 
   .writing-card:hover .writing-arrow {
-    color: var(--gold);
+    color: var(--cyan);
     transform: translate(2px, -2px);
   }
 
@@ -367,17 +367,17 @@
     align-items: center;
   }
 
-  .writing-pub { color: var(--gold-dim); }
+  .writing-pub { color: var(--cyan-dim); }
 
   .sep { color: var(--border); }
 
   .talk-role {
     font-size: 0.68rem;
     letter-spacing: 0.1em;
-    color: var(--gold);
+    color: var(--cyan);
     text-transform: uppercase;
     margin-bottom: 0.75rem;
-    border: 1px solid var(--gold-dim);
+    border: 1px solid var(--cyan-dim);
     display: inline-block;
     padding: 0.15rem 0.5rem;
     border-radius: 2px;
@@ -432,7 +432,7 @@
     font-size: 0.62rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--cyan);
     margin-bottom: 0.6rem;
   }
 
@@ -462,7 +462,7 @@
   }
 
   .series-part {
-    color: var(--gold);
+    color: var(--cyan);
     font-weight: 600;
   }
 
@@ -476,8 +476,8 @@
   }
 
   .pending-tag {
-    color: var(--gold);
-    border-color: var(--gold-dim);
+    color: var(--cyan);
+    border-color: var(--cyan-dim);
   }
 
   @keyframes fadeUp {
