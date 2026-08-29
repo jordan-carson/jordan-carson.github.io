@@ -287,8 +287,8 @@
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 1px;
     background: var(--border);
-    border: 1px solid var(--border);
     border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
     overflow: hidden;
     margin-bottom: 5rem;
   }
@@ -328,8 +328,8 @@
 
   /* Stack */
   .stack-grid {
-    border: 1px solid var(--border);
     border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -366,9 +366,8 @@
     font-size: 0.72rem;
     color: var(--text-dim);
     background: var(--bg-3);
-    border: 1px solid var(--border);
-    padding: 0.2rem 0.6rem;
-    border-radius: 3px;
+    padding: 0.28rem 0.75rem;
+    border-radius: 999px;
     letter-spacing: 0.04em;
   }
 
@@ -378,8 +377,8 @@
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1px;
     background: var(--border);
-    border: 1px solid var(--border);
     border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
     overflow: hidden;
   }
 
@@ -406,8 +405,8 @@
 
   /* Sandbox */
   .sandbox-card {
-    border: 1px solid var(--border);
     border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
     padding: 2rem;
     background: var(--bg-2);
   }
@@ -426,9 +425,9 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--cyan);
-    border: 1px solid var(--cyan-dim);
-    padding: 0.2rem 0.75rem;
-    border-radius: 3px;
+    background: var(--cyan-glow);
+    padding: 0.25rem 0.85rem;
+    border-radius: 999px;
   }
 
   .sandbox-status {
@@ -442,6 +441,7 @@
     font-size: 0.9rem;
     color: var(--text-dim);
     line-height: 1.8;
+    max-width: 720px;
   }
 
   @keyframes fadeUp {
@@ -458,8 +458,8 @@
     flex-direction: column;
     gap: 1px;
     background: var(--border);
-    border: 1px solid var(--border);
     border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
     overflow: hidden;
   }
 
