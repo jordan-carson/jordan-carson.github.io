@@ -142,7 +142,7 @@
   .theme-toggle {
     background: none;
     border: 1px solid var(--border);
-    border-radius: var(--radius);
+    border-radius: 999px;
     color: var(--text-dim);
     cursor: pointer;
     width: 30px;

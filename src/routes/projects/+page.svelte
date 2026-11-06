@@ -98,8 +98,8 @@
     flex-direction: column;
     gap: 1px;
     background: var(--border);
-    border: 1px solid var(--border);
     border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
     overflow: hidden;
   }
 
@@ -163,9 +163,9 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-muted);
-    border: 1px solid var(--border);
-    padding: 0.2rem 0.6rem;
-    border-radius: 2px;
+    background: var(--bg-3);
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
   }
 
   .project-arrow {

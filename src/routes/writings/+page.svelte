@@ -318,8 +318,8 @@
     flex-direction: column;
     gap: 1px;
     background: var(--border);
-    border: 1px solid var(--border);
     border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
     overflow: hidden;
   }
 
@@ -377,10 +377,10 @@
     color: var(--cyan);
     text-transform: uppercase;
     margin-bottom: 0.75rem;
-    border: 1px solid var(--cyan-dim);
+    background: var(--cyan-glow);
     display: inline-block;
-    padding: 0.15rem 0.5rem;
-    border-radius: 2px;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
   }
 
   .writing-title {
@@ -411,14 +411,14 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-muted);
-    border: 1px solid var(--border);
-    padding: 0.2rem 0.6rem;
-    border-radius: 2px;
+    background: var(--bg-3);
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
   }
 
   .series-block {
-    border: 1px solid var(--border);
     border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
     overflow: hidden;
   }
 

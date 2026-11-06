@@ -206,8 +206,8 @@
   .graph-container {
     width: 100%;
     min-height: 540px;
-    border: 1px solid var(--border);
     border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
     background: var(--bg-2);
     overflow: hidden;
     position: relative;

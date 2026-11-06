@@ -463,8 +463,8 @@
   .entry-table-wrap {
     overflow-x: auto;
     margin: 1.25rem 0;
-    border: 1px solid var(--border);
     border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
   }
 
   .entry-table {
@@ -509,8 +509,8 @@
   .journey-now {
     margin-top: 5rem;
     padding: 3rem;
-    border: 1px solid var(--border);
     border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
     background: var(--bg-2);
   }
 

@@ -1,21 +1,9 @@
 <script>
   import { base } from '$app/paths';
-  import { onMount } from 'svelte';
-
-  let checkerEl;
-
-  onMount(() => {
-    const onScroll = () => {
-      if (checkerEl) checkerEl.style.transform = `translateY(${window.scrollY * 0.12}px)`;
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  });
 </script>
 
 <section class="hero">
   <div class="hero-bg">
-    <div class="checker-layer" bind:this={checkerEl}></div>
     <div class="fade-vignette"></div>
     <div class="glow-orb orb-main"></div>
     <div class="glow-orb orb-accent"></div>
@@ -61,34 +49,6 @@
     inset: 0;
     pointer-events: none;
     overflow: hidden;
-  }
-
-  /* Checkered grid: alternating filled/empty cells via CSS gradient */
-  .checker-layer {
-    position: absolute;
-    /* extend beyond viewport so parallax doesn't reveal edges */
-    inset: -20% -10%;
-    will-change: transform;
-    background-color: transparent;
-    background-image:
-      linear-gradient(45deg, var(--checker-fill) 25%, transparent 25%),
-      linear-gradient(-45deg, var(--checker-fill) 25%, transparent 25%),
-      linear-gradient(45deg, transparent 75%, var(--checker-fill) 75%),
-      linear-gradient(-45deg, transparent 75%, var(--checker-fill) 75%);
-    background-size: 48px 48px;
-    background-position: 0 0, 0 24px, 24px -24px, -24px 0px;
-    /* fade toward center so text stays legible */
-    mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, transparent 20%, black 60%, black 100%);
-  }
-
-  /* Light mode (default): soft cyan-tinted squares */
-  :root:not([data-theme='dark']) .checker-layer {
-    --checker-fill: rgba(14, 116, 144, 0.05);
-  }
-
-  /* Dark mode: subtle cyan-tinted squares */
-  :root[data-theme='dark'] .checker-layer {
-    --checker-fill: rgba(34, 211, 238, 0.045);
   }
 
   /* Soft fade at top/bottom to blend into content */
@@ -192,30 +152,32 @@
   }
 
   .btn-primary {
-    padding: 0.75rem 1.75rem;
+    padding: 0.8rem 1.9rem;
     background: var(--cyan);
-    color: var(--bg);
-    font-size: 0.75rem;
-    font-weight: 700;
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    border-radius: var(--radius);
+    border-radius: 999px;
+    box-shadow: 0 1px 2px rgba(14,116,144,0.15), 0 6px 16px rgba(14,116,144,0.18);
     transition: all var(--transition);
   }
   .btn-primary:hover {
     background: var(--cyan-dim);
     transform: translateY(-1px);
-    box-shadow: 0 8px 24px rgba(14,116,144,0.3);
+    box-shadow: 0 2px 4px rgba(14,116,144,0.18), 0 10px 24px rgba(14,116,144,0.24);
   }
 
   .btn-secondary {
-    padding: 0.75rem 1.75rem;
+    padding: 0.8rem 1.9rem;
     border: 1px solid var(--border);
     color: var(--text-dim);
-    font-size: 0.75rem;
+    font-size: 0.72rem;
+    font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    border-radius: var(--radius);
+    border-radius: 999px;
     transition: all var(--transition);
   }
   .btn-secondary:hover {

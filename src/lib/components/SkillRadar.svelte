@@ -63,13 +63,13 @@
       g.append('circle')
         .attr('r', r)
         .attr('fill', 'none')
-        .attr('stroke', 'rgba(201,168,76,0.12)')
+        .attr('stroke', 'rgba(14,116,144,0.12)')
         .attr('stroke-width', 1);
 
       g.append('text')
         .attr('x', 4)
         .attr('y', -r + 4)
-        .attr('fill', 'rgba(201,168,76,0.35)')
+        .attr('fill', 'rgba(14,116,144,0.35)')
         .attr('font-size', '9px')
         .attr('font-family', 'Space Mono, monospace')
         .text(`${(lvl / levels) * 100}%`);
@@ -84,7 +84,7 @@
       g.append('line')
         .attr('x1', 0).attr('y1', 0)
         .attr('x2', x).attr('y2', y)
-        .attr('stroke', 'rgba(201,168,76,0.15)')
+        .attr('stroke', 'rgba(14,116,144,0.15)')
         .attr('stroke-width', 1);
 
       // Axis labels
